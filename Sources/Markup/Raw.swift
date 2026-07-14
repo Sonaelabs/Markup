@@ -1,0 +1,32 @@
+//
+// Copyright © 2026 Sonae Labs.
+// Released under the MIT License.
+//
+
+/// A node representing a raw string.
+public struct Raw: SyncNode, Sendable {
+
+	/// The raw string of the element.
+	@usableFromInline let content: String
+
+	/// Creates a new raw node with the given content.
+	///
+	/// - Parameter content: The raw string of the element.
+	@inlinable public init(_ content: consuming String) {
+		self.content = content
+	}
+
+	/// Creates a new raw node with the given content.
+	///
+	/// - Parameter build: A closure that produces the content of the node.
+	@inlinable public init(_ build: () -> String) {
+		self.content = build()
+	}
+
+	/// Renders the raw element using the given renderer.
+	///
+	/// - Parameter renderer: A renderer used for rendering.
+	@inlinable public consuming func render(using renderer: inout some Renderer) {
+		renderer.append(raw: content)
+	}
+}
