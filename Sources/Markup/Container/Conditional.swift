@@ -4,7 +4,7 @@
 //
 
 /// A node that renders one of two possible child nodes.
-public enum ConditionalNode<First: Node, Second: Node>: Node {
+public enum Conditional<First: Node, Second: Node>: Node {
 
 	/// The node produced by the first branch.
 	case first(First)
@@ -25,11 +25,11 @@ public enum ConditionalNode<First: Node, Second: Node>: Node {
 
 // MARK: -
 
-extension ConditionalNode: Sendable where First: Sendable, Second: Sendable {}
+extension Conditional: Sendable where First: Sendable, Second: Sendable {}
 
 // MARK: -
 
-extension ConditionalNode: SyncNode where First: SyncNode, Second: SyncNode {
+extension Conditional: SyncNode where First: SyncNode, Second: SyncNode {
 
 	/// Renders the selected branch using the given renderer.
 	///

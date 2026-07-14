@@ -17,7 +17,7 @@
 	}
 
 	/// Produces an empty node for a block with no content.
-	@inlinable public static func buildBlock() -> EmptyNode {
+	@inlinable public static func buildBlock() -> Empty {
 		.init()
 	}
 
@@ -37,12 +37,12 @@
 	}
 
 	/// Supports the first branch of `if`/`else`.
-	@inlinable public static func buildEither<First: Node, Second: Node>(first content: consuming First) -> ConditionalNode<First, Second> {
+	@inlinable public static func buildEither<First: Node, Second: Node>(first content: consuming First) -> Conditional<First, Second> {
 		.first(content)
 	}
 
 	/// Supports the second branch of `if`/`else`.
-	@inlinable public static func buildEither<First: Node, Second: Node>(second content: consuming Second) -> ConditionalNode<First, Second> {
+	@inlinable public static func buildEither<First: Node, Second: Node>(second content: consuming Second) -> Conditional<First, Second> {
 		.second(content)
 	}
 
