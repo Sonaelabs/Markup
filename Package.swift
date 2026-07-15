@@ -13,5 +13,12 @@ let package = Package(
         .target(
 			name: "Markup",
         ),
+
+		.testTarget(
+			name: "MarkupTests",
+			dependencies: [
+				"Markup",
+			],
+        ),
     ],
 )
