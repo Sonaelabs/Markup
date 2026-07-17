@@ -16,6 +16,13 @@ let package = Package(
 				"Markup",
 			],
         ),
+
+		.library(
+			name: "HTML",
+			targets: [
+				"HTML",
+			],
+		),
     ],
 
 	targets: [
@@ -28,6 +35,13 @@ let package = Package(
 			dependencies: [
 				"Markup",
 			],
+		),
+
+		.target(
+			name: "HTML",
+			dependencies: [
+				"Markup",
+			]
         ),
     ],
 )
