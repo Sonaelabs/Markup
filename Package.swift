@@ -9,6 +9,15 @@ let package = Package(
 		.macOS(.v14),
 	],
 
+    products: [
+        .library(
+            name: "Markup",
+            targets: [
+				"Markup",
+			],
+        ),
+    ],
+
 	targets: [
         .target(
 			name: "Markup",
