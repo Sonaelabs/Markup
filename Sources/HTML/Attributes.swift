@@ -212,7 +212,7 @@ extension HTMLTags.Script: HTMLAttributes.Charset {}
 
 extension Attribute where Tag: HTMLAttributes.Charset {
 
-	/// Specifies the character encoding for the HTML document.
+	/// Specifies the character encoding.
 	@inlinable public static func charset(_ encoding: consuming Charset) -> Self {
 		.init(name: "charset", value: encoding)
 	}
@@ -858,7 +858,7 @@ extension Attribute where Tag == HTMLTags.Form {
 		.init(name: "autocomplete", value: value ? "on" : "off")
 	}
 
-	/// Specifies how the form-data should be encoded when submitting it to the server.
+	/// Specifies how the form-data should be encoded.
 	@inlinable public static func encType(_ value: consuming EncType) -> Self {
 		.init(name: "enctype", value: value)
 	}

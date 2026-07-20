@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-/// SSpecifies the HTTP method to use when sending form-data.
+/// Specifies the HTTP method to use when sending form-data.
 public enum FormMethod: String, Sendable {
 
 	/// Appends the form-data to the URL in name/value pairs.

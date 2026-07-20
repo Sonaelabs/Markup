@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-/// Specify the shape of each area  in the image map.
+/// Specifies the shape of each area in the image map.
 public enum AreaShape: String, Sendable {
 
 	/// Specifies the entire region.
