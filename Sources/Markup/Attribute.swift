@@ -25,6 +25,8 @@ public struct Attribute<Tag>: Equatable, Sendable {
 	}
 }
 
+// MARK: -
+
 extension Attribute {
 
 	/// Creates an attribute with a single string value.
