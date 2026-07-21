@@ -77,8 +77,8 @@ extension Attribute where Tag: HTML {
 	}
 
 	/// Specifies whether the content of an HTML element is editable or not.
-	@inlinable public static func contentEditable(_ value: consuming Bool) -> Self {
-		.init(name: "contenteditable", value: value)
+	@inlinable public static func contentEditable(_ enable: consuming Bool) -> Self {
+		.init(name: "contenteditable", value: enable)
 	}
 
 	/// Specifies that content of an HTML element is editable as plaintext only.
@@ -97,8 +97,8 @@ extension Attribute where Tag: HTML {
 	}
 
 	/// Specifies whether an HTML element is draggable or not.
-	@inlinable public static func draggable(_ value: consuming Bool) -> Self {
-		.init(name: "draggable", value: value)
+	@inlinable public static func draggable(_ enable: consuming Bool) -> Self {
+		.init(name: "draggable", value: enable)
 	}
 
 	/// Specifies the enter key on virtual keyboards.
@@ -142,8 +142,8 @@ extension Attribute where Tag: HTML {
 	}
 
 	/// Specifies whether the element is to have its spelling and grammar checked or not.
-	@inlinable public static func spellcheck(_ value: consuming Bool) -> Self {
-		.init(name: "spellcheck", value: value)
+	@inlinable public static func spellcheck(_ enable: consuming Bool) -> Self {
+		.init(name: "spellcheck", value: enable)
 	}
 
 	/// Specifies an inline style for an HTML element.
@@ -172,8 +172,8 @@ extension Attribute where Tag: HTML {
 	}
 
 	/// Specifies whether the content of an HTML element should be translated or not.
-	@inlinable public static func translate(_ value: consuming Bool) -> Self {
-		.init(name: "translate", value: value)
+	@inlinable public static func translate(_ enable: consuming Bool) -> Self {
+		.init(name: "translate", value: enable)
 	}
 }
 
@@ -854,8 +854,8 @@ extension Attribute where Tag == HTMLTags.Form {
 	}
 
 	/// Specifies whether autocomplete should be on or off.
-	@inlinable public static func autocomplete(_ value: consuming Bool) -> Self {
-		.init(name: "autocomplete", value: value ? "on" : "off")
+	@inlinable public static func autocomplete(_ enable: consuming Bool) -> Self {
+		.init(name: "autocomplete", value: enable ? "on" : "off")
 	}
 
 	/// Specifies how the form-data should be encoded.
