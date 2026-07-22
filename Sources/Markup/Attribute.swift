@@ -29,10 +29,10 @@ public struct Attribute<Tag>: Equatable, Sendable {
 
 extension Attribute {
 
-	/// Creates an attribute with a single string value.
+	/// Creates an attribute with a single raw value.
 	///
 	/// - Parameters:
-	///   - name: The name of the attribute
+	///   - name: The name of the attribute.
 	///   - value: A raw representable value whose raw value is a string.
 	/// - Returns: An `Attribute` instance representing a single string value.
 	@inlinable public init<Value: RawRepresentable>(name: consuming String, value: consuming Value) where Value.RawValue == String {
@@ -42,7 +42,7 @@ extension Attribute {
 	/// Creates an attribute with a single string value.
 	///
 	/// - Parameters:
-	///   - name: The name of the attribute
+	///   - name: The name of the attribute.
 	///   - value: A value that can be converted to a string.
 	/// - Returns: An `Attribute` instance representing the single string value.
 	@inlinable public init<Value: LosslessStringConvertible>(name: consuming String, value: consuming Value) {
