@@ -200,8 +200,18 @@ extension HTMLTags.Textarea: HTMLAttributes.Autocomplete {}
 extension Attribute where Tag: HTMLAttributes.Autocomplete {
 
 	/// Specifies the types of autocomplete.
+	@inlinable public static func autocomplete(_ value: consuming String) -> Self {
+		.init(name: "autocomplete", value: value)
+	}
+
+	/// Specifies the types of autocomplete.
+	@inlinable public static func autocomplete(_ values: consuming [String]) -> Self {
+		.autocomplete(values.joined(separator: " "))
+	}
+
+	/// Specifies the types of autocomplete.
 	@inlinable public static func autocomplete(_ values: String...) -> Self {
-		.init(name: "autocomplete", value: values.joined(separator: " "))
+		.autocomplete(values)
 	}
 }
 
