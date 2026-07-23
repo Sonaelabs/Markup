@@ -844,8 +844,8 @@ extension Attribute where Tag == HTMLTags.Form {
 	}
 
 	/// Specifies whether autocomplete should be on or off.
-	@inlinable public static func autocomplete(_ enable: consuming Bool) -> Self {
-		.init(name: "autocomplete", value: enable ? "on" : "off")
+	@inlinable public static func autocomplete(_ value: consuming Autocomplete) -> Self {
+		.init(name: "autocomplete", value: value)
 	}
 
 	/// Specifies how the form-data should be encoded.

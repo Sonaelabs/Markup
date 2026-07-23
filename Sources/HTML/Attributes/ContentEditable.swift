@@ -18,7 +18,7 @@ public enum ContentEditable: String, Sendable {
 
 extension ContentEditable: ExpressibleByBooleanLiteral {
 
-	/// Creates an instance using boolean literals.
+	/// Creates an instance using a boolean literal.
 	@inlinable public init(booleanLiteral value: BooleanLiteralType) {
 		self = value ? .enabled : .disabled
 	}

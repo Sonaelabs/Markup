@@ -28,6 +28,8 @@ public enum Popover: String, Sendable {
 	case manual
 }
 
+// MARK: -
+
 /// Specifies what happens when the control is activated.
 public enum PopoverAction: String, Sendable {
 
