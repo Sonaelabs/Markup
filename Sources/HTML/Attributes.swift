@@ -77,13 +77,8 @@ extension Attribute where Tag: HTML {
 	}
 
 	/// Specifies whether the content of an HTML element is editable or not.
-	@inlinable public static func contentEditable(_ enable: consuming Bool) -> Self {
-		.init(name: "contenteditable", value: enable)
-	}
-
-	/// Specifies that content of an HTML element is editable as plaintext only.
-	@inlinable public static func contentEditablePlaintextOnly() -> Self {
-		.init(name: "contenteditable", value: "plaintext-only")
+	@inlinable public static func contentEditable(_ value: consuming ContentEditable) -> Self {
+		.init(name: "contenteditable", value: value.rawValue)
 	}
 
 	/// Specifies custom data private to the page or application.
