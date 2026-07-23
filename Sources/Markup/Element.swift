@@ -57,6 +57,28 @@ extension Element: SyncNode where Content: SyncNode {
 
 // MARK: -
 
+extension Element where Content == Empty {
+
+	/// Creates an element with the given attributes.
+	///
+	/// - Parameters:
+	///   - name: The name of the element.
+	///   - attributes: The attributes of the element.
+	@inlinable public init(name: consuming String, attributes: consuming [Attribute<Tag>]) {
+		self.init(name: name, attributes: attributes, build: Empty.init)
+	}
+
+	/// Renders the element using the given renderer.
+	///
+	/// - Parameter renderer: A renderer used for rendering.
+	@inlinable public consuming func render(using renderer: inout some Renderer) {
+		renderer.append(start: name, attributes: attributes)
+		renderer.append(end: name)
+	}
+}
+
+// MARK: -
+
 /// A node containing only attributes.
 public struct VoidElement<Tag>: SyncNode, Sendable {
 
