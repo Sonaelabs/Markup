@@ -42,6 +42,13 @@ let package = Package(
 			dependencies: [
 				"Markup",
 			]
+		),
+
+		.testTarget(
+            name: "HTMLTests",
+            dependencies: [
+				"HTML",
+			],
         ),
     ],
 )
