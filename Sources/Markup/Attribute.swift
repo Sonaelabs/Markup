@@ -39,6 +39,18 @@ extension Attribute {
 		self.init(name: name, value: value.rawValue)
 	}
 
+	/// Creates an attribute with multiple raw values.
+	///
+	/// - Parameters:
+	///   - name: The name of the attribute.
+	///   - values: An array of raw representable values whose raw value is a string.
+	///   - separator: A separator to join the values.
+	/// - Returns: An `Attribute` instance representing a single string value.
+	@inlinable public init<Value: RawRepresentable>(name: consuming String, values: consuming [Value], separator: consuming String) where Value.RawValue == String {
+		let joinedValue = values.map(\.rawValue).joined(separator: separator)
+		self.init(name: name, value: joinedValue)
+	}
+
 	/// Creates an attribute with a single string value.
 	///
 	/// - Parameters:
