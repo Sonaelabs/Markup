@@ -109,16 +109,6 @@ public import Markup
 	meta(.httpEquiv(httpEquiv), .content(content))
 }
 
-/// Creates a `<style>` element.
-@inlinable public func style(_ attributes: Attribute<HTMLTags.Style>..., build: () -> String) -> Element<HTMLTags.Style, Raw> {
-	.init(name: "style", attributes: attributes) { .init(build) }
-}
-
-/// Creates a `<style media="...">` element.
-@inlinable public func style(media: consuming String, build: () -> String) -> Element<HTMLTags.Style, Raw> {
-	style(.media(media), build: build)
-}
-
 /// Creates a `<title>` element.
 @inlinable public func title<Content: Node>(_ attributes: Attribute<HTMLTags.Title>..., @ContentBuilder build: () -> Content) -> Element<HTMLTags.Title, Content> {
 	.init(name: "title", attributes: attributes, build: build)
@@ -593,23 +583,23 @@ public import Markup
 }
 
 /// Creates a `<script>` element.
-@inlinable public func script(_ attributes: Attribute<HTMLTags.Script>..., build: () -> String) -> Element<HTMLTags.Script, Raw> {
-	.init(name: "script", attributes: attributes) { .init(build) }
+@inlinable public func script(_ attributes: Attribute<HTMLTags.Script>...) -> Element<HTMLTags.Script, Empty> {
+	.init(name: "script", attributes: attributes)
 }
 
 /// Creates a `<script src="...">` element.
-@inlinable public func script(src: consuming String) -> Element<HTMLTags.Script, Raw> {
-	script(.src(src), build: { "" })
+@inlinable public func script(src: consuming String) -> Element<HTMLTags.Script, Empty> {
+	script(.src(src))
 }
 
 /// Creates a `<script src="..." defer>` element.
-@inlinable public func script(defer src: consuming String) -> Element<HTMLTags.Script, Raw> {
-	script(.src(src), .defer, build: { "" })
+@inlinable public func script(defer src: consuming String) -> Element<HTMLTags.Script, Empty> {
+	script(.src(src), .defer)
 }
 
 /// Creates a `<script src="..." async>` element.
-@inlinable public func script(async src: consuming String) -> Element<HTMLTags.Script, Raw> {
-	script(.src(src), .async, build: { "" })
+@inlinable public func script(async src: consuming String) -> Element<HTMLTags.Script, Empty> {
+	script(.src(src), .async)
 }
 
 
