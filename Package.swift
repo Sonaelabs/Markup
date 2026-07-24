@@ -23,6 +23,13 @@ let package = Package(
 				"HTML",
 			],
 		),
+
+		.library(
+			name: "HTMX",
+			targets: [
+				"HTMX",
+			],
+		),
     ],
 
 	targets: [
@@ -50,5 +57,19 @@ let package = Package(
 				"HTML",
 			],
         ),
+
+		.target(
+			name: "HTMX",
+			dependencies: [
+				"HTML",
+			]
+		),
+
+		.testTarget(
+			name: "HTMXTests",
+			dependencies: [
+				"HTMX",
+			],
+		),
     ],
 )
