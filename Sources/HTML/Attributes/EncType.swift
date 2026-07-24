@@ -13,6 +13,8 @@ public enum EncType: String, Sendable {
 	/// This value is necessary if the user will upload a file through the form.
 	case multipart = "multipart/form-data"
 
-	/// Sends data without any encoding at all. Specified as a debugging aid.
+	#if DEBUG
+	/// Sends data without any encoding at all.
 	case text = "text/plain"
+	#endif
 }
