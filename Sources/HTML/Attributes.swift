@@ -159,9 +159,9 @@ extension Attribute where Tag: HTML {
 
 // MARK: -
 
-extension HTMLTags.Area: HTMLAttributes.Alt {}
-extension HTMLTags.Img: HTMLAttributes.Alt {}
-extension HTMLTags.Input: HTMLAttributes.Alt {}
+extension HTMLTag.Area: HTMLAttributes.Alt {}
+extension HTMLTag.Img: HTMLAttributes.Alt {}
+extension HTMLTag.Input: HTMLAttributes.Alt {}
 
 extension Attribute where Tag: HTMLAttributes.Alt {
 
@@ -173,9 +173,9 @@ extension Attribute where Tag: HTMLAttributes.Alt {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Autocomplete {}
-extension HTMLTags.Select: HTMLAttributes.Autocomplete {}
-extension HTMLTags.Textarea: HTMLAttributes.Autocomplete {}
+extension HTMLTag.Input: HTMLAttributes.Autocomplete {}
+extension HTMLTag.Select: HTMLAttributes.Autocomplete {}
+extension HTMLTag.Textarea: HTMLAttributes.Autocomplete {}
 
 extension Attribute where Tag: HTMLAttributes.Autocomplete {
 
@@ -197,8 +197,8 @@ extension Attribute where Tag: HTMLAttributes.Autocomplete {
 
 // MARK: -
 
-extension HTMLTags.Meta: HTMLAttributes.Charset {}
-extension HTMLTags.Script: HTMLAttributes.Charset {}
+extension HTMLTag.Meta: HTMLAttributes.Charset {}
+extension HTMLTag.Script: HTMLAttributes.Charset {}
 
 extension Attribute where Tag: HTMLAttributes.Charset {
 
@@ -210,10 +210,10 @@ extension Attribute where Tag: HTMLAttributes.Charset {
 
 // MARK: -
 
-extension HTMLTags.Blockquote: HTMLAttributes.Cite {}
-extension HTMLTags.Del: HTMLAttributes.Cite {}
-extension HTMLTags.Ins: HTMLAttributes.Cite {}
-extension HTMLTags.Q: HTMLAttributes.Cite {}
+extension HTMLTag.Blockquote: HTMLAttributes.Cite {}
+extension HTMLTag.Del: HTMLAttributes.Cite {}
+extension HTMLTag.Ins: HTMLAttributes.Cite {}
+extension HTMLTag.Q: HTMLAttributes.Cite {}
 
 extension Attribute where Tag: HTMLAttributes.Cite {
 
@@ -226,8 +226,8 @@ extension Attribute where Tag: HTMLAttributes.Cite {
 
 // MARK: -
 
-extension HTMLTags.Td: HTMLAttributes.Colspan {}
-extension HTMLTags.Th: HTMLAttributes.Colspan {}
+extension HTMLTag.Td: HTMLAttributes.Colspan {}
+extension HTMLTag.Th: HTMLAttributes.Colspan {}
 
 extension Attribute where Tag: HTMLAttributes.Colspan {
 
@@ -239,13 +239,13 @@ extension Attribute where Tag: HTMLAttributes.Colspan {
 
 // MARK: -
 
-extension HTMLTags.Del: HTMLAttributes.DateTime {}
-extension HTMLTags.Ins: HTMLAttributes.DateTime {}
-extension HTMLTags.Time: HTMLAttributes.DateTime {}
+extension HTMLTag.Del: HTMLAttributes.DateTime {}
+extension HTMLTag.Ins: HTMLAttributes.DateTime {}
+extension HTMLTag.Time: HTMLAttributes.DateTime {}
 
 extension Attribute where Tag: HTMLAttributes.DateTime {
 
-	// TODO: add support for proper url type
+	// TODO: add support for proper date type
 	/// Specifies the date and time when the text was deleted/inserted.
 	@inlinable public static func dateTime(_ date: consuming String) -> Self {
 		.init(name: "datetime", value: date)
@@ -254,8 +254,8 @@ extension Attribute where Tag: HTMLAttributes.DateTime {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.DirName {}
-extension HTMLTags.Textarea: HTMLAttributes.DirName {}
+extension HTMLTag.Input: HTMLAttributes.DirName {}
+extension HTMLTag.Textarea: HTMLAttributes.DirName {}
 
 extension Attribute where Tag: HTMLAttributes.DirName {
 
@@ -267,13 +267,13 @@ extension Attribute where Tag: HTMLAttributes.DirName {
 
 // MARK: -
 
-extension HTMLTags.Button: HTMLAttributes.Disabled {}
-extension HTMLTags.Fieldset: HTMLAttributes.Disabled {}
-extension HTMLTags.Input: HTMLAttributes.Disabled {}
-extension HTMLTags.Optgroup: HTMLAttributes.Disabled {}
-extension HTMLTags.Option: HTMLAttributes.Disabled {}
-extension HTMLTags.Select: HTMLAttributes.Disabled {}
-extension HTMLTags.Textarea: HTMLAttributes.Disabled {}
+extension HTMLTag.Button: HTMLAttributes.Disabled {}
+extension HTMLTag.Fieldset: HTMLAttributes.Disabled {}
+extension HTMLTag.Input: HTMLAttributes.Disabled {}
+extension HTMLTag.Optgroup: HTMLAttributes.Disabled {}
+extension HTMLTag.Option: HTMLAttributes.Disabled {}
+extension HTMLTag.Select: HTMLAttributes.Disabled {}
+extension HTMLTag.Textarea: HTMLAttributes.Disabled {}
 
 extension Attribute where Tag: HTMLAttributes.Disabled {
 
@@ -285,8 +285,8 @@ extension Attribute where Tag: HTMLAttributes.Disabled {
 
 // MARK: -
 
-extension HTMLTags.A: HTMLAttributes.Download {}
-extension HTMLTags.Area: HTMLAttributes.Download {}
+extension HTMLTag.A: HTMLAttributes.Download {}
+extension HTMLTag.Area: HTMLAttributes.Download {}
 
 extension Attribute where Tag: HTMLAttributes.Download {
 
@@ -298,8 +298,8 @@ extension Attribute where Tag: HTMLAttributes.Download {
 
 // MARK: -
 
-extension HTMLTags.Label: HTMLAttributes.For {}
-extension HTMLTags.Output: HTMLAttributes.For {}
+extension HTMLTag.Label: HTMLAttributes.For {}
+extension HTMLTag.Output: HTMLAttributes.For {}
 
 extension Attribute where Tag: HTMLAttributes.For {
 
@@ -311,15 +311,15 @@ extension Attribute where Tag: HTMLAttributes.For {
 
 // MARK: -
 
-extension HTMLTags.Button: HTMLAttributes.Form {}
-extension HTMLTags.Fieldset: HTMLAttributes.Form {}
-extension HTMLTags.Input: HTMLAttributes.Form {}
-extension HTMLTags.Label: HTMLAttributes.Form {}
-extension HTMLTags.Meter: HTMLAttributes.Form {}
-extension HTMLTags.Object: HTMLAttributes.Form {}
-extension HTMLTags.Output: HTMLAttributes.Form {}
-extension HTMLTags.Select: HTMLAttributes.Form {}
-extension HTMLTags.Textarea: HTMLAttributes.Form {}
+extension HTMLTag.Button: HTMLAttributes.Form {}
+extension HTMLTag.Fieldset: HTMLAttributes.Form {}
+extension HTMLTag.Input: HTMLAttributes.Form {}
+extension HTMLTag.Label: HTMLAttributes.Form {}
+extension HTMLTag.Meter: HTMLAttributes.Form {}
+extension HTMLTag.Object: HTMLAttributes.Form {}
+extension HTMLTag.Output: HTMLAttributes.Form {}
+extension HTMLTag.Select: HTMLAttributes.Form {}
+extension HTMLTag.Textarea: HTMLAttributes.Form {}
 
 extension Attribute where Tag: HTMLAttributes.Form {
 
@@ -331,8 +331,8 @@ extension Attribute where Tag: HTMLAttributes.Form {
 
 // MARK: -
 
-extension HTMLTags.Button: HTMLAttributes.FormAction {}
-extension HTMLTags.Input: HTMLAttributes.FormAction {}
+extension HTMLTag.Button: HTMLAttributes.FormAction {}
+extension HTMLTag.Input: HTMLAttributes.FormAction {}
 
 extension Attribute where Tag: HTMLAttributes.FormAction {
 
@@ -344,8 +344,8 @@ extension Attribute where Tag: HTMLAttributes.FormAction {
 
 // MARK: -
 
-extension HTMLTags.Td: HTMLAttributes.Headers {}
-extension HTMLTags.Th: HTMLAttributes.Headers {}
+extension HTMLTag.Td: HTMLAttributes.Headers {}
+extension HTMLTag.Th: HTMLAttributes.Headers {}
 
 extension Attribute where Tag: HTMLAttributes.Headers {
 
@@ -367,10 +367,10 @@ extension Attribute where Tag: HTMLAttributes.Headers {
 
 // MARK: -
 
-extension HTMLTags.A: HTMLAttributes.Href {}
-extension HTMLTags.Area: HTMLAttributes.Href {}
-extension HTMLTags.Base: HTMLAttributes.Href {}
-extension HTMLTags.Link: HTMLAttributes.Href {}
+extension HTMLTag.A: HTMLAttributes.Href {}
+extension HTMLTag.Area: HTMLAttributes.Href {}
+extension HTMLTag.Base: HTMLAttributes.Href {}
+extension HTMLTag.Link: HTMLAttributes.Href {}
 
 extension Attribute where Tag: HTMLAttributes.Href {
 
@@ -383,9 +383,9 @@ extension Attribute where Tag: HTMLAttributes.Href {
 
 // MARK: -
 
-extension HTMLTags.A: HTMLAttributes.HrefLang {}
-extension HTMLTags.Area: HTMLAttributes.HrefLang {}
-extension HTMLTags.Link: HTMLAttributes.HrefLang {}
+extension HTMLTag.A: HTMLAttributes.HrefLang {}
+extension HTMLTag.Area: HTMLAttributes.HrefLang {}
+extension HTMLTag.Link: HTMLAttributes.HrefLang {}
 
 extension Attribute where Tag: HTMLAttributes.HrefLang {
 
@@ -397,9 +397,9 @@ extension Attribute where Tag: HTMLAttributes.HrefLang {
 
 // MARK: -
 
-extension HTMLTags.Track: HTMLAttributes.Label {}
-extension HTMLTags.Option: HTMLAttributes.Label {}
-extension HTMLTags.Optgroup: HTMLAttributes.Label {}
+extension HTMLTag.Track: HTMLAttributes.Label {}
+extension HTMLTag.Option: HTMLAttributes.Label {}
+extension HTMLTag.Optgroup: HTMLAttributes.Label {}
 
 extension Attribute where Tag: HTMLAttributes.Label {
 
@@ -411,9 +411,9 @@ extension Attribute where Tag: HTMLAttributes.Label {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Max {}
-extension HTMLTags.Meter: HTMLAttributes.Max {}
-extension HTMLTags.Progress: HTMLAttributes.Max {}
+extension HTMLTag.Input: HTMLAttributes.Max {}
+extension HTMLTag.Meter: HTMLAttributes.Max {}
+extension HTMLTag.Progress: HTMLAttributes.Max {}
 
 extension Attribute where Tag: HTMLAttributes.Max {
 
@@ -425,8 +425,8 @@ extension Attribute where Tag: HTMLAttributes.Max {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.MaxLength {}
-extension HTMLTags.Textarea: HTMLAttributes.MaxLength {}
+extension HTMLTag.Input: HTMLAttributes.MaxLength {}
+extension HTMLTag.Textarea: HTMLAttributes.MaxLength {}
 
 extension Attribute where Tag: HTMLAttributes.MaxLength {
 
@@ -438,11 +438,11 @@ extension Attribute where Tag: HTMLAttributes.MaxLength {
 
 // MARK: -
 
-extension HTMLTags.A: HTMLAttributes.Media {}
-extension HTMLTags.Area: HTMLAttributes.Media {}
-extension HTMLTags.Link: HTMLAttributes.Media {}
-extension HTMLTags.Source: HTMLAttributes.Media {}
-extension HTMLTags.Style: HTMLAttributes.Media {}
+extension HTMLTag.A: HTMLAttributes.Media {}
+extension HTMLTag.Area: HTMLAttributes.Media {}
+extension HTMLTag.Link: HTMLAttributes.Media {}
+extension HTMLTag.Source: HTMLAttributes.Media {}
+extension HTMLTag.Style: HTMLAttributes.Media {}
 
 extension Attribute where Tag: HTMLAttributes.Media {
 
@@ -454,8 +454,8 @@ extension Attribute where Tag: HTMLAttributes.Media {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Min {}
-extension HTMLTags.Meter: HTMLAttributes.Min {}
+extension HTMLTag.Input: HTMLAttributes.Min {}
+extension HTMLTag.Meter: HTMLAttributes.Min {}
 
 extension Attribute where Tag: HTMLAttributes.Min {
 
@@ -467,8 +467,8 @@ extension Attribute where Tag: HTMLAttributes.Min {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Multiple {}
-extension HTMLTags.Select: HTMLAttributes.Multiple {}
+extension HTMLTag.Input: HTMLAttributes.Multiple {}
+extension HTMLTag.Select: HTMLAttributes.Multiple {}
 
 extension Attribute where Tag: HTMLAttributes.Multiple {
 
@@ -480,17 +480,17 @@ extension Attribute where Tag: HTMLAttributes.Multiple {
 
 // MARK: -
 
-extension HTMLTags.Button: HTMLAttributes.Name {}
-extension HTMLTags.Fieldset: HTMLAttributes.Name {}
-extension HTMLTags.Form: HTMLAttributes.Name {}
-extension HTMLTags.Iframe: HTMLAttributes.Name {}
-extension HTMLTags.Input: HTMLAttributes.Name {}
-extension HTMLTags.Map: HTMLAttributes.Name {}
-extension HTMLTags.Meta: HTMLAttributes.Name {} // TODO: replace name: String with MetaName
-extension HTMLTags.Object: HTMLAttributes.Name {}
-extension HTMLTags.Output: HTMLAttributes.Name {}
-extension HTMLTags.Select: HTMLAttributes.Name {}
-extension HTMLTags.Textarea: HTMLAttributes.Name {}
+extension HTMLTag.Button: HTMLAttributes.Name {}
+extension HTMLTag.Fieldset: HTMLAttributes.Name {}
+extension HTMLTag.Form: HTMLAttributes.Name {}
+extension HTMLTag.Iframe: HTMLAttributes.Name {}
+extension HTMLTag.Input: HTMLAttributes.Name {}
+extension HTMLTag.Map: HTMLAttributes.Name {}
+extension HTMLTag.Meta: HTMLAttributes.Name {}
+extension HTMLTag.Object: HTMLAttributes.Name {}
+extension HTMLTag.Output: HTMLAttributes.Name {}
+extension HTMLTag.Select: HTMLAttributes.Name {}
+extension HTMLTag.Textarea: HTMLAttributes.Name {}
 
 extension Attribute where Tag: HTMLAttributes.Name {
 
@@ -502,8 +502,8 @@ extension Attribute where Tag: HTMLAttributes.Name {
 
 // MARK: -
 
-extension HTMLTags.Details: HTMLAttributes.Open {}
-extension HTMLTags.Dialog: HTMLAttributes.Open {}
+extension HTMLTag.Details: HTMLAttributes.Open {}
+extension HTMLTag.Dialog: HTMLAttributes.Open {}
 
 extension Attribute where Tag: HTMLAttributes.Open {
 
@@ -515,8 +515,8 @@ extension Attribute where Tag: HTMLAttributes.Open {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Placeholder {}
-extension HTMLTags.Textarea: HTMLAttributes.Placeholder {}
+extension HTMLTag.Input: HTMLAttributes.Placeholder {}
+extension HTMLTag.Textarea: HTMLAttributes.Placeholder {}
 
 extension Attribute where Tag: HTMLAttributes.Placeholder {
 
@@ -528,8 +528,8 @@ extension Attribute where Tag: HTMLAttributes.Placeholder {
 
 // MARK: -
 
-extension HTMLTags.Audio: HTMLAttributes.Playback {}
-extension HTMLTags.Video: HTMLAttributes.Playback {}
+extension HTMLTag.Audio: HTMLAttributes.Playback {}
+extension HTMLTag.Video: HTMLAttributes.Playback {}
 
 extension Attribute where Tag: HTMLAttributes.Playback {
 
@@ -561,8 +561,8 @@ extension Attribute where Tag: HTMLAttributes.Playback {
 
 // MARK: -
 
-extension HTMLTags.Button: HTMLAttributes.Popover {}
-extension HTMLTags.Input: HTMLAttributes.Popover {}
+extension HTMLTag.Button: HTMLAttributes.Popover {}
+extension HTMLTag.Input: HTMLAttributes.Popover {}
 
 extension Attribute where Tag: HTMLAttributes.Popover {
 
@@ -579,8 +579,8 @@ extension Attribute where Tag: HTMLAttributes.Popover {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.ReadOnly {}
-extension HTMLTags.Textarea: HTMLAttributes.ReadOnly {}
+extension HTMLTag.Input: HTMLAttributes.ReadOnly {}
+extension HTMLTag.Textarea: HTMLAttributes.ReadOnly {}
 
 extension Attribute where Tag: HTMLAttributes.ReadOnly {
 
@@ -592,9 +592,9 @@ extension Attribute where Tag: HTMLAttributes.ReadOnly {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Required {}
-extension HTMLTags.Select: HTMLAttributes.Required {}
-extension HTMLTags.Textarea: HTMLAttributes.Required {}
+extension HTMLTag.Input: HTMLAttributes.Required {}
+extension HTMLTag.Select: HTMLAttributes.Required {}
+extension HTMLTag.Textarea: HTMLAttributes.Required {}
 
 extension Attribute where Tag: HTMLAttributes.Required {
 
@@ -606,8 +606,8 @@ extension Attribute where Tag: HTMLAttributes.Required {
 
 // MARK: -
 
-extension HTMLTags.Td: HTMLAttributes.RowSpan {}
-extension HTMLTags.Th: HTMLAttributes.RowSpan {}
+extension HTMLTag.Td: HTMLAttributes.RowSpan {}
+extension HTMLTag.Th: HTMLAttributes.RowSpan {}
 
 extension Attribute where Tag: HTMLAttributes.RowSpan {
 
@@ -619,8 +619,8 @@ extension Attribute where Tag: HTMLAttributes.RowSpan {
 
 // MARK: -
 
-extension HTMLTags.Input: HTMLAttributes.Size {}
-extension HTMLTags.Select: HTMLAttributes.Size {}
+extension HTMLTag.Input: HTMLAttributes.Size {}
+extension HTMLTag.Select: HTMLAttributes.Size {}
 
 extension Attribute where Tag: HTMLAttributes.Size {
 
@@ -632,9 +632,9 @@ extension Attribute where Tag: HTMLAttributes.Size {
 
 // MARK: -
 
-extension HTMLTags.Img: HTMLAttributes.Sizes {}
-extension HTMLTags.Link: HTMLAttributes.Sizes {}
-extension HTMLTags.Source: HTMLAttributes.Sizes {}
+extension HTMLTag.Img: HTMLAttributes.Sizes {}
+extension HTMLTag.Link: HTMLAttributes.Sizes {}
+extension HTMLTag.Source: HTMLAttributes.Sizes {}
 
 extension Attribute where Tag: HTMLAttributes.Sizes {
 
@@ -646,13 +646,13 @@ extension Attribute where Tag: HTMLAttributes.Sizes {
 
 // MARK: -
 
-extension HTMLTags.Canvas: HTMLAttributes.Sizing {}
-extension HTMLTags.Embed: HTMLAttributes.Sizing {}
-extension HTMLTags.Iframe: HTMLAttributes.Sizing {}
-extension HTMLTags.Img: HTMLAttributes.Sizing {}
-extension HTMLTags.Input: HTMLAttributes.Sizing {}
-extension HTMLTags.Object: HTMLAttributes.Sizing {}
-extension HTMLTags.Video: HTMLAttributes.Sizing {}
+extension HTMLTag.Canvas: HTMLAttributes.Sizing {}
+extension HTMLTag.Embed: HTMLAttributes.Sizing {}
+extension HTMLTag.Iframe: HTMLAttributes.Sizing {}
+extension HTMLTag.Img: HTMLAttributes.Sizing {}
+extension HTMLTag.Input: HTMLAttributes.Sizing {}
+extension HTMLTag.Object: HTMLAttributes.Sizing {}
+extension HTMLTag.Video: HTMLAttributes.Sizing {}
 
 extension Attribute where Tag: HTMLAttributes.Sizing {
 
@@ -669,8 +669,8 @@ extension Attribute where Tag: HTMLAttributes.Sizing {
 
 // MARK: -
 
-extension HTMLTags.Col: HTMLAttributes.Span {}
-extension HTMLTags.Colgroup: HTMLAttributes.Span {}
+extension HTMLTag.Col: HTMLAttributes.Span {}
+extension HTMLTag.Colgroup: HTMLAttributes.Span {}
 
 extension Attribute where Tag: HTMLAttributes.Span {
 
@@ -682,15 +682,15 @@ extension Attribute where Tag: HTMLAttributes.Span {
 
 // MARK: -
 
-extension HTMLTags.Audio: HTMLAttributes.Src {}
-extension HTMLTags.Embed: HTMLAttributes.Src {}
-extension HTMLTags.Iframe: HTMLAttributes.Src {}
-extension HTMLTags.Img: HTMLAttributes.Src {}
-extension HTMLTags.Input: HTMLAttributes.Src {}
-extension HTMLTags.Script: HTMLAttributes.Src {}
-extension HTMLTags.Source: HTMLAttributes.Src {}
-extension HTMLTags.Track: HTMLAttributes.Src {}
-extension HTMLTags.Video: HTMLAttributes.Src {}
+extension HTMLTag.Audio: HTMLAttributes.Src {}
+extension HTMLTag.Embed: HTMLAttributes.Src {}
+extension HTMLTag.Iframe: HTMLAttributes.Src {}
+extension HTMLTag.Img: HTMLAttributes.Src {}
+extension HTMLTag.Input: HTMLAttributes.Src {}
+extension HTMLTag.Script: HTMLAttributes.Src {}
+extension HTMLTag.Source: HTMLAttributes.Src {}
+extension HTMLTag.Track: HTMLAttributes.Src {}
+extension HTMLTag.Video: HTMLAttributes.Src {}
 
 extension Attribute where Tag: HTMLAttributes.Src {
 
@@ -702,8 +702,8 @@ extension Attribute where Tag: HTMLAttributes.Src {
 
 // MARK: -
 
-extension HTMLTags.Img: HTMLAttributes.SrcSet {}
-extension HTMLTags.Source: HTMLAttributes.SrcSet {}
+extension HTMLTag.Img: HTMLAttributes.SrcSet {}
+extension HTMLTag.Source: HTMLAttributes.SrcSet {}
 
 extension Attribute where Tag: HTMLAttributes.SrcSet {
 
@@ -715,10 +715,10 @@ extension Attribute where Tag: HTMLAttributes.SrcSet {
 
 // MARK: -
 
-extension HTMLTags.A: HTMLAttributes.Target {}
-extension HTMLTags.Area: HTMLAttributes.Target {}
-extension HTMLTags.Base: HTMLAttributes.Target {}
-extension HTMLTags.Form: HTMLAttributes.Target {}
+extension HTMLTag.A: HTMLAttributes.Target {}
+extension HTMLTag.Area: HTMLAttributes.Target {}
+extension HTMLTag.Base: HTMLAttributes.Target {}
+extension HTMLTag.Form: HTMLAttributes.Target {}
 
 extension Attribute where Tag: HTMLAttributes.Target {
 
@@ -730,13 +730,13 @@ extension Attribute where Tag: HTMLAttributes.Target {
 
 // MARK: -
 
-extension HTMLTags.A: HTMLAttributes.MediaType {}
-extension HTMLTags.Embed: HTMLAttributes.MediaType {}
-extension HTMLTags.Link: HTMLAttributes.MediaType {}
-extension HTMLTags.Object: HTMLAttributes.MediaType {}
-extension HTMLTags.Script: HTMLAttributes.MediaType {}
-extension HTMLTags.Source: HTMLAttributes.MediaType {}
-extension HTMLTags.Style: HTMLAttributes.MediaType {}
+extension HTMLTag.A: HTMLAttributes.MediaType {}
+extension HTMLTag.Embed: HTMLAttributes.MediaType {}
+extension HTMLTag.Link: HTMLAttributes.MediaType {}
+extension HTMLTag.Object: HTMLAttributes.MediaType {}
+extension HTMLTag.Script: HTMLAttributes.MediaType {}
+extension HTMLTag.Source: HTMLAttributes.MediaType {}
+extension HTMLTag.Style: HTMLAttributes.MediaType {}
 
 extension Attribute where Tag: HTMLAttributes.MediaType {
 
@@ -748,8 +748,8 @@ extension Attribute where Tag: HTMLAttributes.MediaType {
 
 // MARK: -
 
-extension HTMLTags.Img: HTMLAttributes.UseMap {}
-extension HTMLTags.Object: HTMLAttributes.UseMap {}
+extension HTMLTag.Img: HTMLAttributes.UseMap {}
+extension HTMLTag.Object: HTMLAttributes.UseMap {}
 
 extension Attribute where Tag: HTMLAttributes.UseMap {
 
@@ -761,13 +761,13 @@ extension Attribute where Tag: HTMLAttributes.UseMap {
 
 // MARK: -
 
-extension HTMLTags.Button: HTMLAttributes.Value {}
-extension HTMLTags.Data: HTMLAttributes.Value {}
-extension HTMLTags.Input: HTMLAttributes.Value {}
-extension HTMLTags.Li: HTMLAttributes.Value {}
-extension HTMLTags.Option: HTMLAttributes.Value {}
-extension HTMLTags.Meter: HTMLAttributes.Value {}
-extension HTMLTags.Progress: HTMLAttributes.Value {}
+extension HTMLTag.Button: HTMLAttributes.Value {}
+extension HTMLTag.Data: HTMLAttributes.Value {}
+extension HTMLTag.Input: HTMLAttributes.Value {}
+extension HTMLTag.Li: HTMLAttributes.Value {}
+extension HTMLTag.Option: HTMLAttributes.Value {}
+extension HTMLTag.Meter: HTMLAttributes.Value {}
+extension HTMLTag.Progress: HTMLAttributes.Value {}
 
 extension Attribute where Tag: HTMLAttributes.Value {
 
@@ -779,7 +779,7 @@ extension Attribute where Tag: HTMLAttributes.Value {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.A {
+extension Attribute where Tag == HTMLTag.A {
 
 	/// Specifies the relationship of the `<a>` element.
 	@inlinable public static func rel(_ value: consuming HyperlinkRelationship) -> Self {
@@ -789,7 +789,7 @@ extension Attribute where Tag == HTMLTags.A {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Area {
+extension Attribute where Tag == HTMLTag.Area {
 
 	// TODO: add support for proper coords type
 	/// Specifies the coordinates of an area in an image map.
@@ -810,7 +810,7 @@ extension Attribute where Tag == HTMLTags.Area {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Button {
+extension Attribute where Tag == HTMLTag.Button {
 
 	//TODO: update value if possible
 	/// Specifies the button command.
@@ -831,7 +831,7 @@ extension Attribute where Tag == HTMLTags.Button {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Form {
+extension Attribute where Tag == HTMLTag.Form {
 
 	/// Specifies the character encodings that are to be used for the form submission.
 	@inlinable public static func acceptCharset(_ value: consuming String) -> Self {
@@ -871,7 +871,7 @@ extension Attribute where Tag == HTMLTags.Form {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Iframe {
+extension Attribute where Tag == HTMLTag.Iframe {
 
 	// TODO: add support for proper sandboxing
 	/// Enables an extra set of restrictions.
@@ -888,7 +888,7 @@ extension Attribute where Tag == HTMLTags.Iframe {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Input {
+extension Attribute where Tag == HTMLTag.Input {
 
 	/// Specifies the types of files that the server accepts (only for type="file").
 	@inlinable public static func accept(_ value: consuming String) -> Self {
@@ -923,7 +923,7 @@ extension Attribute where Tag == HTMLTags.Input {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Img {
+extension Attribute where Tag == HTMLTag.Img {
 
 	/// Specifies that the image is part of a server-side image map.
 	@inlinable public static var isMap: Self {
@@ -933,7 +933,7 @@ extension Attribute where Tag == HTMLTags.Img {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Link {
+extension Attribute where Tag == HTMLTag.Link {
 
 	/// Specifies the relationship of the `<link>` element.
 	@inlinable public static func rel(_ value: consuming LinkRelationship) -> Self {
@@ -943,7 +943,7 @@ extension Attribute where Tag == HTMLTags.Link {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Meta {
+extension Attribute where Tag == HTMLTag.Meta {
 
 	/// Specifies the value associated with the http-equiv or name attribute.
 	@inlinable public static func content(_ value: consuming String) -> Self {
@@ -958,7 +958,7 @@ extension Attribute where Tag == HTMLTags.Meta {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Meter {
+extension Attribute where Tag == HTMLTag.Meter {
 
 	/// Specifies the range where the gauge's value is considered to be a high value.
 	@inlinable public static func high(_ value: consuming Int) -> Self {
@@ -978,7 +978,7 @@ extension Attribute where Tag == HTMLTags.Meter {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Object {
+extension Attribute where Tag == HTMLTag.Object {
 
 	/// Specifies the URL of the resource to be used by the object.
 	@inlinable public static func data(_ value: consuming String) -> Self {
@@ -988,7 +988,7 @@ extension Attribute where Tag == HTMLTags.Object {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Option {
+extension Attribute where Tag == HTMLTag.Option {
 
 	/// Specifies that an option should be pre-selected when the page loads.
 	@inlinable public static var selected: Self {
@@ -998,7 +998,7 @@ extension Attribute where Tag == HTMLTags.Option {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Ol {
+extension Attribute where Tag == HTMLTag.Ol {
 
 	/// Specifies that the list order should be descending (9, 8, 7, etc.).
 	@inlinable public static var reversed: Self {
@@ -1013,7 +1013,7 @@ extension Attribute where Tag == HTMLTags.Ol {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Script {
+extension Attribute where Tag == HTMLTag.Script {
 
 	/// Specifies that the script will be executed asynchronously as soon as it is available.
 	@inlinable public static var async: Self {
@@ -1028,7 +1028,7 @@ extension Attribute where Tag == HTMLTags.Script {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Textarea {
+extension Attribute where Tag == HTMLTag.Textarea {
 
 	/// Specifies the visible width of a text area.
 	@inlinable public static func cols(_ value: consuming Int) -> Self {
@@ -1048,7 +1048,7 @@ extension Attribute where Tag == HTMLTags.Textarea {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Th {
+extension Attribute where Tag == HTMLTag.Th {
 
 	/// Specifies whether a header cell is a header for a column, row, or group of columns or rows.
 	@inlinable public static func scope(_ value: consuming Scope) -> Self {
@@ -1058,7 +1058,7 @@ extension Attribute where Tag == HTMLTags.Th {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Track {
+extension Attribute where Tag == HTMLTag.Track {
 
 	/// Specifies that the track is to be enabled.
 	@inlinable public static var `default`: Self {
@@ -1078,7 +1078,7 @@ extension Attribute where Tag == HTMLTags.Track {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTags.Video {
+extension Attribute where Tag == HTMLTag.Video {
 
 	/// Specifies an image to be shown while the video is downloading, or until the user hits the play button.
 	/// If this is not included, the first frame of the video will be used instead.

@@ -6,7 +6,7 @@
 public import Markup
 
 public protocol HTML {}
-public enum HTMLTags {}
+public enum HTMLTag {}
 
 // MARK: -
 
@@ -29,7 +29,7 @@ extension Text: HTML {}
 
 // MARK: - Main Root
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Root: HTML {}
 	public enum Head: HTML {}
 	public enum Body: HTML {}
@@ -37,7 +37,7 @@ extension HTMLTags {
 
 // MARK: - Document Metadata
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Base: HTML {}
 	public enum Link: HTML {}
 	public enum Meta: HTML {}
@@ -47,7 +47,7 @@ extension HTMLTags {
 
 // MARK: - Content Sectioning
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Address: HTML {}
 	public enum Article: HTML {}
 	public enum Aside: HTML {}
@@ -70,7 +70,7 @@ extension HTMLTags {
 
 // MARK: - Text Content
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Blockquote: HTML {}
 	public enum Dd: HTML {}
 	public enum Div: HTML {}
@@ -89,7 +89,7 @@ extension HTMLTags {
 
 // MARK: - Inline Text Semantics
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum A: HTML {}
 	public enum Abbr: HTML {}
 	public enum B: HTML {}
@@ -123,7 +123,7 @@ extension HTMLTags {
 
 // MARK: - Image and Multimedia
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Area: HTML {}
 	public enum Audio: HTML {}
 	public enum Img: HTML {}
@@ -134,7 +134,7 @@ extension HTMLTags {
 
 // MARK: - Embeded Content
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Embed: HTML {}
 	public enum Iframe: HTML {}
 	public enum Picture: HTML {}
@@ -144,7 +144,7 @@ extension HTMLTags {
 
 // MARK: - Scripting
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Canvas: HTML {}
 	public enum Noscript: HTML {}
 	public enum Script: HTML {}
@@ -152,14 +152,14 @@ extension HTMLTags {
 
 // MARK: - Demarcating Edits
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Del: HTML {}
 	public enum Ins: HTML {}
 }
 
 // MARK: - Table Content
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Caption: HTML {}
 	public enum Colgroup: HTML {}
 	public enum Col: HTML {}
@@ -176,7 +176,7 @@ extension HTMLTags {
 
 // MARK: - Forms
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Button: HTML {}
 	public enum Datalist: HTML {}
 	public enum Fieldset: HTML {}
@@ -195,7 +195,7 @@ extension HTMLTags {
 
 // MARK: - Interactive Elements
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Details: HTML {}
 	public enum Dialog: HTML {}
 	public enum Summary: HTML {}
@@ -203,7 +203,7 @@ extension HTMLTags {
 
 // MARK: - Web Components
 
-extension HTMLTags {
+extension HTMLTag {
 	public enum Slot: HTML {}
 	public enum Template: HTML {}
 }
