@@ -18,14 +18,13 @@ struct EmptyNodeTests {
 	}
 
 	@Test func streamElementWithEmptyContent() async throws {
-		let test = Fixtures.generate(element: "test")
 		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		try await Fixtures.singleElement.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("test"),
-			.end("test"),
+			.start("bar"),
+			.end("bar"),
 		])
 	}
 }

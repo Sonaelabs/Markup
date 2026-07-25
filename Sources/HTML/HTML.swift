@@ -30,180 +30,179 @@ extension Text: HTML {}
 // MARK: - Main Root
 
 extension HTMLTag {
-	public enum Root: HTML {}
-	public enum Head: HTML {}
-	public enum Body: HTML {}
+	public enum html: HTML, TagDefinition { public static let name = "html" }
+	public enum head: HTML, TagDefinition { public static let name = "head" }
+	public enum body: HTML, TagDefinition { public static let name = "body" }
 }
 
 // MARK: - Document Metadata
 
 extension HTMLTag {
-	public enum Base: HTML {}
-	public enum Link: HTML {}
-	public enum Meta: HTML {}
-	public enum Style: HTML {}
-	public enum Title: HTML {}
+	public enum base: HTML, TagDefinition { public static let name = "base" }
+	public enum link: HTML, TagDefinition { public static let name = "link" }
+	public enum meta: HTML, TagDefinition { public static let name = "meta" }
+	public enum title: HTML, TagDefinition { public static let name = "title" }
 }
 
 // MARK: - Content Sectioning
 
 extension HTMLTag {
-	public enum Address: HTML {}
-	public enum Article: HTML {}
-	public enum Aside: HTML {}
-	public enum Footer: HTML {}
-	public enum Header: HTML {}
+	public enum address: HTML, TagDefinition { public static let name = "address" }
+	public enum article: HTML, TagDefinition { public static let name = "article" }
+	public enum aside: HTML, TagDefinition { public static let name = "aside" }
+	public enum footer: HTML, TagDefinition { public static let name = "footer" }
+	public enum header: HTML, TagDefinition { public static let name = "header" }
 
-	public enum H1: HTML {}
-	public enum H2: HTML {}
-	public enum H3: HTML {}
-	public enum H4: HTML {}
-	public enum H5: HTML {}
-	public enum H6: HTML {}
+	public enum h1: HTML, TagDefinition { public static let name = "h1" }
+	public enum h2: HTML, TagDefinition { public static let name = "h2" }
+	public enum h3: HTML, TagDefinition { public static let name = "h3" }
+	public enum h4: HTML, TagDefinition { public static let name = "h4" }
+	public enum h5: HTML, TagDefinition { public static let name = "h5" }
+	public enum h6: HTML, TagDefinition { public static let name = "h6" }
 
-	public enum Hgroup: HTML {}
-	public enum Main: HTML {}
-	public enum Nav: HTML {}
-	public enum Search: HTML {}
-	public enum Section: HTML {}
+	public enum hgroup: HTML, TagDefinition { public static let name = "hgroup" }
+	public enum main: HTML, TagDefinition { public static let name = "main" }
+	public enum nav: HTML, TagDefinition { public static let name = "nav" }
+	public enum search: HTML, TagDefinition { public static let name = "search" }
+	public enum section: HTML, TagDefinition { public static let name = "section" }
 }
 
 // MARK: - Text Content
 
 extension HTMLTag {
-	public enum Blockquote: HTML {}
-	public enum Dd: HTML {}
-	public enum Div: HTML {}
-	public enum Dl: HTML {}
-	public enum Dt: HTML {}
-	public enum Figcaption: HTML {}
-	public enum Figure: HTML {}
-	public enum Hr: HTML {}
-	public enum Li: HTML {}
-	public enum Menu: HTML {}
-	public enum Ol: HTML {}
-	public enum P: HTML {}
-	public enum Pre: HTML {}
-	public enum Ul: HTML {}
+	public enum blockquote: HTML, TagDefinition { public static let name = "blockquote" }
+	public enum dd: HTML, TagDefinition { public static let name = "dd" }
+	public enum div: HTML, TagDefinition { public static let name = "div" }
+	public enum dl: HTML, TagDefinition { public static let name = "dl" }
+	public enum dt: HTML, TagDefinition { public static let name = "dt" }
+	public enum figcaption: HTML, TagDefinition { public static let name = "figcaption" }
+	public enum figure: HTML, TagDefinition { public static let name = "figure" }
+	public enum hr: HTML, TagDefinition { public static let name = "hr" }
+	public enum li: HTML, TagDefinition { public static let name = "li" }
+	public enum menu: HTML, TagDefinition { public static let name = "menu" }
+	public enum ol: HTML, TagDefinition { public static let name = "ol" }
+	public enum p: HTML, TagDefinition { public static let name = "p" }
+	public enum pre: HTML, TagDefinition { public static let name = "pre" }
+	public enum ul: HTML, TagDefinition { public static let name = "ul" }
 }
 
 // MARK: - Inline Text Semantics
 
 extension HTMLTag {
-	public enum A: HTML {}
-	public enum Abbr: HTML {}
-	public enum B: HTML {}
-	public enum Bdi: HTML {}
-	public enum Bdo: HTML {}
-	public enum Br: HTML {}
-	public enum Cite: HTML {}
-	public enum Code: HTML {}
-	public enum Data: HTML {}
-	public enum Dfn: HTML {}
-	public enum Em: HTML {}
-	public enum I: HTML {}
-	public enum Kbd: HTML {}
-	public enum Mark: HTML {}
-	public enum Q: HTML {}
-	public enum Rp: HTML {}
-	public enum Rt: HTML {}
-	public enum Ruby: HTML {}
-	public enum S: HTML {}
-	public enum Samp: HTML {}
-	public enum Small: HTML {}
-	public enum Span: HTML {}
-	public enum Strong: HTML {}
-	public enum Sub: HTML {}
-	public enum Sup: HTML {}
-	public enum Time: HTML {}
-	public enum U: HTML {}
-	public enum Var: HTML {}
-	public enum Wbr: HTML {}
+	public enum a: HTML, TagDefinition { public static let name = "a" }
+	public enum abbr: HTML, TagDefinition { public static let name = "abbr" }
+	public enum b: HTML, TagDefinition { public static let name = "b" }
+	public enum bdi: HTML, TagDefinition { public static let name = "bdi" }
+	public enum bdo: HTML, TagDefinition { public static let name = "bdo" }
+	public enum br: HTML, TagDefinition { public static let name = "br" }
+	public enum cite: HTML, TagDefinition { public static let name = "cite" }
+	public enum code: HTML, TagDefinition { public static let name = "code" }
+	public enum data: HTML, TagDefinition { public static let name = "data" }
+	public enum dfn: HTML, TagDefinition { public static let name = "dfn" }
+	public enum em: HTML, TagDefinition { public static let name = "em" }
+	public enum i: HTML, TagDefinition { public static let name = "i" }
+	public enum kbd: HTML, TagDefinition { public static let name = "kbd" }
+	public enum mark: HTML, TagDefinition { public static let name = "mark" }
+	public enum q: HTML, TagDefinition { public static let name = "q" }
+	public enum rp: HTML, TagDefinition { public static let name = "rp" }
+	public enum rt: HTML, TagDefinition { public static let name = "rt" }
+	public enum ruby: HTML, TagDefinition { public static let name = "ruby" }
+	public enum s: HTML, TagDefinition { public static let name = "s" }
+	public enum samp: HTML, TagDefinition { public static let name = "samp" }
+	public enum small: HTML, TagDefinition { public static let name = "small" }
+	public enum span: HTML, TagDefinition { public static let name = "span" }
+	public enum strong: HTML, TagDefinition { public static let name = "strong" }
+	public enum sub: HTML, TagDefinition { public static let name = "sub" }
+	public enum sup: HTML, TagDefinition { public static let name = "sup" }
+	public enum time: HTML, TagDefinition { public static let name = "time" }
+	public enum u: HTML, TagDefinition { public static let name = "u" }
+	public enum `var`: HTML, TagDefinition { public static let name = "var" }
+	public enum wbr: HTML, TagDefinition { public static let name = "wbr" }
 }
 
 // MARK: - Image and Multimedia
 
 extension HTMLTag {
-	public enum Area: HTML {}
-	public enum Audio: HTML {}
-	public enum Img: HTML {}
-	public enum Map: HTML {}
-	public enum Track: HTML {}
-	public enum Video: HTML {}
+	public enum area: HTML, TagDefinition { public static let name = "area" }
+	public enum audio: HTML, TagDefinition { public static let name = "audio" }
+	public enum img: HTML, TagDefinition { public static let name = "img" }
+	public enum map: HTML, TagDefinition { public static let name = "map" }
+	public enum track: HTML, TagDefinition { public static let name = "track" }
+	public enum video: HTML, TagDefinition { public static let name = "video" }
 }
 
 // MARK: - Embeded Content
 
 extension HTMLTag {
-	public enum Embed: HTML {}
-	public enum Iframe: HTML {}
-	public enum Picture: HTML {}
-	public enum Object: HTML {}
-	public enum Source: HTML {}
+	public enum embed: HTML, TagDefinition { public static let name = "embed" }
+	public enum iframe: HTML, TagDefinition { public static let name = "iframe" }
+	public enum picture: HTML, TagDefinition { public static let name = "picture" }
+	public enum object: HTML, TagDefinition { public static let name = "object" }
+	public enum source: HTML, TagDefinition { public static let name = "source" }
 }
 
 // MARK: - Scripting
 
 extension HTMLTag {
-	public enum Canvas: HTML {}
-	public enum Noscript: HTML {}
-	public enum Script: HTML {}
+	public enum canvas: HTML, TagDefinition { public static let name = "canvas" }
+	public enum noscript: HTML, TagDefinition { public static let name = "noscript" }
+	public enum script: HTML, TagDefinition { public static let name = "script" }
 }
 
 // MARK: - Demarcating Edits
 
 extension HTMLTag {
-	public enum Del: HTML {}
-	public enum Ins: HTML {}
+	public enum del: HTML, TagDefinition { public static let name = "del" }
+	public enum ins: HTML, TagDefinition { public static let name = "ins" }
 }
 
 // MARK: - Table Content
 
 extension HTMLTag {
-	public enum Caption: HTML {}
-	public enum Colgroup: HTML {}
-	public enum Col: HTML {}
+	public enum caption: HTML, TagDefinition { public static let name = "caption" }
+	public enum colgroup: HTML, TagDefinition { public static let name = "colgroup" }
+	public enum col: HTML, TagDefinition { public static let name = "col" }
 
-	public enum Table: HTML {}
-	public enum Thead: HTML {}
-	public enum Tbody: HTML {}
-	public enum Tfoot: HTML {}
+	public enum table: HTML, TagDefinition { public static let name = "table" }
+	public enum thead: HTML, TagDefinition { public static let name = "thead" }
+	public enum tbody: HTML, TagDefinition { public static let name = "tbody" }
+	public enum tfoot: HTML, TagDefinition { public static let name = "tfoot" }
 
-	public enum Td: HTML {}
-	public enum Th: HTML {}
-	public enum Tr: HTML {}
+	public enum td: HTML, TagDefinition { public static let name = "td" }
+	public enum th: HTML, TagDefinition { public static let name = "th" }
+	public enum tr: HTML, TagDefinition { public static let name = "tr" }
 }
 
 // MARK: - Forms
 
 extension HTMLTag {
-	public enum Button: HTML {}
-	public enum Datalist: HTML {}
-	public enum Fieldset: HTML {}
-	public enum Form: HTML {}
-	public enum Input: HTML {}
-	public enum Label: HTML {}
-	public enum Legend: HTML {}
-	public enum Meter: HTML {}
-	public enum Optgroup: HTML {}
-	public enum Option: HTML {}
-	public enum Output: HTML {}
-	public enum Progress: HTML {}
-	public enum Select: HTML {}
-	public enum Textarea: HTML {}
+	public enum button: HTML, TagDefinition { public static let name = "button" }
+	public enum datalist: HTML, TagDefinition { public static let name = "datalist" }
+	public enum fieldset: HTML, TagDefinition { public static let name = "fieldset" }
+	public enum form: HTML, TagDefinition { public static let name = "form" }
+	public enum input: HTML, TagDefinition { public static let name = "input" }
+	public enum label: HTML, TagDefinition { public static let name = "label" }
+	public enum legend: HTML, TagDefinition { public static let name = "legend" }
+	public enum meter: HTML, TagDefinition { public static let name = "meter" }
+	public enum optgroup: HTML, TagDefinition { public static let name = "optgroup" }
+	public enum option: HTML, TagDefinition { public static let name = "option" }
+	public enum output: HTML, TagDefinition { public static let name = "output" }
+	public enum progress: HTML, TagDefinition { public static let name = "progress" }
+	public enum select: HTML, TagDefinition { public static let name = "select" }
+	public enum textarea: HTML, TagDefinition { public static let name = "textarea" }
 }
 
 // MARK: - Interactive Elements
 
 extension HTMLTag {
-	public enum Details: HTML {}
-	public enum Dialog: HTML {}
-	public enum Summary: HTML {}
+	public enum details: HTML, TagDefinition { public static let name = "details" }
+	public enum dialog: HTML, TagDefinition { public static let name = "dialog" }
+	public enum summary: HTML, TagDefinition { public static let name = "summary" }
 }
 
 // MARK: - Web Components
 
 extension HTMLTag {
-	public enum Slot: HTML {}
-	public enum Template: HTML {}
+	public enum slot: HTML, TagDefinition { public static let name = "slot" }
+	public enum template: HTML, TagDefinition { public static let name = "template" }
 }

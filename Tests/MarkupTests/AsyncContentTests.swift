@@ -29,8 +29,8 @@ struct AsyncContentTests {
 
 		#expect(recorder.events == [
 			.flush(force: false),
-			.start("A"),
-			.end("A"),
+			.start("bar"),
+			.end("bar"),
 			.flush(force: false),
 		])
 	}
@@ -43,10 +43,10 @@ struct AsyncContentTests {
 
 		#expect(recorder.events == [
 			.flush(force: false),
-			.start("B"),
-			.start("A"),
-			.end("A"),
-			.end("B"),
+			.start("foo"),
+			.start("bar"),
+			.end("bar"),
+			.end("foo"),
 			.flush(force: false),
 		])
 	}
@@ -59,14 +59,11 @@ struct AsyncContentTests {
 
 		#expect(recorder.events == [
 			.flush(force: false),
-			.start("C"),
-			.start("A"),
-			.end("A"),
-			.start("B"),
-			.start("A"),
-			.end("A"),
-			.end("B"),
-			.end("C"),
+			.start("foo"),
+			.start("bar"),
+			.end("bar"),
+			.start("baz"),
+			.end("foo"),
 			.flush(force: false),
 		])
 	}

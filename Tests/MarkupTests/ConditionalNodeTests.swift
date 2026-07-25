@@ -31,7 +31,7 @@ struct ConditionalNodeTests {
 	}
 
 	@Test func streamIfTrue() async throws {
-		let test = Fixtures.generate(element: "A") {
+		let test = foo {
 			if true { Fixtures.text }
 		}
 
@@ -40,14 +40,14 @@ struct ConditionalNodeTests {
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("A"),
+			.start("foo"),
 			.text("test"),
-			.end("A"),
+			.end("foo"),
 		])
 	}
 
 	@Test func streamIfFalse() async throws {
-		let test = Fixtures.generate(element: "A") {
+		let test = foo {
 			if false { Fixtures.text }
 		}
 
@@ -56,13 +56,13 @@ struct ConditionalNodeTests {
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("A"),
-			.end("A"),
+			.start("foo"),
+			.end("foo"),
 		])
 	}
 
 	@Test func streamIfTrueElse() async throws {
-		let test = Fixtures.generate(element: "A") {
+		let test = foo {
 			if true {
 				Fixtures.text
 			} else {
@@ -75,14 +75,14 @@ struct ConditionalNodeTests {
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("A"),
+			.start("foo"),
 			.text("test"),
-			.end("A"),
+			.end("foo"),
 		])
 	}
 
 	@Test func streamIfFalseElse() async throws {
-		let test = Fixtures.generate(element: "A") {
+		let test = foo {
 			if false {
 				Fixtures.text
 			} else {
@@ -95,9 +95,9 @@ struct ConditionalNodeTests {
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("A"),
+			.start("foo"),
 			.raw("test"),
-			.end("A"),
+			.end("foo"),
 		])
 	}
 }

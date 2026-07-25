@@ -9,30 +9,26 @@ import Testing
 struct ElementTests {
 
 	@Test func buildSingleElement() async throws {
-		let test = Fixtures.generate(element: "test")
 		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		try await Fixtures.singleElement.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("test"),
-			.end("test"),
+			.start("bar"),
+			.end("bar"),
 		])
 	}
 
 	@Test func buildNestedElement() async throws {
-		let test = Fixtures.generate(element: "test") {
-			Fixtures.generate(element: "child")
-		}
 		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		try await Fixtures.nestedElement.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("test"),
-			.start("child"),
-			.end("child"),
-			.end("test"),
+			.start("foo"),
+			.start("bar"),
+			.end("bar"),
+			.end("foo"),
 		])
 	}
 }

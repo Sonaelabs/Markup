@@ -9,7 +9,7 @@ import Testing
 struct ForEachTests {
 
 	@Test func buildEmpty() async throws {
-		let test = ForEach([String](), build: Fixtures.generate)
+		let test = ForEach([String](), build: Text.init)
 		var recorder = RecordingRenderer()
 
 		try await test.stream(using: &recorder)
@@ -18,33 +18,29 @@ struct ForEachTests {
 	}
 
 	@Test func buildSingleItem() async throws {
-		let test = ForEach(["single"], build: Fixtures.generate)
+		let test = ForEach(["single"], build: Text.init)
 		var recorder = RecordingRenderer()
 
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("single"),
-			.end("single"),
+			.text("single"),
 			.flush(force: false),
 		])
 	}
 
 	@Test func buildMultiItem() async throws {
-		let test = ForEach(["X", "Y", "Z"], build: Fixtures.generate)
+		let test = ForEach(["X", "Y", "Z"], build: Text.init)
 		var recorder = RecordingRenderer()
 
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("X"),
-			.end("X"),
+			.text("X"),
 			.flush(force: false),
-			.start("Y"),
-			.end("Y"),
+			.text("Y"),
 			.flush(force: false),
-			.start("Z"),
-			.end("Z"),
+			.text("Z"),
 			.flush(force: false),
 		])
 	}

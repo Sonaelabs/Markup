@@ -5,6 +5,20 @@
 
 @testable import Markup
 
+enum Tags {
+	enum foo: TagDefinition { public static let name = "foo" }
+	enum bar: TagDefinition { public static let name = "bar" }
+	enum baz: TagDefinition { public static let name = "baz" }
+}
+
+// MARK: -
+
+typealias foo<Content: Node> = Element<Tags.foo, Content>
+typealias bar = Element<Tags.bar, Empty>
+typealias baz = VoidElement<Tags.baz>
+
+// MARK: -
+
 enum Fixtures {
 
 	static var comment: some Node {
@@ -16,21 +30,17 @@ enum Fixtures {
 	}
 
 	static var singleElement: some Node {
-		self.generate(element: "A") {
-			self.empty
-		}
+		bar()
 	}
 
 	static var nestedElement: some Node {
-		self.generate(element: "B") {
-			self.singleElement
-		}
+		foo { bar() }
 	}
 
 	static var fragment: some Node {
-		self.generate(element: "C") {
-			self.singleElement
-			self.nestedElement
+		foo {
+			bar()
+			baz()
 		}
 	}
 
@@ -40,16 +50,5 @@ enum Fixtures {
 
 	static var text: Text {
 		.init("test")
-	}
-}
-
-extension Fixtures {
-
-	static func generate<Content: Node>(element: String, @ContentBuilder build: () -> Content) -> Element<Fixtures, Content> {
-		.init(name: element, attributes: [], build: build)
-	}
-
-	static func generate(element: String) -> Element<Fixtures, Empty> {
-		.init(name: element, attributes: [], build: Empty.init)
 	}
 }

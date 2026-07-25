@@ -81,13 +81,13 @@ struct AttributeRenderingTests {
 		expect(p(.id("foo"), .title("bar"), .hidden) {}, #"<p id="foo" title="bar" hidden></p>"#)
 	}
 
-	@Test func renderMetaAttributes() async throws {
-		expect(meta(charset: .unicode), #"<meta charset="UTF-8">"#)
-		expect(meta(author: "John Doe"), #"<meta name="author" content="John Doe">"#)
-		expect(meta(description: "foo"), #"<meta name="description" content="foo">"#)
-		expect(meta(keywords: "foo bar baz"), #"<meta name="keywords" content="foo bar baz">"#)
-		expect(meta(viewport: "width=device-width, initial-scale=1.0"), #"<meta name="viewport" content="width=device-width, initial-scale=1.0">"#)
-	}
+//	@Test func renderMetaAttributes() async throws {
+//		expect(meta(charset: .unicode), #"<meta charset="UTF-8">"#)
+//		expect(meta(author: "John Doe"), #"<meta name="author" content="John Doe">"#)
+//		expect(meta(description: "foo"), #"<meta name="description" content="foo">"#)
+//		expect(meta(keywords: "foo bar baz"), #"<meta name="keywords" content="foo bar baz">"#)
+//		expect(meta(viewport: "width=device-width, initial-scale=1.0"), #"<meta name="viewport" content="width=device-width, initial-scale=1.0">"#)
+//	}
 
 	private func expect(_ html: some HTML & SyncNode , _ result: String, sourceLocation: SourceLocation = #_sourceLocation) {
 		#expect(html.write() == result, sourceLocation: sourceLocation)

@@ -10,7 +10,7 @@ struct AsyncForEachTests {
 
 	@Test func buildEmpty() async throws {
 		let stream = AsyncStream(testData: [String]())
-		let test = AsyncForEach(stream, build: Fixtures.generate)
+		let test = AsyncForEach(stream, build: Text.init)
 		var recorder = RecordingRenderer()
 
 		try await test.stream(using: &recorder)
@@ -20,34 +20,30 @@ struct AsyncForEachTests {
 
 	@Test func buildSingleItem() async throws {
 		let stream = AsyncStream(testData: ["single"])
-		let test = AsyncForEach(stream, build: Fixtures.generate)
+		let test = AsyncForEach(stream, build: Text.init)
 		var recorder = RecordingRenderer()
 
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("single"),
-			.end("single"),
+			.text("single"),
 			.flush(force: false),
 		])
 	}
 
 	@Test func buildMultiItem() async throws {
 		let stream = AsyncStream(testData: ["X", "Y", "Z"])
-		let test = AsyncForEach(stream, build: Fixtures.generate)
+		let test = AsyncForEach(stream, build: Text.init)
 		var recorder = RecordingRenderer()
 
 		try await test.stream(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("X"),
-			.end("X"),
+			.text("X"),
 			.flush(force: false),
-			.start("Y"),
-			.end("Y"),
+			.text("Y"),
 			.flush(force: false),
-			.start("Z"),
-			.end("Z"),
+			.text("Z"),
 			.flush(force: false),
 		])
 	}
@@ -57,7 +53,7 @@ struct AsyncForEachTests {
 			continuation.finish(throwing: TestError.asyncForEach)
 		}
 
-		let test = AsyncForEach(stream, build: Fixtures.generate)
+		let test = AsyncForEach(stream, build: Text.init)
 		var recorder = RecordingRenderer()
 
 		let error = await #expect(throws: TestError.self) {
