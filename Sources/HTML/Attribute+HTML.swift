@@ -137,6 +137,11 @@ extension Attribute where Tag: HTML {
 		.init(name: "popover")
 	}
 
+	/// Specifies a unique id for an HTML element.
+	@inlinable public static func slot(_ value: consuming String) -> Self {
+		.init(name: "slot", value: value)
+	}
+
 	/// Specifies whether the element is to have its spelling and grammar checked or not.
 	@inlinable public static func spellcheck(_ enable: consuming Bool) -> Self {
 		.init(name: "spellcheck", value: enable)
