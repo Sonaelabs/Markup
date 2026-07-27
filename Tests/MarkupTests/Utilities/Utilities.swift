@@ -35,12 +35,12 @@ struct RecordingRenderer: StreamRenderer {
 		events.append(.text(text))
 	}
 
-	mutating func append<Tag>(start name: consuming String, attributes: consuming [Attribute<Tag>]) {
-		events.append(.start(name))
+	mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>]) {
+		events.append(.start(tag.name))
 	}
 
-	mutating func append(end name: consuming String) {
-		events.append(.end(name))
+	mutating func append<Tag: TagDefinition>(end tag: Tag.Type) {
+		events.append(.end(tag.name))
 	}
 
 	mutating func flushIfNeeded(force: Bool) async throws {

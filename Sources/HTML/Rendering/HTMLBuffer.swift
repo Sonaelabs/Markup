@@ -44,9 +44,9 @@ public struct HTMLBuffer: Renderer {
 	}
 
 	/// Renders an HTML element's starting tag and attributes.
-	@inlinable public mutating func append<Tag>(start name: consuming String, attributes: consuming [Attribute<Tag>]) {
+	@inlinable public mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>]) {
 		storage.append(60) // <
-		storage.append(contentsOf: name.utf8)
+		storage.append(contentsOf: tag.name.utf8)
 
 		for attribute in attributes {
 			storage.append(32) // space
@@ -63,9 +63,9 @@ public struct HTMLBuffer: Renderer {
 	}
 
 	/// Renders an HTML element's ending tag.
-	@inlinable public mutating func append(end name: consuming String) {
+	@inlinable public mutating func append<Tag: TagDefinition>(end tag: Tag.Type) {
 		storage.append(contentsOf: [60, 47]) // </
-		storage.append(contentsOf: name.utf8)
+		storage.append(contentsOf: tag.name.utf8)
 		storage.append(62) // >
 	}
 

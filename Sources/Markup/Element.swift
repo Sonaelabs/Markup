@@ -33,9 +33,9 @@ public struct Element<Tag: TagDefinition, Content: Node>: Node {
 	///
 	/// - Parameter renderer: A renderer used for rendering.
 	@inlinable public consuming func stream(using renderer: inout some StreamRenderer) async throws {
-		renderer.append(start: Tag.name, attributes: attributes)
+		renderer.append(start: Tag.self, attributes: attributes)
 		try await content.stream(using: &renderer)
-		renderer.append(end: Tag.name)
+		renderer.append(end: Tag.self)
 	}
 }
 
@@ -51,9 +51,9 @@ extension Element: SyncNode where Content: SyncNode {
 	///
 	/// - Parameter renderer: A renderer used for rendering.
 	@inlinable public consuming func render(using renderer: inout some Renderer) {
-		renderer.append(start: Tag.name, attributes: attributes)
+		renderer.append(start: Tag.self, attributes: attributes)
 		content.render(using: &renderer)
-		renderer.append(end: Tag.name)
+		renderer.append(end: Tag.self)
 	}
 }
 
@@ -75,8 +75,8 @@ extension Element where Content == Empty {
 	///
 	/// - Parameter renderer: A renderer used for rendering.
 	@inlinable public consuming func render(using renderer: inout some Renderer) {
-		renderer.append(start: Tag.name, attributes: attributes)
-		renderer.append(end: Tag.name)
+		renderer.append(start: Tag.self, attributes: attributes)
+		renderer.append(end: Tag.self)
 	}
 }
 
@@ -101,6 +101,6 @@ public struct VoidElement<Tag: TagDefinition>: SyncNode, Sendable {
 	///
 	/// - Parameter renderer: A renderer used for rendering.
 	@inlinable public consuming func render(using renderer: inout some Renderer) {
-		renderer.append(start: Tag.name, attributes: attributes)
+		renderer.append(start: Tag.self, attributes: attributes)
 	}
 }

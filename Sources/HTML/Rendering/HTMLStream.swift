@@ -38,13 +38,13 @@ public struct HTMLStream<Writer: StreamWriter>: StreamRenderer {
 	}
 
 	/// Renders an HTML element's starting tag and attributes.
-	@inlinable public mutating func append<Tag>(start name: consuming String, attributes: consuming [Attribute<Tag>]) {
-		buffer.append(start: name, attributes: attributes)
+	@inlinable public mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>]) {
+		buffer.append(start: tag, attributes: attributes)
 	}
 
 	/// Renders an HTML element's ending tag.
-	@inlinable public mutating func append(end name: consuming String) {
-		buffer.append(end: name)
+	@inlinable public mutating func append<Tag: TagDefinition>(end tag: Tag.Type) {
+		buffer.append(end: tag)
 	}
 
 	/// Flushes buffered bytes. If `force` is false, the renderer decides
