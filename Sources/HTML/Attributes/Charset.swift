@@ -4,11 +4,30 @@
 //
 
 /// Specifies the character encoding for the HTML document.
-public enum Charset: String, Sendable {
+public struct Charset: RawRepresentable, Sendable {
 
-	/// Standard encoding for the Latin alphabet.
-	case latin = "ISO-8859-1"
+	public let rawValue: String
 
-	/// Character encoding for Unicode. Compatible with ASCII.
-	case unicode = "UTF-8"
+	/// Creates an instance using a string.
+	@inlinable public init(rawValue: String) {
+		self.rawValue = rawValue
+	}
+}
+
+// MARK: -
+
+extension Charset {
+
+	/// Character encoding for Unicode.
+	@inlinable public static var utf8: Self { "UTF-8" }
+}
+
+// MARK: -
+
+extension Charset: ExpressibleByStringLiteral {
+
+	/// Creates an instance using a string literal.
+	@inlinable public init(stringLiteral value: String) {
+		self.rawValue = value
+	}
 }
