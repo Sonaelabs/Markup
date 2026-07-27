@@ -5,7 +5,7 @@
 
 public import HTML
 
-extension Attribute where Tag: HTML {
+extension Attribute where Tag: HTMLTag {
 
 	/// A namespace for HTMX WS attributes.
 	public enum ws {}

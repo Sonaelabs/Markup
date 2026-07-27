@@ -5,7 +5,7 @@
 
 public import Markup
 
-public enum HTMLAttributes {
+public enum HTMLTrait {
 	public protocol alt {}
 	public protocol autocomplete {}
 	public protocol charset {}
@@ -50,7 +50,7 @@ public enum HTMLAttributes {
 
 // MARK: -
 
-extension Attribute where Tag: HTML {
+extension Attribute where Tag: HTMLTag {
 
 	/// Specifies a shortcut key to activate/focus an element.
 	@inlinable public static func accessKey(_ value: consuming Character) -> Self {
@@ -165,11 +165,11 @@ extension Attribute where Tag: HTML {
 
 // MARK: -
 
-extension HTMLTag.area: HTMLAttributes.alt {}
-extension HTMLTag.img: HTMLAttributes.alt {}
-extension HTMLTag.input: HTMLAttributes.alt {}
+extension HTMLElement.area: HTMLTrait.alt {}
+extension HTMLElement.img: HTMLTrait.alt {}
+extension HTMLElement.input: HTMLTrait.alt {}
 
-extension Attribute where Tag: HTMLAttributes.alt {
+extension Attribute where Tag: HTMLTrait.alt {
 
 	/// Specifies information for an image if a user for some reason cannot view it.
 	@inlinable public static func alt(_ text: consuming String) -> Self {
@@ -179,11 +179,11 @@ extension Attribute where Tag: HTMLAttributes.alt {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.autocomplete {}
-extension HTMLTag.select: HTMLAttributes.autocomplete {}
-extension HTMLTag.textarea: HTMLAttributes.autocomplete {}
+extension HTMLElement.input: HTMLTrait.autocomplete {}
+extension HTMLElement.select: HTMLTrait.autocomplete {}
+extension HTMLElement.textarea: HTMLTrait.autocomplete {}
 
-extension Attribute where Tag: HTMLAttributes.autocomplete {
+extension Attribute where Tag: HTMLTrait.autocomplete {
 
 	/// Specifies the types of autocomplete.
 	@inlinable public static func autocomplete(_ value: consuming String) -> Self {
@@ -203,10 +203,10 @@ extension Attribute where Tag: HTMLAttributes.autocomplete {
 
 // MARK: -
 
-extension HTMLTag.meta: HTMLAttributes.charset {}
-extension HTMLTag.script: HTMLAttributes.charset {}
+extension HTMLElement.meta: HTMLTrait.charset {}
+extension HTMLElement.script: HTMLTrait.charset {}
 
-extension Attribute where Tag: HTMLAttributes.charset {
+extension Attribute where Tag: HTMLTrait.charset {
 
 	/// Specifies the character encoding.
 	@inlinable public static func charset(_ encoding: consuming Charset) -> Self {
@@ -216,12 +216,12 @@ extension Attribute where Tag: HTMLAttributes.charset {
 
 // MARK: -
 
-extension HTMLTag.blockquote: HTMLAttributes.cite {}
-extension HTMLTag.del: HTMLAttributes.cite {}
-extension HTMLTag.ins: HTMLAttributes.cite {}
-extension HTMLTag.q: HTMLAttributes.cite {}
+extension HTMLElement.blockquote: HTMLTrait.cite {}
+extension HTMLElement.del: HTMLTrait.cite {}
+extension HTMLElement.ins: HTMLTrait.cite {}
+extension HTMLElement.q: HTMLTrait.cite {}
 
-extension Attribute where Tag: HTMLAttributes.cite {
+extension Attribute where Tag: HTMLTrait.cite {
 
 	// TODO: add support for proper url type
 	/// Specifies a URL to a document that explains the quote, or why the text was inserted/changed.
@@ -232,10 +232,10 @@ extension Attribute where Tag: HTMLAttributes.cite {
 
 // MARK: -
 
-extension HTMLTag.td: HTMLAttributes.colspan {}
-extension HTMLTag.th: HTMLAttributes.colspan {}
+extension HTMLElement.td: HTMLTrait.colspan {}
+extension HTMLElement.th: HTMLTrait.colspan {}
 
-extension Attribute where Tag: HTMLAttributes.colspan {
+extension Attribute where Tag: HTMLTrait.colspan {
 
 	/// Specifies the number of columns a cell should span.
 	@inlinable public static func colSpan(_ count: consuming Int) -> Self {
@@ -245,13 +245,13 @@ extension Attribute where Tag: HTMLAttributes.colspan {
 
 // MARK: -
 
-extension HTMLTag.audio: HTMLAttributes.crossorigin {}
-extension HTMLTag.img: HTMLAttributes.crossorigin {}
-extension HTMLTag.link: HTMLAttributes.crossorigin {}
-extension HTMLTag.script: HTMLAttributes.crossorigin {}
-extension HTMLTag.video: HTMLAttributes.crossorigin {}
+extension HTMLElement.audio: HTMLTrait.crossorigin {}
+extension HTMLElement.img: HTMLTrait.crossorigin {}
+extension HTMLElement.link: HTMLTrait.crossorigin {}
+extension HTMLElement.script: HTMLTrait.crossorigin {}
+extension HTMLElement.video: HTMLTrait.crossorigin {}
 
-extension Attribute where Tag: HTMLAttributes.crossorigin {
+extension Attribute where Tag: HTMLTrait.crossorigin {
 
 	/// Creates a `crossorigin` attribute.
 	@inlinable public static var crossOrigin: Self {
@@ -266,11 +266,11 @@ extension Attribute where Tag: HTMLAttributes.crossorigin {
 
 // MARK: -
 
-extension HTMLTag.del: HTMLAttributes.datetime {}
-extension HTMLTag.ins: HTMLAttributes.datetime {}
-extension HTMLTag.time: HTMLAttributes.datetime {}
+extension HTMLElement.del: HTMLTrait.datetime {}
+extension HTMLElement.ins: HTMLTrait.datetime {}
+extension HTMLElement.time: HTMLTrait.datetime {}
 
-extension Attribute where Tag: HTMLAttributes.datetime {
+extension Attribute where Tag: HTMLTrait.datetime {
 
 	// TODO: add support for proper date type
 	/// Specifies the date and time when the text was deleted/inserted.
@@ -281,10 +281,10 @@ extension Attribute where Tag: HTMLAttributes.datetime {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.dirname {}
-extension HTMLTag.textarea: HTMLAttributes.dirname {}
+extension HTMLElement.input: HTMLTrait.dirname {}
+extension HTMLElement.textarea: HTMLTrait.dirname {}
 
-extension Attribute where Tag: HTMLAttributes.dirname {
+extension Attribute where Tag: HTMLTrait.dirname {
 
 	/// Specifies that the text direction will be submitted.
 	@inlinable public static func dirName(_ name: consuming String) -> Self {
@@ -294,15 +294,15 @@ extension Attribute where Tag: HTMLAttributes.dirname {
 
 // MARK: -
 
-extension HTMLTag.button: HTMLAttributes.disabled {}
-extension HTMLTag.fieldset: HTMLAttributes.disabled {}
-extension HTMLTag.input: HTMLAttributes.disabled {}
-extension HTMLTag.optgroup: HTMLAttributes.disabled {}
-extension HTMLTag.option: HTMLAttributes.disabled {}
-extension HTMLTag.select: HTMLAttributes.disabled {}
-extension HTMLTag.textarea: HTMLAttributes.disabled {}
+extension HTMLElement.button: HTMLTrait.disabled {}
+extension HTMLElement.fieldset: HTMLTrait.disabled {}
+extension HTMLElement.input: HTMLTrait.disabled {}
+extension HTMLElement.optgroup: HTMLTrait.disabled {}
+extension HTMLElement.option: HTMLTrait.disabled {}
+extension HTMLElement.select: HTMLTrait.disabled {}
+extension HTMLElement.textarea: HTMLTrait.disabled {}
 
-extension Attribute where Tag: HTMLAttributes.disabled {
+extension Attribute where Tag: HTMLTrait.disabled {
 
 	/// Specifies that the element should be disabled.
 	@inlinable public static var disabled: Self {
@@ -312,10 +312,10 @@ extension Attribute where Tag: HTMLAttributes.disabled {
 
 // MARK: -
 
-extension HTMLTag.a: HTMLAttributes.download {}
-extension HTMLTag.area: HTMLAttributes.download {}
+extension HTMLElement.a: HTMLTrait.download {}
+extension HTMLElement.area: HTMLTrait.download {}
 
-extension Attribute where Tag: HTMLAttributes.download {
+extension Attribute where Tag: HTMLTrait.download {
 
 	/// Specifies that the target will be downloaded when a user clicks on the hyperlink.
 	@inlinable public static var download: Self {
@@ -325,10 +325,10 @@ extension Attribute where Tag: HTMLAttributes.download {
 
 // MARK: -
 
-extension HTMLTag.label: HTMLAttributes.`for` {}
-extension HTMLTag.output: HTMLAttributes.`for` {}
+extension HTMLElement.label: HTMLTrait.`for` {}
+extension HTMLElement.output: HTMLTrait.`for` {}
 
-extension Attribute where Tag: HTMLAttributes.`for` {
+extension Attribute where Tag: HTMLTrait.`for` {
 
 	/// Specifies the relationship between the element and a form control.
 	@inlinable public static func `for`(_ id: consuming String) -> Self {
@@ -338,17 +338,17 @@ extension Attribute where Tag: HTMLAttributes.`for` {
 
 // MARK: -
 
-extension HTMLTag.button: HTMLAttributes.form {}
-extension HTMLTag.fieldset: HTMLAttributes.form {}
-extension HTMLTag.input: HTMLAttributes.form {}
-extension HTMLTag.label: HTMLAttributes.form {}
-extension HTMLTag.meter: HTMLAttributes.form {}
-extension HTMLTag.object: HTMLAttributes.form {}
-extension HTMLTag.output: HTMLAttributes.form {}
-extension HTMLTag.select: HTMLAttributes.form {}
-extension HTMLTag.textarea: HTMLAttributes.form {}
+extension HTMLElement.button: HTMLTrait.form {}
+extension HTMLElement.fieldset: HTMLTrait.form {}
+extension HTMLElement.input: HTMLTrait.form {}
+extension HTMLElement.label: HTMLTrait.form {}
+extension HTMLElement.meter: HTMLTrait.form {}
+extension HTMLElement.object: HTMLTrait.form {}
+extension HTMLElement.output: HTMLTrait.form {}
+extension HTMLElement.select: HTMLTrait.form {}
+extension HTMLElement.textarea: HTMLTrait.form {}
 
-extension Attribute where Tag: HTMLAttributes.form {
+extension Attribute where Tag: HTMLTrait.form {
 
 	/// Specifies the form the element belongs to.
 	@inlinable public static func form(_ id: consuming String) -> Self {
@@ -358,10 +358,10 @@ extension Attribute where Tag: HTMLAttributes.form {
 
 // MARK: -
 
-extension HTMLTag.button: HTMLAttributes.formaction {}
-extension HTMLTag.input: HTMLAttributes.formaction {}
+extension HTMLElement.button: HTMLTrait.formaction {}
+extension HTMLElement.input: HTMLTrait.formaction {}
 
-extension Attribute where Tag: HTMLAttributes.formaction {
+extension Attribute where Tag: HTMLTrait.formaction {
 
 	/// Specifies where to send the form-data when a form is submitted.
 	@inlinable public static func formAction(_ url: consuming String) -> Self {
@@ -371,10 +371,10 @@ extension Attribute where Tag: HTMLAttributes.formaction {
 
 // MARK: -
 
-extension HTMLTag.td: HTMLAttributes.headers {}
-extension HTMLTag.th: HTMLAttributes.headers {}
+extension HTMLElement.td: HTMLTrait.headers {}
+extension HTMLElement.th: HTMLTrait.headers {}
 
-extension Attribute where Tag: HTMLAttributes.headers {
+extension Attribute where Tag: HTMLTrait.headers {
 
 	/// Specifies one or more header cells a table cell is related to.
 	@inlinable public static func headers(_ value: consuming String) -> Self {
@@ -394,12 +394,12 @@ extension Attribute where Tag: HTMLAttributes.headers {
 
 // MARK: -
 
-extension HTMLTag.a: HTMLAttributes.href {}
-extension HTMLTag.area: HTMLAttributes.href {}
-extension HTMLTag.base: HTMLAttributes.href {}
-extension HTMLTag.link: HTMLAttributes.href {}
+extension HTMLElement.a: HTMLTrait.href {}
+extension HTMLElement.area: HTMLTrait.href {}
+extension HTMLElement.base: HTMLTrait.href {}
+extension HTMLElement.link: HTMLTrait.href {}
 
-extension Attribute where Tag: HTMLAttributes.href {
+extension Attribute where Tag: HTMLTrait.href {
 
 	// TODO: add support for proper url type
 	/// Specifies the URL of the page the link goes to.
@@ -410,11 +410,11 @@ extension Attribute where Tag: HTMLAttributes.href {
 
 // MARK: -
 
-extension HTMLTag.a: HTMLAttributes.hreflang {}
-extension HTMLTag.area: HTMLAttributes.hreflang {}
-extension HTMLTag.link: HTMLAttributes.hreflang {}
+extension HTMLElement.a: HTMLTrait.hreflang {}
+extension HTMLElement.area: HTMLTrait.hreflang {}
+extension HTMLElement.link: HTMLTrait.hreflang {}
 
-extension Attribute where Tag: HTMLAttributes.hreflang {
+extension Attribute where Tag: HTMLTrait.hreflang {
 
 	/// Specifies the language of the linked document.
 	@inlinable public static func hrefLang(_ language: consuming Language) -> Self {
@@ -424,11 +424,11 @@ extension Attribute where Tag: HTMLAttributes.hreflang {
 
 // MARK: -
 
-extension HTMLTag.track: HTMLAttributes.label {}
-extension HTMLTag.option: HTMLAttributes.label {}
-extension HTMLTag.optgroup: HTMLAttributes.label {}
+extension HTMLElement.track: HTMLTrait.label {}
+extension HTMLElement.option: HTMLTrait.label {}
+extension HTMLElement.optgroup: HTMLTrait.label {}
 
-extension Attribute where Tag: HTMLAttributes.label {
+extension Attribute where Tag: HTMLTrait.label {
 
 	/// Specifies a label.
 	@inlinable public static func label(_ text: consuming String) -> Self {
@@ -438,11 +438,11 @@ extension Attribute where Tag: HTMLAttributes.label {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.max {}
-extension HTMLTag.meter: HTMLAttributes.max {}
-extension HTMLTag.progress: HTMLAttributes.max {}
+extension HTMLElement.input: HTMLTrait.max {}
+extension HTMLElement.meter: HTMLTrait.max {}
+extension HTMLElement.progress: HTMLTrait.max {}
 
-extension Attribute where Tag: HTMLAttributes.max {
+extension Attribute where Tag: HTMLTrait.max {
 
 	/// Specifies how much work the task requires in total.
 	@inlinable public static func max(_ value: consuming Int) -> Self {
@@ -452,10 +452,10 @@ extension Attribute where Tag: HTMLAttributes.max {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.maxlength {}
-extension HTMLTag.textarea: HTMLAttributes.maxlength {}
+extension HTMLElement.input: HTMLTrait.maxlength {}
+extension HTMLElement.textarea: HTMLTrait.maxlength {}
 
-extension Attribute where Tag: HTMLAttributes.maxlength {
+extension Attribute where Tag: HTMLTrait.maxlength {
 
 	/// Specifies the maximum number of characters allowed in the element.
 	@inlinable public static func maxLength(_ count: consuming Int) -> Self {
@@ -465,12 +465,12 @@ extension Attribute where Tag: HTMLAttributes.maxlength {
 
 // MARK: -
 
-extension HTMLTag.a: HTMLAttributes.media {}
-extension HTMLTag.area: HTMLAttributes.media {}
-extension HTMLTag.link: HTMLAttributes.media {}
-extension HTMLTag.source: HTMLAttributes.media {}
+extension HTMLElement.a: HTMLTrait.media {}
+extension HTMLElement.area: HTMLTrait.media {}
+extension HTMLElement.link: HTMLTrait.media {}
+extension HTMLElement.source: HTMLTrait.media {}
 
-extension Attribute where Tag: HTMLAttributes.media {
+extension Attribute where Tag: HTMLTrait.media {
 
 	/// Specifies what media/device the linked document is optimized for.
 	@inlinable public static func media(_ query: consuming String) -> Self {
@@ -480,10 +480,10 @@ extension Attribute where Tag: HTMLAttributes.media {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.min {}
-extension HTMLTag.meter: HTMLAttributes.min {}
+extension HTMLElement.input: HTMLTrait.min {}
+extension HTMLElement.meter: HTMLTrait.min {}
 
-extension Attribute where Tag: HTMLAttributes.min {
+extension Attribute where Tag: HTMLTrait.min {
 
 	/// Specifies how much work the task requires in total.
 	@inlinable public static func min(_ value: consuming Int) -> Self {
@@ -493,10 +493,10 @@ extension Attribute where Tag: HTMLAttributes.min {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.multiple {}
-extension HTMLTag.select: HTMLAttributes.multiple {}
+extension HTMLElement.input: HTMLTrait.multiple {}
+extension HTMLElement.select: HTMLTrait.multiple {}
 
-extension Attribute where Tag: HTMLAttributes.multiple {
+extension Attribute where Tag: HTMLTrait.multiple {
 
 	/// Specifies that the user is allowed to enter/select more than one value.
 	@inlinable public static var multiple: Self {
@@ -506,19 +506,19 @@ extension Attribute where Tag: HTMLAttributes.multiple {
 
 // MARK: -
 
-extension HTMLTag.button: HTMLAttributes.name {}
-extension HTMLTag.fieldset: HTMLAttributes.name {}
-extension HTMLTag.form: HTMLAttributes.name {}
-extension HTMLTag.iframe: HTMLAttributes.name {}
-extension HTMLTag.input: HTMLAttributes.name {}
-extension HTMLTag.map: HTMLAttributes.name {}
-extension HTMLTag.meta: HTMLAttributes.name {}
-extension HTMLTag.object: HTMLAttributes.name {}
-extension HTMLTag.output: HTMLAttributes.name {}
-extension HTMLTag.select: HTMLAttributes.name {}
-extension HTMLTag.textarea: HTMLAttributes.name {}
+extension HTMLElement.button: HTMLTrait.name {}
+extension HTMLElement.fieldset: HTMLTrait.name {}
+extension HTMLElement.form: HTMLTrait.name {}
+extension HTMLElement.iframe: HTMLTrait.name {}
+extension HTMLElement.input: HTMLTrait.name {}
+extension HTMLElement.map: HTMLTrait.name {}
+extension HTMLElement.meta: HTMLTrait.name {}
+extension HTMLElement.object: HTMLTrait.name {}
+extension HTMLElement.output: HTMLTrait.name {}
+extension HTMLElement.select: HTMLTrait.name {}
+extension HTMLElement.textarea: HTMLTrait.name {}
 
-extension Attribute where Tag: HTMLAttributes.name {
+extension Attribute where Tag: HTMLTrait.name {
 
 	/// Specifies the name of the element. Can be used to reference the element in a JavaScript.
 	@inlinable public static func name(_ name: consuming String) -> Self {
@@ -528,10 +528,10 @@ extension Attribute where Tag: HTMLAttributes.name {
 
 // MARK: -
 
-extension HTMLTag.details: HTMLAttributes.open {}
-extension HTMLTag.dialog: HTMLAttributes.open {}
+extension HTMLElement.details: HTMLTrait.open {}
+extension HTMLElement.dialog: HTMLTrait.open {}
 
-extension Attribute where Tag: HTMLAttributes.open {
+extension Attribute where Tag: HTMLTrait.open {
 
 	/// Specifies that the element is opened and the user can interact with it.
 	@inlinable public static var open: Self {
@@ -541,10 +541,10 @@ extension Attribute where Tag: HTMLAttributes.open {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.placeholder {}
-extension HTMLTag.textarea: HTMLAttributes.placeholder {}
+extension HTMLElement.input: HTMLTrait.placeholder {}
+extension HTMLElement.textarea: HTMLTrait.placeholder {}
 
-extension Attribute where Tag: HTMLAttributes.placeholder {
+extension Attribute where Tag: HTMLTrait.placeholder {
 
 	/// Specifies a short hint that describes the expected value of an input field or a textarea.
 	@inlinable public static func placeholder(_ text: consuming String) -> Self {
@@ -554,10 +554,10 @@ extension Attribute where Tag: HTMLAttributes.placeholder {
 
 // MARK: -
 
-extension HTMLTag.audio: HTMLAttributes.playback {}
-extension HTMLTag.video: HTMLAttributes.playback {}
+extension HTMLElement.audio: HTMLTrait.playback {}
+extension HTMLElement.video: HTMLTrait.playback {}
 
-extension Attribute where Tag: HTMLAttributes.playback {
+extension Attribute where Tag: HTMLTrait.playback {
 
 	/// Specifies that the audio or video will start playing as soon as it is ready.
 	@inlinable public static var autoplay: Self {
@@ -587,10 +587,10 @@ extension Attribute where Tag: HTMLAttributes.playback {
 
 // MARK: -
 
-extension HTMLTag.button: HTMLAttributes.popover {}
-extension HTMLTag.input: HTMLAttributes.popover {}
+extension HTMLElement.button: HTMLTrait.popover {}
+extension HTMLElement.input: HTMLTrait.popover {}
 
-extension Attribute where Tag: HTMLAttributes.popover {
+extension Attribute where Tag: HTMLTrait.popover {
 
 	/// Specifies the popover target that will be shown when the user clicks on the element.
 	@inlinable public static func popover(target: consuming String) -> Self {
@@ -605,10 +605,10 @@ extension Attribute where Tag: HTMLAttributes.popover {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.readonly {}
-extension HTMLTag.textarea: HTMLAttributes.readonly {}
+extension HTMLElement.input: HTMLTrait.readonly {}
+extension HTMLElement.textarea: HTMLTrait.readonly {}
 
-extension Attribute where Tag: HTMLAttributes.readonly {
+extension Attribute where Tag: HTMLTrait.readonly {
 
 	/// Specifies that the element is read-only.
 	@inlinable public static var readOnly: Self {
@@ -618,11 +618,11 @@ extension Attribute where Tag: HTMLAttributes.readonly {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.required {}
-extension HTMLTag.select: HTMLAttributes.required {}
-extension HTMLTag.textarea: HTMLAttributes.required {}
+extension HTMLElement.input: HTMLTrait.required {}
+extension HTMLElement.select: HTMLTrait.required {}
+extension HTMLElement.textarea: HTMLTrait.required {}
 
-extension Attribute where Tag: HTMLAttributes.required {
+extension Attribute where Tag: HTMLTrait.required {
 
 	/// Specifies that the element must be filled out before submitting the form.
 	@inlinable public static var required: Self {
@@ -632,10 +632,10 @@ extension Attribute where Tag: HTMLAttributes.required {
 
 // MARK: -
 
-extension HTMLTag.td: HTMLAttributes.rowspan {}
-extension HTMLTag.th: HTMLAttributes.rowspan {}
+extension HTMLElement.td: HTMLTrait.rowspan {}
+extension HTMLElement.th: HTMLTrait.rowspan {}
 
-extension Attribute where Tag: HTMLAttributes.rowspan {
+extension Attribute where Tag: HTMLTrait.rowspan {
 
 	/// Specifies the number of rows a table cell should span.
 	@inlinable public static func rowSpan(_ count: consuming Int) -> Self {
@@ -645,10 +645,10 @@ extension Attribute where Tag: HTMLAttributes.rowspan {
 
 // MARK: -
 
-extension HTMLTag.input: HTMLAttributes.size {}
-extension HTMLTag.select: HTMLAttributes.size {}
+extension HTMLElement.input: HTMLTrait.size {}
+extension HTMLElement.select: HTMLTrait.size {}
 
-extension Attribute where Tag: HTMLAttributes.size {
+extension Attribute where Tag: HTMLTrait.size {
 
 	/// Specifies the for the visible content.
 	@inlinable public static func size(_ count: consuming Int) -> Self {
@@ -658,11 +658,11 @@ extension Attribute where Tag: HTMLAttributes.size {
 
 // MARK: -
 
-extension HTMLTag.img: HTMLAttributes.sizes {}
-extension HTMLTag.link: HTMLAttributes.sizes {}
-extension HTMLTag.source: HTMLAttributes.sizes {}
+extension HTMLElement.img: HTMLTrait.sizes {}
+extension HTMLElement.link: HTMLTrait.sizes {}
+extension HTMLElement.source: HTMLTrait.sizes {}
 
-extension Attribute where Tag: HTMLAttributes.sizes {
+extension Attribute where Tag: HTMLTrait.sizes {
 
 	/// Specifies the size of the linked resource.
 	@inlinable public static func sizes(_ value: consuming String) -> Self {
@@ -672,15 +672,15 @@ extension Attribute where Tag: HTMLAttributes.sizes {
 
 // MARK: -
 
-extension HTMLTag.canvas: HTMLAttributes.sizing {}
-extension HTMLTag.embed: HTMLAttributes.sizing {}
-extension HTMLTag.iframe: HTMLAttributes.sizing {}
-extension HTMLTag.img: HTMLAttributes.sizing {}
-extension HTMLTag.input: HTMLAttributes.sizing {}
-extension HTMLTag.object: HTMLAttributes.sizing {}
-extension HTMLTag.video: HTMLAttributes.sizing {}
+extension HTMLElement.canvas: HTMLTrait.sizing {}
+extension HTMLElement.embed: HTMLTrait.sizing {}
+extension HTMLElement.iframe: HTMLTrait.sizing {}
+extension HTMLElement.img: HTMLTrait.sizing {}
+extension HTMLElement.input: HTMLTrait.sizing {}
+extension HTMLElement.object: HTMLTrait.sizing {}
+extension HTMLElement.video: HTMLTrait.sizing {}
 
-extension Attribute where Tag: HTMLAttributes.sizing {
+extension Attribute where Tag: HTMLTrait.sizing {
 
 	/// Specifies the width of the element.
 	@inlinable public static func width(_ pixels: consuming Int) -> Self {
@@ -695,10 +695,10 @@ extension Attribute where Tag: HTMLAttributes.sizing {
 
 // MARK: -
 
-extension HTMLTag.col: HTMLAttributes.span {}
-extension HTMLTag.colgroup: HTMLAttributes.span {}
+extension HTMLElement.col: HTMLTrait.span {}
+extension HTMLElement.colgroup: HTMLTrait.span {}
 
-extension Attribute where Tag: HTMLAttributes.span {
+extension Attribute where Tag: HTMLTrait.span {
 
 	/// Specifies the number of columns to span.
 	@inlinable public static func span(_ count: consuming Int) -> Self {
@@ -708,17 +708,17 @@ extension Attribute where Tag: HTMLAttributes.span {
 
 // MARK: -
 
-extension HTMLTag.audio: HTMLAttributes.src {}
-extension HTMLTag.embed: HTMLAttributes.src {}
-extension HTMLTag.iframe: HTMLAttributes.src {}
-extension HTMLTag.img: HTMLAttributes.src {}
-extension HTMLTag.input: HTMLAttributes.src {}
-extension HTMLTag.script: HTMLAttributes.src {}
-extension HTMLTag.source: HTMLAttributes.src {}
-extension HTMLTag.track: HTMLAttributes.src {}
-extension HTMLTag.video: HTMLAttributes.src {}
+extension HTMLElement.audio: HTMLTrait.src {}
+extension HTMLElement.embed: HTMLTrait.src {}
+extension HTMLElement.iframe: HTMLTrait.src {}
+extension HTMLElement.img: HTMLTrait.src {}
+extension HTMLElement.input: HTMLTrait.src {}
+extension HTMLElement.script: HTMLTrait.src {}
+extension HTMLElement.source: HTMLTrait.src {}
+extension HTMLElement.track: HTMLTrait.src {}
+extension HTMLElement.video: HTMLTrait.src {}
 
-extension Attribute where Tag: HTMLAttributes.src {
+extension Attribute where Tag: HTMLTrait.src {
 
 	/// Specifies the URL of the media file.
 	@inlinable public static func src(_ url: consuming String) -> Self {
@@ -728,10 +728,10 @@ extension Attribute where Tag: HTMLAttributes.src {
 
 // MARK: -
 
-extension HTMLTag.img: HTMLAttributes.srcset {}
-extension HTMLTag.source: HTMLAttributes.srcset {}
+extension HTMLElement.img: HTMLTrait.srcset {}
+extension HTMLElement.source: HTMLTrait.srcset {}
 
-extension Attribute where Tag: HTMLAttributes.srcset {
+extension Attribute where Tag: HTMLTrait.srcset {
 
 	/// Specifies the URL of the image to use in different situations.
 	@inlinable public static func srcSet(_ value: consuming String) -> Self {
@@ -741,12 +741,12 @@ extension Attribute where Tag: HTMLAttributes.srcset {
 
 // MARK: -
 
-extension HTMLTag.a: HTMLAttributes.target {}
-extension HTMLTag.area: HTMLAttributes.target {}
-extension HTMLTag.base: HTMLAttributes.target {}
-extension HTMLTag.form: HTMLAttributes.target {}
+extension HTMLElement.a: HTMLTrait.target {}
+extension HTMLElement.area: HTMLTrait.target {}
+extension HTMLElement.base: HTMLTrait.target {}
+extension HTMLElement.form: HTMLTrait.target {}
 
-extension Attribute where Tag: HTMLAttributes.target {
+extension Attribute where Tag: HTMLTrait.target {
 
 	/// Specifies the target for where to open the linked document or where to submit the form.
 	@inlinable public static func target(_ value: consuming Target) -> Self {
@@ -756,14 +756,14 @@ extension Attribute where Tag: HTMLAttributes.target {
 
 // MARK: -
 
-extension HTMLTag.a: HTMLAttributes.type {}
-extension HTMLTag.embed: HTMLAttributes.type {}
-extension HTMLTag.link: HTMLAttributes.type {}
-extension HTMLTag.object: HTMLAttributes.type {}
-extension HTMLTag.script: HTMLAttributes.type {}
-extension HTMLTag.source: HTMLAttributes.type {}
+extension HTMLElement.a: HTMLTrait.type {}
+extension HTMLElement.embed: HTMLTrait.type {}
+extension HTMLElement.link: HTMLTrait.type {}
+extension HTMLElement.object: HTMLTrait.type {}
+extension HTMLElement.script: HTMLTrait.type {}
+extension HTMLElement.source: HTMLTrait.type {}
 
-extension Attribute where Tag: HTMLAttributes.type {
+extension Attribute where Tag: HTMLTrait.type {
 
 	/// Specifies the type of element.
 	@inlinable public static func type(_ value: consuming String) -> Self {
@@ -773,10 +773,10 @@ extension Attribute where Tag: HTMLAttributes.type {
 
 // MARK: -
 
-extension HTMLTag.img: HTMLAttributes.usemap {}
-extension HTMLTag.object: HTMLAttributes.usemap {}
+extension HTMLElement.img: HTMLTrait.usemap {}
+extension HTMLElement.object: HTMLTrait.usemap {}
 
-extension Attribute where Tag: HTMLAttributes.usemap {
+extension Attribute where Tag: HTMLTrait.usemap {
 
 	/// Specifies an image as a client-side image map.
 	@inlinable public static func useMap(_ id: consuming String) -> Self {
@@ -786,15 +786,15 @@ extension Attribute where Tag: HTMLAttributes.usemap {
 
 // MARK: -
 
-extension HTMLTag.button: HTMLAttributes.value {}
-extension HTMLTag.data: HTMLAttributes.value {}
-extension HTMLTag.input: HTMLAttributes.value {}
-extension HTMLTag.li: HTMLAttributes.value {}
-extension HTMLTag.option: HTMLAttributes.value {}
-extension HTMLTag.meter: HTMLAttributes.value {}
-extension HTMLTag.progress: HTMLAttributes.value {}
+extension HTMLElement.button: HTMLTrait.value {}
+extension HTMLElement.data: HTMLTrait.value {}
+extension HTMLElement.input: HTMLTrait.value {}
+extension HTMLElement.li: HTMLTrait.value {}
+extension HTMLElement.option: HTMLTrait.value {}
+extension HTMLElement.meter: HTMLTrait.value {}
+extension HTMLElement.progress: HTMLTrait.value {}
 
-extension Attribute where Tag: HTMLAttributes.value {
+extension Attribute where Tag: HTMLTrait.value {
 
 	/// Specifies the value of the element.
 	@inlinable public static func value(_ value: consuming String) -> Self {
@@ -804,7 +804,7 @@ extension Attribute where Tag: HTMLAttributes.value {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.a {
+extension Attribute where Tag == HTMLElement.a {
 
 	/// Specifies the relationship of the `<a>` element.
 	@inlinable public static func rel(_ value: consuming HyperlinkRelationship) -> Self {
@@ -814,7 +814,7 @@ extension Attribute where Tag == HTMLTag.a {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.area {
+extension Attribute where Tag == HTMLElement.area {
 
 	// TODO: add support for proper coords type
 	/// Specifies the coordinates of an area in an image map.
@@ -835,7 +835,7 @@ extension Attribute where Tag == HTMLTag.area {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.button {
+extension Attribute where Tag == HTMLElement.button {
 
 	//TODO: update value if possible
 	/// Specifies the button command.
@@ -856,7 +856,7 @@ extension Attribute where Tag == HTMLTag.button {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.form {
+extension Attribute where Tag == HTMLElement.form {
 
 	/// Specifies the character encodings that are to be used for the form submission.
 	@inlinable public static func acceptCharset(_ value: consuming String) -> Self {
@@ -896,7 +896,7 @@ extension Attribute where Tag == HTMLTag.form {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.iframe {
+extension Attribute where Tag == HTMLElement.iframe {
 
 	// TODO: add support for proper sandboxing
 	/// Enables an extra set of restrictions.
@@ -913,7 +913,7 @@ extension Attribute where Tag == HTMLTag.iframe {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.input {
+extension Attribute where Tag == HTMLElement.input {
 
 	/// Specifies the types of files that the server accepts (only for type="file").
 	@inlinable public static func accept(_ value: consuming String) -> Self {
@@ -948,7 +948,7 @@ extension Attribute where Tag == HTMLTag.input {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.img {
+extension Attribute where Tag == HTMLElement.img {
 
 	/// Specifies that the image is part of a server-side image map.
 	@inlinable public static var isMap: Self {
@@ -958,7 +958,7 @@ extension Attribute where Tag == HTMLTag.img {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.link {
+extension Attribute where Tag == HTMLElement.link {
 
 	/// Specifies the relationship of the `<link>` element.
 	@inlinable public static func rel(_ value: consuming LinkRelationship) -> Self {
@@ -968,7 +968,7 @@ extension Attribute where Tag == HTMLTag.link {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.meta {
+extension Attribute where Tag == HTMLElement.meta {
 
 	/// Specifies the value associated with the http-equiv or name attribute.
 	@inlinable public static func content(_ value: consuming String) -> Self {
@@ -983,7 +983,7 @@ extension Attribute where Tag == HTMLTag.meta {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.meter {
+extension Attribute where Tag == HTMLElement.meter {
 
 	/// Specifies the range where the gauge's value is considered to be a high value.
 	@inlinable public static func high(_ value: consuming Int) -> Self {
@@ -1003,7 +1003,7 @@ extension Attribute where Tag == HTMLTag.meter {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.object {
+extension Attribute where Tag == HTMLElement.object {
 
 	/// Specifies the URL of the resource to be used by the object.
 	@inlinable public static func data(_ value: consuming String) -> Self {
@@ -1013,7 +1013,7 @@ extension Attribute where Tag == HTMLTag.object {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.option {
+extension Attribute where Tag == HTMLElement.option {
 
 	/// Specifies that an option should be pre-selected when the page loads.
 	@inlinable public static var selected: Self {
@@ -1023,7 +1023,7 @@ extension Attribute where Tag == HTMLTag.option {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.ol {
+extension Attribute where Tag == HTMLElement.ol {
 
 	/// Specifies that the list order should be descending (9, 8, 7, etc.).
 	@inlinable public static var reversed: Self {
@@ -1038,7 +1038,7 @@ extension Attribute where Tag == HTMLTag.ol {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.script {
+extension Attribute where Tag == HTMLElement.script {
 
 	/// Specifies that the script will be executed asynchronously as soon as it is available.
 	@inlinable public static var async: Self {
@@ -1053,7 +1053,7 @@ extension Attribute where Tag == HTMLTag.script {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.textarea {
+extension Attribute where Tag == HTMLElement.textarea {
 
 	/// Specifies the visible width of a text area.
 	@inlinable public static func cols(_ value: consuming Int) -> Self {
@@ -1073,7 +1073,7 @@ extension Attribute where Tag == HTMLTag.textarea {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.th {
+extension Attribute where Tag == HTMLElement.th {
 
 	/// Specifies whether a header cell is a header for a column, row, or group of columns or rows.
 	@inlinable public static func scope(_ value: consuming Scope) -> Self {
@@ -1083,7 +1083,7 @@ extension Attribute where Tag == HTMLTag.th {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.track {
+extension Attribute where Tag == HTMLElement.track {
 
 	/// Specifies that the track is to be enabled.
 	@inlinable public static var `default`: Self {
@@ -1103,7 +1103,7 @@ extension Attribute where Tag == HTMLTag.track {
 
 // MARK: -
 
-extension Attribute where Tag == HTMLTag.video {
+extension Attribute where Tag == HTMLElement.video {
 
 	/// Specifies an image to be shown while the video is downloading, or until the user hits the play button.
 	/// If this is not included, the first frame of the video will be used instead.
