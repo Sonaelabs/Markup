@@ -11,6 +11,7 @@ public enum HTMLAttributes {
 	public protocol charset {}
 	public protocol cite {}
 	public protocol colspan {}
+	public protocol crossorigin {}
 	public protocol datetime {}
 	public protocol dirname {}
 	public protocol disabled {}
@@ -234,6 +235,27 @@ extension Attribute where Tag: HTMLAttributes.colspan {
 	/// Specifies the number of columns a cell should span.
 	@inlinable public static func colSpan(_ count: consuming Int) -> Self {
 		.init(name: "colspan", value: count)
+	}
+}
+
+// MARK: -
+
+extension HTMLTag.audio: HTMLAttributes.crossorigin {}
+extension HTMLTag.img: HTMLAttributes.crossorigin {}
+extension HTMLTag.link: HTMLAttributes.crossorigin {}
+extension HTMLTag.script: HTMLAttributes.crossorigin {}
+extension HTMLTag.video: HTMLAttributes.crossorigin {}
+
+extension Attribute where Tag: HTMLAttributes.crossorigin {
+
+	/// Creates a `crossorigin` attribute.
+	@inlinable public static var crossOrigin: Self {
+		.init(name: "crossorigin")
+	}
+
+	/// Creates a `crossorigin` attribute.
+	@inlinable public static func crossOrigin(_ value: consuming CrossOrigin) -> Self {
+		.init(name: "crossorigin", value: value)
 	}
 }
 
