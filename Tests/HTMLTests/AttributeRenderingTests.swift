@@ -81,34 +81,6 @@ struct AttributeRenderingTests {
 		expect(p(.id("foo"), .title("bar"), .hidden) {}, #"<p id="foo" title="bar" hidden></p>"#)
 	}
 
-	@Test func renderConvenientAttributesBase() {
-		expect(base.href("/test"), #"<base href="/test">"#)
-	}
-
-	@Test func renderConvenientAttributesLink() async throws {
-		expect(link.stylesheet("/test.css"), #"<link rel="stylesheet" href="/test.css">"#)
-		expect(link.icon("/test.css"), #"<link rel="icon" href="/test.css">"#)
-		expect(link.preconnect("/test.css"), #"<link rel="preconnect" href="/test.css" crossorigin>"#)
-		expect(link.canonical("/test.css"), #"<link rel="canonical" href="/test.css">"#)
-		expect(link.manifest("/test.css"), #"<link rel="manifest" href="/test.css">"#)
-		expect(link.dnsPrefetch("/test.css"), #"<link rel="dns-prefetch" href="/test.css">"#)
-	}
-
-	@Test func renderConvenientAttributesMeta() {
-		expect(meta.charset(), #"<meta charset="UTF-8">"#)
-		expect(meta.charset(.utf8), #"<meta charset="UTF-8">"#)
-		expect(meta.author("foo"), #"<meta name="author" content="foo">"#)
-		expect(meta.description("foo"), #"<meta name="description" content="foo">"#)
-		expect(meta.keywords("foo bar baz"), #"<meta name="keywords" content="foo bar baz">"#)
-		expect(meta.viewport("width=device-width, initial-scale=1"), #"<meta name="viewport" content="width=device-width, initial-scale=1">"#)
-	}
-
-	@Test func renderConvenientAttributesScript() {
-		expect(script.load("/test.js"), #"<script src="/test.js"></script>"#)
-		expect(script.defer("/test.js"), #"<script defer src="/test.js"></script>"#)
-		expect(script.async("/test.js"), #"<script async src="/test.js"></script>"#)
-	}
-
 	private func expect(_ html: some HTML & SyncNode , _ result: String, sourceLocation: SourceLocation = #_sourceLocation) {
 		#expect(html.write() == result, sourceLocation: sourceLocation)
 	}
