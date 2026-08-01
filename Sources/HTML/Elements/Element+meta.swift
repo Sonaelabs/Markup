@@ -8,7 +8,7 @@ public import Markup
 extension meta {
 
 	/// Creates a `<meta charset="...">` element.
-	@inlinable public static func charset(_ value: consuming Charset = .utf8) -> Self {
+	@inlinable public static func charset(_ value: consuming Charset) -> Self {
 		.init(.charset(value))
 	}
 
