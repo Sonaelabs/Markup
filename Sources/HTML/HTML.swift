@@ -13,6 +13,7 @@ public protocol HTMLTag: TagDefinition {}
 extension Array: HTML where Element: HTML {}
 extension Optional: HTML where Wrapped: HTML {}
 
+extension Compound: HTML where Content: HTML {}
 extension Conditional: HTML where First: HTML, Second: HTML {}
 extension ForEach: HTML where Content: HTML {}
 extension Fragment: HTML where repeat each Child: HTML {}
