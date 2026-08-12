@@ -4,7 +4,7 @@
 //
 
 /// A node representing a comment.
-public struct Comment: SyncNode, Sendable {
+public struct Comment: Node {
 
 	/// The text of the comment.
 	@usableFromInline let text: StaticString

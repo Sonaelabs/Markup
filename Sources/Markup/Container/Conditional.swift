@@ -12,25 +12,6 @@ public enum Conditional<First: Node, Second: Node>: Node {
 	/// The node produced by the second branch.
 	case second(Second)
 
-	/// Streams the selected branch using the given renderer.
-	///
-	/// - Parameter renderer: A renderer used for rendering.
-	@inlinable public consuming func stream(using renderer: inout some StreamRenderer) async throws {
-		switch self {
-			case .first(let node):	try await node.stream(using: &renderer)
-			case .second(let node):	try await node.stream(using: &renderer)
-		}
-	}
-}
-
-// MARK: -
-
-extension Conditional: Sendable where First: Sendable, Second: Sendable {}
-
-// MARK: -
-
-extension Conditional: SyncNode where First: SyncNode, Second: SyncNode {
-
 	/// Renders the selected branch using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.

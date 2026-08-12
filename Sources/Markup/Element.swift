@@ -29,24 +29,6 @@ public struct Element<Tag: TagDefinition, Content: Node>: Node {
 		self.content = build()
 	}
 
-	/// Renders the element and streams its content using the given renderer.
-	///
-	/// - Parameter renderer: A renderer used for rendering.
-	@inlinable public consuming func stream(using renderer: inout some StreamRenderer) async throws {
-		renderer.append(start: Tag.self, attributes: attributes)
-		try await content.stream(using: &renderer)
-		renderer.append(end: Tag.self)
-	}
-}
-
-// MARK: -
-
-extension Element: Sendable where Content: Sendable {}
-
-// MARK: -
-
-extension Element: SyncNode where Content: SyncNode {
-
 	/// Renders the element using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.
@@ -83,7 +65,7 @@ extension Element where Content == Empty {
 // MARK: -
 
 /// A node containing only attributes.
-public struct VoidElement<Tag: TagDefinition>: SyncNode, Sendable {
+public struct VoidElement<Tag: TagDefinition>: Node {
 
 	/// The attributes of the void element.
 	@usableFromInline let attributes: [Attribute<Tag>]

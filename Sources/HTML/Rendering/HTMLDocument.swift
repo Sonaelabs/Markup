@@ -3,6 +3,8 @@
 // Released under the MIT License.
 //
 
+import Markup
+
 //public protocol HTMLDocument {
 //
 //	@ContentBuilder var head: some Node { get }

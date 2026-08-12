@@ -13,8 +13,7 @@ struct ComponentTests {
 
 		let test = FooItem(name: "foo")
 		let compound = Compound(test)
-
-		try await compound.stream(using: &recorder)
+		compound.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.comment("Hello"),
@@ -27,20 +26,16 @@ struct ComponentTests {
 
 		let test = FooList(names: ["foo", "bar", "baz"])
 		let compound = Compound(test)
-
-		try await compound.stream(using: &recorder)
+		compound.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("foo"),
 			.comment("Hello"),
 			.text("foo"),
-			.flush(force: false),
 			.comment("Hello"),
 			.text("bar"),
-			.flush(force: false),
 			.comment("Hello"),
 			.text("baz"),
-			.flush(force: false),
 			.end("foo"),
 		])
 	}
@@ -51,7 +46,7 @@ struct ComponentTests {
 struct FooList: Component {
 	let names: [String]
 
-	var content: some SyncNode {
+	var content: some Node {
 		foo {
 			ForEach(names) { name in
 				FooItem(name: name)
@@ -63,7 +58,7 @@ struct FooList: Component {
 struct FooItem: Component {
 	let name: String
 
-	var content: some SyncNode {
+	var content: some Node {
 		Comment("Hello")
 		Text(name)
 	}

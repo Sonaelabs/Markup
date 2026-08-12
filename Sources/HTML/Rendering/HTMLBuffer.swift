@@ -87,7 +87,7 @@ public struct HTMLBuffer: Renderer {
 
 // MARK: -
 
-extension HTML where Self: SyncNode {
+extension HTML where Self: Node {
 
 	/// Renders the node into an HTML string.
 	///

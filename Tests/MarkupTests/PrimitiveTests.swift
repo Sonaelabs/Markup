@@ -11,7 +11,7 @@ struct ElementTests {
 	@Test func buildSingleElement() async throws {
 		var recorder = RecordingRenderer()
 
-		try await Fixtures.singleElement.stream(using: &recorder)
+		Fixtures.singleElement.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("bar"),
@@ -22,7 +22,7 @@ struct ElementTests {
 	@Test func buildNestedElement() async throws {
 		var recorder = RecordingRenderer()
 
-		try await Fixtures.nestedElement.stream(using: &recorder)
+		Fixtures.nestedElement.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("foo"),

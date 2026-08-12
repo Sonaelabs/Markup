@@ -3,13 +3,9 @@
 // Released under the MIT License.
 //
 
-@_exported import protocol Markup.StreamWriter
-
 @_exported import struct Markup.ContentBuilder
 
 @_exported import struct Markup.Attribute
-@_exported import struct Markup.AsyncContent
-@_exported import struct Markup.AsyncForEach
 @_exported import struct Markup.Comment
 @_exported import struct Markup.ForEach
 @_exported import struct Markup.Fragment

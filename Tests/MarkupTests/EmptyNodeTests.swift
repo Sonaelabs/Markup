@@ -12,7 +12,7 @@ struct EmptyNodeTests {
 		let test = Empty()
 		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		test.render(using: &recorder)
 
 		#expect(recorder.events.isEmpty)
 	}
@@ -20,7 +20,7 @@ struct EmptyNodeTests {
 	@Test func streamElementWithEmptyContent() async throws {
 		var recorder = RecordingRenderer()
 
-		try await Fixtures.singleElement.stream(using: &recorder)
+		Fixtures.singleElement.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("bar"),

@@ -81,7 +81,7 @@ struct AttributeRenderingTests {
 		expect(p(.id("foo"), .title("bar"), .hidden) {}, #"<p id="foo" title="bar" hidden></p>"#)
 	}
 
-	private func expect(_ html: some HTML & SyncNode , _ result: String, sourceLocation: SourceLocation = #_sourceLocation) {
+	private func expect(_ html: some HTML & Node , _ result: String, sourceLocation: SourceLocation = #_sourceLocation) {
 		#expect(html.write() == result, sourceLocation: sourceLocation)
 	}
 }

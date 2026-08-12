@@ -10,7 +10,7 @@ enum TestError: Error, Equatable {
 	case asyncForEach
 }
 
-struct RecordingRenderer: StreamRenderer {
+struct RecordingRenderer: Renderer {
 
 	enum Event: Equatable {
 		case comment(String)
@@ -41,9 +41,5 @@ struct RecordingRenderer: StreamRenderer {
 
 	mutating func append<Tag: TagDefinition>(end tag: Tag.Type) {
 		events.append(.end(tag.name))
-	}
-
-	mutating func flushIfNeeded(force: Bool) async throws {
-		events.append(.flush(force: force))
 	}
 }

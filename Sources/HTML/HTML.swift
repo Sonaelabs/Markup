@@ -13,10 +13,8 @@ public protocol HTMLTag: TagDefinition {}
 extension Array: HTML where Element: HTML {}
 extension Optional: HTML where Wrapped: HTML {}
 
-extension AsyncContent: HTML where Content: HTML {}
-extension AsyncForEach: HTML where Source.Element: HTML {}
 extension Conditional: HTML where First: HTML, Second: HTML {}
-extension ForEach: HTML where Source.Element: HTML {}
+extension ForEach: HTML where Content: HTML {}
 extension Fragment: HTML where repeat each Child: HTML {}
 
 extension Element: HTML where Tag: HTMLTag, Content: HTML {}

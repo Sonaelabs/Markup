@@ -16,24 +16,6 @@ public struct Fragment<each Child: Node>: Node {
 		self.children = (repeat each children)
 	}
 
-	/// Streams children using the given renderer.
-	///
-	/// - Parameter renderer: A renderer used for rendering.
-	@inlinable public consuming func stream(using renderer: inout some StreamRenderer) async throws {
-		for child in repeat each children {
-			try await child.stream(using: &renderer)
-		}
-	}
-}
-
-// MARK: -
-
-extension Fragment: Sendable where repeat each Child: Sendable {}
-
-// MARK: -
-
-extension Fragment: SyncNode where repeat each Child: SyncNode {
-
 	/// Renders children using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.

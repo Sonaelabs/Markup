@@ -4,7 +4,7 @@
 //
 
 /// A node representing text.
-public struct Text: SyncNode, Sendable {
+public struct Text: Node, Sendable {
 
 	/// The text content of the node.
 	@usableFromInline let content: String

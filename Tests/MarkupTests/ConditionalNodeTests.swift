@@ -10,9 +10,9 @@ struct ConditionalNodeTests {
 
 	@Test func streamFirst() async throws {
 		let test = Conditional<Raw, Empty>.first(Fixtures.raw)
-		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		var recorder = RecordingRenderer()
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.raw("test"),
@@ -21,9 +21,9 @@ struct ConditionalNodeTests {
 
 	@Test func streamSecond() async throws {
 		let test = Conditional<Empty, Text>.second(Fixtures.text)
-		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		var recorder = RecordingRenderer()
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.text("test"),
@@ -36,8 +36,7 @@ struct ConditionalNodeTests {
 		}
 
 		var recorder = RecordingRenderer()
-
-		try await test.stream(using: &recorder)
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("foo"),
@@ -52,8 +51,7 @@ struct ConditionalNodeTests {
 		}
 
 		var recorder = RecordingRenderer()
-
-		try await test.stream(using: &recorder)
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("foo"),
@@ -71,8 +69,7 @@ struct ConditionalNodeTests {
 		}
 
 		var recorder = RecordingRenderer()
-
-		try await test.stream(using: &recorder)
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("foo"),
@@ -91,8 +88,7 @@ struct ConditionalNodeTests {
 		}
 
 		var recorder = RecordingRenderer()
-
-		try await test.stream(using: &recorder)
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.start("foo"),

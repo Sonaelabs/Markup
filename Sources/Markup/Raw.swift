@@ -4,7 +4,7 @@
 //
 
 /// A node representing a raw string.
-public struct Raw: SyncNode, Sendable {
+public struct Raw: Node, Sendable {
 
 	/// The raw string of the element.
 	@usableFromInline let content: String

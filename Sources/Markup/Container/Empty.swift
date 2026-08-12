@@ -4,7 +4,7 @@
 //
 
 /// An empty node with no attributes or content.
-public struct Empty: SyncNode, Sendable {
+public struct Empty: Node {
 
 	/// Creates a new empty element.
 	@usableFromInline init() {}

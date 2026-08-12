@@ -10,9 +10,9 @@ struct FragmentTests {
 
 	@Test func buildEmpty() async throws {
 		let test = Fragment()
-		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		var recorder = RecordingRenderer()
+		test.render(using: &recorder)
 
 		#expect(recorder.events.isEmpty)
 	}
@@ -21,9 +21,9 @@ struct FragmentTests {
 		let test = Fragment(
 			Fixtures.text,
 		)
-		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		var recorder = RecordingRenderer()
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.text("test"),
@@ -35,9 +35,9 @@ struct FragmentTests {
 			Fixtures.text,
 			Fixtures.raw,
 		)
-		var recorder = RecordingRenderer()
 
-		try await test.stream(using: &recorder)
+		var recorder = RecordingRenderer()
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.text("test"),
@@ -61,9 +61,9 @@ struct FragmentTests {
 			Fixtures.text,
 			Fixtures.raw,
 		)
+		
 		var recorder = RecordingRenderer()
-
-		try await test.stream(using: &recorder)
+		test.render(using: &recorder)
 
 		#expect(recorder.events == [
 			.text("test"),

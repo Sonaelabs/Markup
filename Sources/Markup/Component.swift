@@ -22,22 +22,6 @@ public struct Compound<Content: Node>: Node {
 		self.content = component.content
 	}
 
-	/// Streams using the given renderer.
-	///
-	/// - Parameter renderer: A renderer used for rendering.
-	@inlinable public consuming func stream(using renderer: inout some StreamRenderer) async throws {
-		try await content.stream(using: &renderer)
-	}
-}
-
-// MARK: -
-
-extension Compound: Sendable where Content: Sendable {}
-
-// MARK: -
-
-extension Compound: SyncNode where Content: SyncNode {
-
 	/// Renders using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.
