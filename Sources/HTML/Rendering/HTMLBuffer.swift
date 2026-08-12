@@ -18,7 +18,7 @@ public struct HTMLBuffer: Renderer {
 	/// Creates an HTML renderer reserving the given buffer capacity.
 	///
 	/// - Parameter capacity: The number of bytes to reserve up front.
-	@usableFromInline init(reservingCapacity capacity: Int) {
+	@inlinable public init(reservingCapacity capacity: Int) {
 		storage.reserveCapacity(capacity)
 	}
 
