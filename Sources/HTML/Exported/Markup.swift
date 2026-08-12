@@ -3,8 +3,9 @@
 // Released under the MIT License.
 //
 
+@_exported import protocol Markup.Component
+
 @_exported import struct Markup.ContentBuilder
-@_exported import struct Markup.Component
 
 @_exported import struct Markup.Attribute
 @_exported import struct Markup.Comment
