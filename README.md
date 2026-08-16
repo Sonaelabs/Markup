@@ -1,6 +1,6 @@
 # Markup: A Swift DSL for generating HTML.
 
-## ⚠️ Not intended for general use
+### ⚠️ Not intended for general use
 
 This repository is public for convenience, not as a released library.
 
