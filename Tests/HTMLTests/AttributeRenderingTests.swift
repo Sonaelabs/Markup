@@ -81,6 +81,10 @@ struct AttributeRenderingTests {
 		expect(p(.id("foo"), .title("bar"), .hidden) {}, #"<p id="foo" title="bar" hidden></p>"#)
 	}
 
+	@Test func renderConditionalAttributes() {
+		expect(p(.id("foo").when(true), .title("bar"), .hidden.when(false)) {}, #"<p id="foo" title="bar"></p>"#)
+	}
+
 	private func expect(_ html: some HTML & Node , _ result: String, sourceLocation: SourceLocation = #_sourceLocation) {
 		#expect(html.write() == result, sourceLocation: sourceLocation)
 	}

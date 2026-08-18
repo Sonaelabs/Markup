@@ -61,3 +61,13 @@ extension Attribute {
 		self.init(name: name, value: .init(value))
 	}
 }
+
+// MARK: -
+
+extension Attribute {
+
+	/// Returns this attribute if the condition holds, otherwise `nil`.
+	@inlinable public consuming func when(_ condition: Bool) -> Self? {
+		condition ? self : nil
+	}
+}
