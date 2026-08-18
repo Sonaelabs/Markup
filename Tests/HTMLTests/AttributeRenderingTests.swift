@@ -9,7 +9,7 @@ import HTML
 
 struct AttributeRenderingTests {
 
-	@Test func renderGlobalAttributes() async throws {
+	@Test func renderGlobalAttributes() {
 		expect(p(.accessKey("f")) {}, #"<p accesskey="f"></p>"#)
 
 		expect(p(.autofocus) {}, #"<p autofocus></p>"#)
@@ -73,11 +73,11 @@ struct AttributeRenderingTests {
 		expect(p(.translate(false)) {}, #"<p translate="false"></p>"#)
 	}
 
-	@Test func renderEscapedAttributes() async throws {
+	@Test func renderEscapedAttributes() {
 		expect(p(.title(#"foo"<bar>&baz"#)) {}, #"<p title="foo&quot;<bar>&amp;baz"></p>"#)
 	}
 
-	@Test func renderMultipleAttributes() async throws {
+	@Test func renderMultipleAttributes() {
 		expect(p(.id("foo"), .title("bar"), .hidden) {}, #"<p id="foo" title="bar" hidden></p>"#)
 	}
 
