@@ -3,18 +3,21 @@
 // Released under the MIT License.
 //
 
-/// Specifies the shape of each area in the image map.
-public enum AreaShape: String, Sendable {
+extension HTMLValue {
 
-	/// Specifies the entire region.
-	case `default`
+	/// Specifies the shape of each area in the image map.
+	public enum AreaShape: String, Sendable {
 
-	/// Defines a rectangular region.
-	case rect
+		/// Specifies the entire region.
+		case `default`
 
-	/// Defines a circular region.
-	case circle
+		/// Defines a rectangular region.
+		case rect
 
-	/// Defines a polygonal region.
-	case poly
+		/// Defines a circular region.
+		case circle
+
+		/// Defines a polygonal region.
+		case poly
+	}
 }

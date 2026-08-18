@@ -3,11 +3,14 @@
 // Released under the MIT License.
 //
 
-public enum CrossOrigin: String, Sendable {
+extension HTMLValue {
 
-	/// Specifies credentials flag is set to `same-origin`.
-	case anonymous
+	public enum CrossOrigin: String, Sendable {
 
-	/// Specifies credentials flag is set to `include`.
-	case useCredentials = "use-credentials"
+		/// Specifies credentials flag is set to `same-origin`.
+		case anonymous
+
+		/// Specifies credentials flag is set to `include`.
+		case useCredentials = "use-credentials"
+	}
 }

@@ -8,6 +8,8 @@ public import Markup
 public protocol HTML: Node {}
 public protocol HTMLTag: TagDefinition {}
 
+public enum HTMLValue {}
+
 // MARK: -
 
 extension Array: HTML where Element: HTML {}

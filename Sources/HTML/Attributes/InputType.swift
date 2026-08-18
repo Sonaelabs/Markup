@@ -3,72 +3,75 @@
 // Released under the MIT License.
 //
 
-/// Specifies an input field where the user can enter data.
-public enum InputType: String, Sendable {
+extension HTMLValue {
 
-	/// Defines a clickable button.
-	case button
+	/// Specifies an input field where the user can enter data.
+	public enum InputType: String, Sendable {
 
-	/// Defines a checkbox.
-	case checkbox
+		/// Defines a clickable button.
+		case button
 
-	/// Defines a color picker.
-	case color
+		/// Defines a checkbox.
+		case checkbox
 
-	/// Defines a date control (`YYYY-MM-DD`).
-	case date
+		/// Defines a color picker.
+		case color
 
-	/// Defines a date and time control (`YYYY-MM-DDTHH:mm`).
-	case datetimeLocal
+		/// Defines a date control (`YYYY-MM-DD`).
+		case date
 
-	/// Defines a field for an e-mail address.
-	case email
+		/// Defines a date and time control (`YYYY-MM-DDTHH:mm`).
+		case datetimeLocal
 
-	/// Defines a file-select field and a "Browse" button (for file uploads).
-	case file
+		/// Defines a field for an e-mail address.
+		case email
 
-	/// Defines a hidden input field.
-	case hidden
+		/// Defines a file-select field and a "Browse" button (for file uploads).
+		case file
 
-	/// Defines an image as the submit button.
-	case image
+		/// Defines a hidden input field.
+		case hidden
 
-	/// Defines a month and year control (no timezone).
-	case month
+		/// Defines an image as the submit button.
+		case image
 
-	/// Defines a field for entering a number.
-	case number
+		/// Defines a month and year control (no timezone).
+		case month
 
-	/// Defines a password field.
-	case password
+		/// Defines a field for entering a number.
+		case number
 
-	/// Defines a radio button.
-	case radio
+		/// Defines a password field.
+		case password
 
-	/// Defines a range control (like a slider control).
-	case range
+		/// Defines a radio button.
+		case radio
 
-	/// Defines a reset button.
-	case reset
+		/// Defines a range control (like a slider control).
+		case range
 
-	/// Defines a text field for entering a search string.
-	case search
+		/// Defines a reset button.
+		case reset
 
-	/// Defines a submit button.
-	case submit
+		/// Defines a text field for entering a search string.
+		case search
 
-	/// Defines a field for entering a telephone number.
-	case tel
+		/// Defines a submit button.
+		case submit
 
-	/// Defines a single-line text field.
-	case text
+		/// Defines a field for entering a telephone number.
+		case tel
 
-	/// Defines a control for entering a time (no timezone).
-	case time
+		/// Defines a single-line text field.
+		case text
 
-	/// Defines a field for entering a URL.
-	case url
+		/// Defines a control for entering a time (no timezone).
+		case time
 
-	/// Defines a week and year control (no timezone).
-	case week
+		/// Defines a field for entering a URL.
+		case url
+
+		/// Defines a week and year control (no timezone).
+		case week
+	}
 }

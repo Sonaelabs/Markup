@@ -3,31 +3,34 @@
 // Released under the MIT License.
 //
 
-/// Specifies the appearance of the keyboard on a phone or tablet.
-public enum InputMode: String, Sendable {
+extension HTMLValue {
 
-	/// No keyboard should appear
-	case none
+	/// Specifies the appearance of the keyboard on a phone or tablet.
+	public enum InputMode: String, Sendable {
 
-	/// Default. Text keyboard
-	case text
+		/// No keyboard should appear
+		case none
 
-	/// Numeric only keyboard, usually also a comma key
-	case decimal
+		/// Default. Text keyboard
+		case text
 
-	/// Numeric only keyboard
-	case numeric
+		/// Numeric only keyboard, usually also a comma key
+		case decimal
 
-	/// Numeric only keyboard, usually also with [+], [*], and [#] keys
-	case tel
+		/// Numeric only keyboard
+		case numeric
 
-	/// Text keyboard, usually the [enter] key says [go]
-	case search
+		/// Numeric only keyboard, usually also with [+], [*], and [#] keys
+		case tel
 
-	/// Text keyboard, with keys typically for e-mail addresses like [@]
-	case email
+		/// Text keyboard, usually the [enter] key says [go]
+		case search
 
-	/// Text keyboard, with keys typically for web addresses like [.] and [/], and a
-	/// special [.com] key, or other domain endings that are typically for the local settings.
-	case url
+		/// Text keyboard, with keys typically for e-mail addresses like [@]
+		case email
+
+		/// Text keyboard, with keys typically for web addresses like [.] and [/], and a
+		/// special [.com] key, or other domain endings that are typically for the local settings.
+		case url
+	}
 }

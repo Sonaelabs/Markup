@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// A type representing content editability.
-public enum ContentEditable: String, Sendable {
+extension HTMLValue {
 
-	///
-	case enabled = "true"
+	/// A type representing content editability.
+	public enum ContentEditable: String, Sendable {
 
-	case disabled = "false"
+		///
+		case enabled = "true"
 
-	case plainTextOnly = "plaintext-only"
+		case disabled = "false"
+
+		case plainTextOnly = "plaintext-only"
+	}
 }
 
 // MARK: -
 
-extension ContentEditable: ExpressibleByBooleanLiteral {
+extension HTMLValue.ContentEditable: ExpressibleByBooleanLiteral {
 
 	/// Creates an instance using a boolean literal.
 	@inlinable public init(booleanLiteral value: BooleanLiteralType) {

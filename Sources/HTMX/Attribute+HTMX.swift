@@ -112,7 +112,7 @@ extension Attribute.hx {
 	}
 
 	/// Creates an `hx-encoding` attribute.
-	@inlinable public static func encoding(_ type: consuming EncType) -> Attribute<Tag> {
+	@inlinable public static func encoding(_ type: consuming HTMLValue.EncType) -> Attribute<Tag> {
 		.init(name: "hx-encoding", value: type)
 	}
 }

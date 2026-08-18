@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// Specifies the character encoding for the HTML document.
-public struct Charset: RawRepresentable, Sendable {
+extension HTMLValue {
 
-	public let rawValue: String
+	/// Specifies the character encoding for the HTML document.
+	public struct Charset: RawRepresentable, Sendable {
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
+		public let rawValue: String
+
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
 	}
 }
 
 // MARK: -
 
-extension Charset {
+extension HTMLValue.Charset {
 
 	/// Character encoding for Unicode.
 	@inlinable public static var utf8: Self { "UTF-8" }
@@ -24,7 +27,7 @@ extension Charset {
 
 // MARK: -
 
-extension Charset: ExpressibleByStringLiteral {
+extension HTMLValue.Charset: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

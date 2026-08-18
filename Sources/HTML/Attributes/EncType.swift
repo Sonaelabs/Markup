@@ -3,18 +3,21 @@
 // Released under the MIT License.
 //
 
-/// Specifies how the form-data should be encoded when submitting it to the server.
-public enum EncType: String, Sendable {
+extension HTMLValue {
 
-	/// All characters are encoded before sent (spaces are converted to "+" symbols,
-	/// and special characters are converted to ASCII HEX values)
-	case application = "application/x-www-form-urlencoded"
+	/// Specifies how the form-data should be encoded when submitting it to the server.
+	public enum EncType: String, Sendable {
 
-	/// This value is necessary if the user will upload a file through the form.
-	case multipart = "multipart/form-data"
+		/// All characters are encoded before sent (spaces are converted to "+" symbols,
+		/// and special characters are converted to ASCII HEX values)
+		case application = "application/x-www-form-urlencoded"
 
-	#if DEBUG
-	/// Sends data without any encoding at all.
-	case text = "text/plain"
-	#endif
+		/// This value is necessary if the user will upload a file through the form.
+		case multipart = "multipart/form-data"
+
+		#if DEBUG
+		/// Sends data without any encoding at all.
+		case text = "text/plain"
+		#endif
+	}
 }
