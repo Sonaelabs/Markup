@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies if and how the author thinks that the media file should be loaded when the page loads.
 	public enum Preload: String, Sendable {

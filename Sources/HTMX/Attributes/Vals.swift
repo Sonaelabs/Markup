@@ -3,16 +3,19 @@
 // Released under the MIT License.
 //
 
-public struct Vals: ExpressibleByDictionaryLiteral, Sendable {
+extension HTMX {
 
-	public var rawValue: String = ""
+	public struct Vals: ExpressibleByDictionaryLiteral, Sendable {
 
-	@inlinable public init(dictionaryLiteral elements: (String, String)...) {
-		let pairs = elements.map { "\"\($0.0)\": \"\($0.1)\"" }
-		let joined = pairs.joined(separator: ", ")
+		public var rawValue: String = ""
 
-		rawValue.append("{")
-		rawValue.append(joined)
-		rawValue.append("}")
+		@inlinable public init(dictionaryLiteral elements: (String, String)...) {
+			let pairs = elements.map { "\"\($0.0)\": \"\($0.1)\"" }
+			let joined = pairs.joined(separator: ", ")
+
+			rawValue.append("{")
+			rawValue.append(joined)
+			rawValue.append("}")
+		}
 	}
 }

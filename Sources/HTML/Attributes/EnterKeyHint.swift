@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 	
 	/// Specifies the appearance of the "Enter" key on a virtual keyboard.
 	public enum EnterKeyHint: String, Sendable {

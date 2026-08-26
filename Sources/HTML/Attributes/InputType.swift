@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies an input field where the user can enter data.
 	public enum InputType: String, Sendable {

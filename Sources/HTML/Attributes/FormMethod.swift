@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies the HTTP method to use when sending form-data.
 	public enum FormMethod: String, Sendable {

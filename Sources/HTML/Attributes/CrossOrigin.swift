@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	public enum CrossOrigin: String, Sendable {
 

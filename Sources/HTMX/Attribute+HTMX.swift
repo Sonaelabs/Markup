@@ -5,7 +5,11 @@
 
 public import HTML
 
-extension Attribute where Tag: HTMLTag {
+public enum HTMX {}
+
+// MARK: -
+
+extension Attribute where Tag: HTML.Tag {
 
 	/// A namespace for HTMX attributes.
 	public enum hx {}
@@ -46,22 +50,22 @@ extension Attribute.hx {
 extension Attribute.hx {
 
 	/// Creates an `hx-trigger` attribute.
-	@inlinable public static func trigger(_ value: consuming Trigger) -> Attribute<Tag> {
+	@inlinable public static func trigger(_ value: consuming HTMX.Trigger) -> Attribute<Tag> {
 		.init(name: "hx-trigger", value: value)
 	}
 
 	/// Creates an `hx-trigger` attribute.
-	@inlinable public static func trigger(_ values: Trigger...) -> Attribute<Tag> {
+	@inlinable public static func trigger(_ values: HTMX.Trigger...) -> Attribute<Tag> {
 		.init(name: "hx-trigger", values: values, separator: ", ")
 	}
 
 	/// Creates an `hx-swap` attribute.
-	@inlinable public static func swap(_ style: consuming Swap) -> Attribute<Tag> {
+	@inlinable public static func swap(_ style: consuming HTMX.Swap) -> Attribute<Tag> {
 		.init(name: "hx-swap", value: style)
 	}
 
 	/// Creates an `hx-target` attribute.
-	@inlinable public static func target(_ selector: consuming FooSelector) -> Attribute<Tag> {
+	@inlinable public static func target(_ selector: consuming HTMX.FooSelector) -> Attribute<Tag> {
 		.init(name: "hx-target", value: selector)
 	}
 
@@ -76,7 +80,7 @@ extension Attribute.hx {
 	}
 
 	/// Creates an `hx-swap-oob` attribute.
-	@inlinable public static func swapOOB(_ selector: consuming SwapOOB) -> Attribute<Tag> {
+	@inlinable public static func swapOOB(_ selector: consuming HTMX.SwapOOB) -> Attribute<Tag> {
 		.init(name: "hx-swap-oob", value: selector)
 	}
 
@@ -92,17 +96,17 @@ extension Attribute.hx {
 
 	// TODO: add simple json decoding
 	/// Creates an `hx-vals` attribute.
-	@inlinable public static func vals(_ json: consuming Vals) -> Attribute<Tag> {
+	@inlinable public static func vals(_ json: consuming HTMX.Vals) -> Attribute<Tag> {
 		.init(name: "hx-vals", value: json.rawValue)
 	}
 
 	/// Creates an `hx-include` attribute.
-	@inlinable public static func include(_ value: consuming Include) -> Attribute<Tag> {
+	@inlinable public static func include(_ value: consuming HTMX.Include) -> Attribute<Tag> {
 		.init(name: "hx-include", value: value)
 	}
 
 	/// Creates an `hx-include` attribute.
-	@inlinable public static func include(_ values: Include...) -> Attribute<Tag> {
+	@inlinable public static func include(_ values: HTMX.Include...) -> Attribute<Tag> {
 		.init(name: "hx-include", values: values, separator: ", ")
 	}
 
@@ -112,7 +116,7 @@ extension Attribute.hx {
 	}
 
 	/// Creates an `hx-encoding` attribute.
-	@inlinable public static func encoding(_ type: consuming HTMLValue.EncType) -> Attribute<Tag> {
+	@inlinable public static func encoding(_ type: consuming HTML.EncType) -> Attribute<Tag> {
 		.init(name: "hx-encoding", value: type)
 	}
 }
@@ -157,12 +161,12 @@ extension Attribute.hx {
 extension Attribute.hx {
 
 	/// Creates an `hx-ext` attribute.
-	@inlinable public static func ext(_ value: consuming Extension) -> Attribute<Tag> {
+	@inlinable public static func ext(_ value: consuming HTMX.Extension) -> Attribute<Tag> {
 		.init(name: "hx-ext", value: value)
 	}
 
 	/// Creates an `hx-ext` attribute.
-	@inlinable public static func ext(_ extensions: Extension...) -> Attribute<Tag> {
+	@inlinable public static func ext(_ extensions: HTMX.Extension...) -> Attribute<Tag> {
 		.init(name: "hx-ext", values: extensions, separator: ", ")
 	}
 
@@ -183,22 +187,22 @@ extension Attribute.hx {
 	}
 
 	/// Creates an `hx-indicator` attribute.
-	@inlinable public static func indicator(_ value: consuming Indicator) -> Attribute<Tag> {
+	@inlinable public static func indicator(_ value: consuming HTMX.Indicator) -> Attribute<Tag> {
 		.init(name: "hx-indicator", value: value)
 	}
 
 	/// Creates an `hx-indicator` attribute.
-	@inlinable public static func indicator(_ values: Indicator...) -> Attribute<Tag> {
+	@inlinable public static func indicator(_ values: HTMX.Indicator...) -> Attribute<Tag> {
 		.init(name: "hx-indicator", values: values, separator: ", ")
 	}
 
 	/// Creates an `hx-sync` attribute.
-	@inlinable public static func sync(_ selector: consuming FooSelector) -> Attribute<Tag> {
+	@inlinable public static func sync(_ selector: consuming HTMX.FooSelector) -> Attribute<Tag> {
 		.init(name: "hx-sync", value: selector)
 	}
 
 	/// Creates an `hx-sync` attribute.
-	@inlinable public static func sync(_ selector: consuming FooSelector, _ strategy: consuming SyncStrategy) -> Attribute<Tag> {
+	@inlinable public static func sync(_ selector: consuming HTMX.FooSelector, _ strategy: consuming HTMX.SyncStrategy) -> Attribute<Tag> {
 		let modification = selector.rawValue + ":\(strategy)"
 		return .init(name: "hx-sync", value: modification)
 	}
@@ -211,13 +215,13 @@ extension Attribute.hx {
 	// TODO: add support for .inherit
 	// !!!: v4:name, v2: implementation
 	/// Creates an `hx-disabled-elt` attribute.
-	@inlinable public static func disable(_ selector: consuming FooSelector) -> Attribute<Tag> {
+	@inlinable public static func disable(_ selector: consuming HTMX.FooSelector) -> Attribute<Tag> {
 		.init(name: "hx-disabled-elt", value: selector)
 	}
 
 	// !!!: v4:name, v2: implementation
 	/// Creates an `hx-disabled-elt` attribute.
-	@inlinable public static func disable(_ selector: FooSelector...) -> Attribute<Tag> {
+	@inlinable public static func disable(_ selector: HTMX.FooSelector...) -> Attribute<Tag> {
 		.init(name: "hx-disabled-elt", values: selector, separator: ", ")
 	}
 

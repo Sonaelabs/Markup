@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies a popover element.
 	public enum Popover: String, Sendable {
@@ -33,7 +33,7 @@ extension HTMLValue {
 
 // MARK: -
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies what happens when the control is activated.
 	public enum PopoverAction: String, Sendable {

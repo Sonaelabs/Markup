@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// A type representing the `autocomplete` attribute.
 	public enum Autocomplete: String, Sendable {

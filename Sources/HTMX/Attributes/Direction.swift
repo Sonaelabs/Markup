@@ -3,12 +3,15 @@
 // Released under the MIT License.
 //
 
-/// A type representing direction.
-public enum Direction: String, Sendable {
+extension HTMX {
 
-	/// Specifies to scroll to the bottom.
-	case bottom
+	/// A type representing direction.
+	public enum Direction: String, Sendable {
 
-	/// Specifies to scroll to the top.
-	case top
+		/// Specifies to scroll to the bottom.
+		case bottom
+
+		/// Specifies to scroll to the top.
+		case top
+	}
 }

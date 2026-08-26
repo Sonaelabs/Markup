@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies how the form-data should be encoded when submitting it to the server.
 	public enum EncType: String, Sendable {

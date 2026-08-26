@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// A type representing an event trigger.
-public struct Trigger: RawRepresentable, Sendable {
+extension HTMX {
 
-	public var rawValue: String
+	/// A type representing an event trigger.
+	public struct Trigger: RawRepresentable, Sendable {
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
+		public var rawValue: String
+
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
 	}
 }
 
 // MARK: -
 
-extension Trigger {
+extension HTMX.Trigger {
 
 	/// Creates a `load` event trigger.
 	@inlinable public static var load: Self { "load" }
@@ -40,7 +43,7 @@ extension Trigger {
 
 // MARK: -
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var abort: Self { "abort" }
 	@inlinable public static var error: Self { "error" }
 
@@ -62,7 +65,7 @@ extension Trigger {
 
 // MARK: - Animation Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var animationStart: Self { "animationstart" }
 	@inlinable public static var animationEnd: Self { "animationend" }
 	@inlinable public static var animationIteration: Self { "animationiteration" }
@@ -75,7 +78,7 @@ extension Trigger {
 
 // MARK: - Clipboard Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var cut: Self { "cut" }
 	@inlinable public static var copy: Self { "copy" }
 	@inlinable public static var paste: Self { "paste" }
@@ -83,7 +86,7 @@ extension Trigger {
 
 // MARK: - Dialog Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var beforeToggle: Self { "beforetoggle" }
 	@inlinable public static var cancel: Self { "cancel" }
 	@inlinable public static var close: Self { "close" }
@@ -92,7 +95,7 @@ extension Trigger {
 
 // MARK: - Focus Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var blur: Self { "blur" }
 	@inlinable public static var focus: Self { "focus" }
 	@inlinable public static var focusIn: Self { "focusin" }
@@ -101,7 +104,7 @@ extension Trigger {
 
 // MARK: - Form Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var change: Self { "change" }
 	@inlinable public static var input: Self { "input" }
 	@inlinable public static var invalid: Self { "invalid" }
@@ -113,14 +116,14 @@ extension Trigger {
 
 // MARK: - Fullsreen Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var fullscreenChange: Self { "fullscreenchange" }
 	@inlinable public static var fullscreenError: Self { "fullscreenerror" }
 }
 
 // MARK: - Interactive Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var drag: Self { "drag" }
 	@inlinable public static var dragStart: Self { "dragstart" }
 	@inlinable public static var dragEnd: Self { "dragend" }
@@ -132,14 +135,14 @@ extension Trigger {
 
 // MARK: - Keyboard Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var keyDown: Self { "keydown" }
 	@inlinable public static var keyUp: Self { "keyup" }
 }
 
 // MARK: - Media Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var canPlay: Self { "canplay" }
 	@inlinable public static var canPlayThrough: Self { "canplaythrough" }
 	@inlinable public static var durationChange: Self { "durationchange" }
@@ -164,7 +167,7 @@ extension Trigger {
 
 // MARK: - Mouse Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var click: Self { "click" }
 	@inlinable public static var dblClick: Self { "dblclick" }
 	@inlinable public static var auxClick: Self { "auxclick" }
@@ -181,7 +184,7 @@ extension Trigger {
 
 // MARK: - Pointer Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var pointerDown: Self { "pointerdown" }
 	@inlinable public static var pointerUp: Self { "pointerup" }
 	@inlinable public static var pointerMove: Self { "pointermove" }
@@ -197,14 +200,14 @@ extension Trigger {
 
 // MARK: - Scroll Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var scroll: Self { "scroll" }
 	@inlinable public static var scrollEnd: Self { "scrollend" }
 }
 
 // MARK: - Touch Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var touchStart: Self { "touchstart" }
 	@inlinable public static var touchMove: Self { "touchmove" }
 	@inlinable public static var touchEnd: Self { "touchend" }
@@ -213,7 +216,7 @@ extension Trigger {
 
 // MARK: - Window Events
 
-extension Trigger {
+extension HTMX.Trigger {
 	@inlinable public static var afterPrint: Self { "afterprint" }
 	@inlinable public static var beforePrint: Self { "beforeprint" }
 	@inlinable public static var beforeUnload: Self { "beforeunload" }
@@ -234,7 +237,7 @@ extension Trigger {
 
 // MARK: - Polling
 
-extension Trigger {
+extension HTMX.Trigger {
 
 	/// Creates a repeating polling trigger.
 	@inlinable public static func every(_ interval: consuming Duration) -> Self {
@@ -244,7 +247,7 @@ extension Trigger {
 
 // MARK: - Modifiers
 
-extension Trigger {
+extension HTMX.Trigger {
 
 	/// Specifies event ot only trigger once.
 	@inlinable public consuming func once() -> Self {
@@ -269,7 +272,7 @@ extension Trigger {
 	// TODO: support from:window
 	// TODO: support from:document
 	/// Specifies a request to come from another element in the document.
-	@inlinable public consuming func from(_ selector: consuming FromSelector) -> Self {
+	@inlinable public consuming func from(_ selector: consuming HTMX.FromSelector) -> Self {
 		appending("from", value: selector.rawValue)
 	}
 
@@ -298,7 +301,7 @@ extension Trigger {
 
 // MARK: -
 
-extension Trigger: ExpressibleByStringLiteral {
+extension HTMX.Trigger: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

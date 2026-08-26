@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies the shape of each area in the image map.
 	public enum AreaShape: String, Sendable {

@@ -5,7 +5,7 @@
 
 public import HTML
 
-extension Attribute where Tag: HTMLTag {
+extension Attribute where Tag: HTML.Tag {
 
 	/// A namespace for HTMX SSE attributes.
 	public enum sse {}
@@ -38,7 +38,7 @@ extension Attribute.sse {
 
 // MARK: -
 
-extension Trigger {
+extension HTMX.Trigger {
 
 	/// Creates a `sse` event trigger.
 	@inlinable public static func sse(_ name: consuming String) -> Self {

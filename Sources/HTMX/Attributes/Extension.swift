@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// A type representing an extension for HTMX.
-public struct Extension: RawRepresentable, Sendable {
+extension HTMX {
 
-	public var rawValue: String
+	/// A type representing an extension for HTMX.
+	public struct Extension: RawRepresentable, Sendable {
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
+		public var rawValue: String
+
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
 	}
 }
 
 // MARK: -
 
-extension Extension {
+extension HTMX.Extension {
 
 	/// Specifies support for `Server Send Events` directly from HTML.
 	@inlinable public static var sse: Self { "sse" }
@@ -38,7 +41,7 @@ extension Extension {
 
 // MARK: -
 
-extension Extension: ExpressibleByStringLiteral {
+extension HTMX.Extension: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

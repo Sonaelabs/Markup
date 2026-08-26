@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// A type representing an element query selector.
-public struct FooSelector: QuerySelector, Sendable {
+extension HTMX {
 
-	public var rawValue: String
+	/// A type representing an element query selector.
+	public struct FooSelector: QuerySelector, Sendable {
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
+		public var rawValue: String
+
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
 	}
 }
 
 // MARK: -
 
-extension FooSelector {
+extension HTMX.FooSelector {
 
 	/// Creates a `next` selector.
 	@inlinable public static var next: Self { "next" }
@@ -28,7 +31,7 @@ extension FooSelector {
 
 // MARK: -
 
-extension FooSelector: ExpressibleByStringLiteral {
+extension HTMX.FooSelector: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

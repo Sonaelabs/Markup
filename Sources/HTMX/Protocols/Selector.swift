@@ -3,15 +3,18 @@
 // Released under the MIT License.
 //
 
-/// A type representing a query selector.
-public protocol QuerySelector: RawRepresentable {
-	var rawValue: RawValue { get set }
-	init(rawValue: RawValue)
+extension HTMX {
+
+	/// A type representing a query selector.
+	public protocol QuerySelector: RawRepresentable {
+		var rawValue: RawValue { get set }
+		init(rawValue: RawValue)
+	}
 }
 
 // MARK: -
 
-extension QuerySelector where RawValue == String {
+extension HTMX.QuerySelector where RawValue == String {
 
 	/// Creates a `this` query selector.
 	@inlinable public static var this: Self {
@@ -47,7 +50,7 @@ extension QuerySelector where RawValue == String {
 
 // MARK: -
 
-extension QuerySelector where RawValue == String {
+extension HTMX.QuerySelector where RawValue == String {
 
 	/// Creates a `[name='...']` query selector.
 	@inlinable public static func name(_ name: RawValue) -> Self {

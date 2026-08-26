@@ -324,7 +324,7 @@ extension HTMXTests {
 
 extension HTMXTests {
 
-	private func expect(_ attribute: Attribute<HTMLElement.div>, _ name: String, _ value: String?, sourceLocation: SourceLocation = #_sourceLocation) {
+	private func expect(_ attribute: Attribute<HTML.Div>, _ name: String, _ value: String?, sourceLocation: SourceLocation = #_sourceLocation) {
 		#expect(attribute.name == name, sourceLocation: sourceLocation)
 		#expect(attribute.value == value, sourceLocation: sourceLocation)
 	}

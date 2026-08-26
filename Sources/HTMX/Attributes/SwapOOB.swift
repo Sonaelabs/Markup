@@ -3,26 +3,29 @@
 // Released under the MIT License.
 //
 
-/// A type representing how to swap elements.
-public struct SwapOOB: RawRepresentable, Sendable {
-	public typealias Strategy = Swap.Strategy
+extension HTMX {
 
-	public var rawValue: String
+	/// A type representing how to swap elements.
+	public struct SwapOOB: RawRepresentable, Sendable {
+		public typealias Strategy = Swap.Strategy
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
-	}
+		public var rawValue: String
 
-	/// Creates an instance using a swap strategy.
-	@inlinable public init(strategy: Strategy) {
-		rawValue = strategy.rawValue
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
+
+		/// Creates an instance using a swap strategy.
+		@inlinable public init(strategy: Strategy) {
+			rawValue = strategy.rawValue
+		}
 	}
 }
 
 // MARK: - Styles
 
-extension SwapOOB {
+extension HTMX.SwapOOB {
 
 	/// Applies default `.outerHTML`.
 	@inlinable public static var `true`: Self { "true" }
@@ -57,7 +60,7 @@ extension SwapOOB {
 
 // MARK: - Modifier
 
-extension SwapOOB {
+extension HTMX.SwapOOB {
 
 	/// Replace inner html of the target element.
 	@inlinable public static func innerHTML(_ selector: consuming String) -> Self {
@@ -108,7 +111,7 @@ extension SwapOOB {
 
 // MARK: -
 
-extension SwapOOB: ExpressibleByStringLiteral {
+extension HTMX.SwapOOB: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

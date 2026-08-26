@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies the character encoding for the HTML document.
 	public struct Charset: RawRepresentable, Sendable {
@@ -19,7 +19,7 @@ extension HTMLValue {
 
 // MARK: -
 
-extension HTMLValue.Charset {
+extension HTML.Charset {
 
 	/// Character encoding for Unicode.
 	@inlinable public static var utf8: Self { "UTF-8" }
@@ -27,7 +27,7 @@ extension HTMLValue.Charset {
 
 // MARK: -
 
-extension HTMLValue.Charset: ExpressibleByStringLiteral {
+extension HTML.Charset: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

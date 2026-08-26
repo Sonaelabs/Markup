@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies the kind of text track.
 	public enum TrackKind: String, Sendable {

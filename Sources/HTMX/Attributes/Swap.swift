@@ -3,56 +3,59 @@
 // Released under the MIT License.
 //
 
-/// A type representing how to swap elements.
-public struct Swap: RawRepresentable, Sendable {
+extension HTMX {
 
-	/// A type representing a swap strategy.
-	public enum Strategy: String, Sendable {
+	/// A type representing how to swap elements.
+	public struct Swap: RawRepresentable, Sendable {
 
-		/// Specifies the inner html of the target element.
-		case innerHTML
+		/// A type representing a swap strategy.
+		public enum Strategy: String, Sendable {
 
-		/// Specifies the entire target element with the response.
-		case outerHTML
+			/// Specifies the inner html of the target element.
+			case innerHTML
 
-		/// Specifies the text content of the target element, without parsing the response as HTML.
-		case textContent
+			/// Specifies the entire target element with the response.
+			case outerHTML
 
-		/// Before the target element.
-		case beforeBegin = "beforebegin"
+			/// Specifies the text content of the target element, without parsing the response as HTML.
+			case textContent
 
-		/// Before the first child of the target element.
-		case afterBegin = "afterbegin"
+			/// Before the target element.
+			case beforeBegin = "beforebegin"
 
-		/// After the last child of the target element.
-		case beforeEnd = "beforeend"
+			/// Before the first child of the target element.
+			case afterBegin = "afterbegin"
 
-		/// After the target element.
-		case afterEnd = "afterend"
+			/// After the last child of the target element.
+			case beforeEnd = "beforeend"
 
-		/// Deletes the target element.
-		case delete
+			/// After the target element.
+			case afterEnd = "afterend"
 
-		/// Does not append content.
-		case none
-	}
+			/// Deletes the target element.
+			case delete
 
-	public var rawValue: String
+			/// Does not append content.
+			case none
+		}
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
-	}
+		public var rawValue: String
 
-	/// Creates an instance using a swap strategy.
-	@inlinable public init(strategy: Strategy) {
-		rawValue = strategy.rawValue
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
+
+		/// Creates an instance using a swap strategy.
+		@inlinable public init(strategy: Strategy) {
+			rawValue = strategy.rawValue
+		}
 	}
 }
 
 // MARK: - Styles
 
-extension Swap {
+extension HTMX.Swap {
 
 	/// Applies default from `htmx.config.defaultSwapStyle`.
 	@inlinable public static var `default`: Self { "" }
@@ -87,7 +90,7 @@ extension Swap {
 
 // MARK: - Modifier
 
-extension Swap {
+extension HTMX.Swap {
 
 	/// Specifies the duration before doing the swap after it is received.
 	@inlinable public consuming func swap(_ delay: consuming Duration) -> Self {
@@ -115,22 +118,22 @@ extension Swap {
 	}
 
 	/// Specifies scrolling behavior of the target element.
-	@inlinable public consuming func scroll(_ direction: consuming Direction) -> Self {
+	@inlinable public consuming func scroll(_ direction: consuming HTMX.Direction) -> Self {
 		appending("scroll", direction.rawValue)
 	}
 
 	/// Specifies scrolling behavior of the target element.
-	@inlinable public consuming func scroll(_ direction: consuming Direction, _ selector: consuming FooSelector) -> Self {
+	@inlinable public consuming func scroll(_ direction: consuming HTMX.Direction, _ selector: consuming HTMX.FooSelector) -> Self {
 		appending("scroll:\(selector.rawValue)", direction.rawValue)
 	}
 
 	/// Specifies scrolling behavior of the target element.
-	@inlinable public consuming func show(_ direction: consuming Direction) -> Self {
+	@inlinable public consuming func show(_ direction: consuming HTMX.Direction) -> Self {
 		appending("show", direction.rawValue)
 	}
 
 	/// Specifies scrolling behavior of the target element.
-	@inlinable public consuming func show(_ direction: consuming Direction, _ selector: consuming FooSelector) -> Self {
+	@inlinable public consuming func show(_ direction: consuming HTMX.Direction, _ selector: consuming HTMX.FooSelector) -> Self {
 		appending("show:\(selector.rawValue)", direction.rawValue)
 	}
 
@@ -157,7 +160,7 @@ extension Swap {
 
 // MARK: -
 
-extension Swap: ExpressibleByStringLiteral {
+extension HTMX.Swap: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

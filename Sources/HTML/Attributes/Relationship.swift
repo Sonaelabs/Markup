@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies `rel` keywords valid on `<link>` elements.
 	public enum LinkRelationship: String, Sendable {
@@ -31,7 +31,7 @@ extension HTMLValue {
 
 // MARK: -
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies `rel` keywords valid on `<a>` and `<area>` elements.
 	public enum HyperlinkRelationship: String, Sendable {
@@ -57,7 +57,7 @@ extension HTMLValue {
 
 // MARK: -
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies `rel` keywords valid on `<form>` elements.
 	public enum FormRelationship: String, Sendable {

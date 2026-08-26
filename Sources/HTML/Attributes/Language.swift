@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Represents all languages supported by the HTML `lang` attribute based on BCP 47.
 	public enum Language: String, Sendable {

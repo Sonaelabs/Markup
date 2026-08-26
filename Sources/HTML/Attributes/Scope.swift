@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// The scope attribute specifies whether a header cell is a header for a row, column, row group, or column group.
 	public enum Scope: String, Sendable {

@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// A type representing an element query selector.
-public struct FromSelector: QuerySelector, Sendable {
+extension HTMX {
 
-	public var rawValue: String
+	/// A type representing an element query selector.
+	public struct FromSelector: QuerySelector, Sendable {
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
+		public var rawValue: String
+
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
 	}
 }
 
 // MARK: -
 
-extension FromSelector {
+extension HTMX.FromSelector {
 
 	/// Creates a `document` selector.
 	@inlinable public static var document: Self { "document" }
@@ -34,7 +37,7 @@ extension FromSelector {
 
 // MARK: -
 
-extension FromSelector: ExpressibleByStringLiteral {
+extension HTMX.FromSelector: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

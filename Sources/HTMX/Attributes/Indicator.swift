@@ -3,20 +3,23 @@
 // Released under the MIT License.
 //
 
-/// A type representing an indicator.
-public struct Indicator: RawRepresentable, Sendable {
+extension HTMX {
 
-	public var rawValue: String
+	/// A type representing an indicator.
+	public struct Indicator: RawRepresentable, Sendable {
 
-	/// Creates an instance using a string.
-	@inlinable public init(rawValue: String) {
-		self.rawValue = rawValue
+		public var rawValue: String
+
+		/// Creates an instance using a string.
+		@inlinable public init(rawValue: String) {
+			self.rawValue = rawValue
+		}
 	}
 }
 
 // MARK: -
 
-extension Indicator {
+extension HTMX.Indicator {
 
 	/// Specifies to inherit an indicator.
 	@inlinable public static var inherit: Self { "inherit" }
@@ -35,7 +38,7 @@ extension Indicator {
 
 // MARK: -
 
-extension Indicator: ExpressibleByStringLiteral {
+extension HTMX.Indicator: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {

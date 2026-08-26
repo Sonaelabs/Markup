@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// A type representing content editability.
 	public enum ContentEditable: String, Sendable {
@@ -19,7 +19,7 @@ extension HTMLValue {
 
 // MARK: -
 
-extension HTMLValue.ContentEditable: ExpressibleByBooleanLiteral {
+extension HTML.ContentEditable: ExpressibleByBooleanLiteral {
 
 	/// Creates an instance using a boolean literal.
 	@inlinable public init(booleanLiteral value: BooleanLiteralType) {

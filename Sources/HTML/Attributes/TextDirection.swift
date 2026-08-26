@@ -3,7 +3,7 @@
 // Released under the MIT License.
 //
 
-extension HTMLValue {
+extension HTML {
 
 	/// Specifies the direction of the text in an HTML element.
 	public enum TextDirection: String, Sendable {
