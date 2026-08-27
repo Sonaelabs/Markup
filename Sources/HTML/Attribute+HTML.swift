@@ -108,8 +108,8 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies a unique id for an HTML element.
-	@inlinable public static func id(_ value: consuming String) -> Self {
-		.init(name: "id", value: value)
+	@inlinable public static func id(_ id: consuming HTML.Identifier) -> Self {
+		.init(name: "id", value: id)
 	}
 
 	/// Disables an HTML element and all the elements inside.
@@ -138,8 +138,8 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies a unique id for an HTML element.
-	@inlinable public static func slot(_ value: consuming String) -> Self {
-		.init(name: "slot", value: value)
+	@inlinable public static func slot(_ name: consuming String) -> Self {
+		.init(name: "slot", value: name)
 	}
 
 	/// Specifies whether the element is to have its spelling and grammar checked or not.
@@ -331,7 +331,7 @@ extension HTML.Output: HTMLTrait.`for` {}
 extension Attribute where Tag: HTMLTrait.`for` {
 
 	/// Specifies the relationship between the element and a form control.
-	@inlinable public static func `for`(_ id: consuming String) -> Self {
+	@inlinable public static func `for`(_ id: consuming HTML.Identifier) -> Self {
 		.init(name: "for", value: id)
 	}
 }
@@ -351,8 +351,18 @@ extension HTML.Textarea: HTMLTrait.form {}
 extension Attribute where Tag: HTMLTrait.form {
 
 	/// Specifies the form the element belongs to.
-	@inlinable public static func form(_ id: consuming String) -> Self {
+	@inlinable public static func form(_ id: consuming HTML.Identifier) -> Self {
 		.init(name: "form", value: id)
+	}
+
+	/// Specifies the form the element belongs to.
+	@inlinable public static func form(_ ids: consuming [HTML.Identifier]) -> Self {
+		.init(name: "form", values: ids, separator: " ")
+	}
+
+	/// Specifies the form the element belongs to.
+	@inlinable public static func form(_ ids: HTML.Identifier...) -> Self {
+		.init(name: "form", values: ids, separator: " ")
 	}
 }
 
@@ -377,18 +387,18 @@ extension HTML.Th: HTMLTrait.headers {}
 extension Attribute where Tag: HTMLTrait.headers {
 
 	/// Specifies one or more header cells a table cell is related to.
-	@inlinable public static func headers(_ value: consuming String) -> Self {
-		.init(name: "headers", value: value)
+	@inlinable public static func headers(_ id: consuming HTML.Identifier) -> Self {
+		.init(name: "headers", value: id)
 	}
 
 	/// Specifies one or more header cells a table cell is related to.
-	@inlinable public static func headers(_ values: consuming [String]) -> Self {
-		.headers(values.joined(separator: " "))
+	@inlinable public static func headers(_ ids: consuming [HTML.Identifier]) -> Self {
+		.init(name: "headers", values: ids, separator: " ")
 	}
 
 	/// Specifies one or more header cells a table cell is related to.
-	@inlinable public static func headers(_ values: String...) -> Self {
-		.headers(values)
+	@inlinable public static func headers(_ ids: HTML.Identifier...) -> Self {
+		.init(name: "headers", values: ids, separator: " ")
 	}
 }
 
@@ -593,7 +603,7 @@ extension HTML.Input: HTMLTrait.popover {}
 extension Attribute where Tag: HTMLTrait.popover {
 
 	/// Specifies the popover target that will be shown when the user clicks on the element.
-	@inlinable public static func popover(target: consuming String) -> Self {
+	@inlinable public static func popover(target: consuming HTML.Identifier) -> Self {
 		.init(name: "popovertarget", value: target)
 	}
 
@@ -779,8 +789,8 @@ extension HTML.Object: HTMLTrait.usemap {}
 extension Attribute where Tag: HTMLTrait.usemap {
 
 	/// Specifies an image as a client-side image map.
-	@inlinable public static func useMap(_ id: consuming String) -> Self {
-		.init(name: "usemap", value: id)
+	@inlinable public static func useMap(_ name: consuming String) -> Self {
+		.init(name: "usemap", value: name)
 	}
 }
 
@@ -844,7 +854,7 @@ extension Attribute where Tag == HTML.Button {
 	}
 
 	/// Specifies the commands target.
-	@inlinable public static func commandFor(_ id: consuming String) -> Self {
+	@inlinable public static func commandFor(_ id: consuming HTML.Identifier) -> Self {
 		.init(name: "commandfor", value: id)
 	}
 
@@ -926,7 +936,7 @@ extension Attribute where Tag == HTML.Input {
 	}
 
 	/// Specifies the datalist associated with an input element.
-	@inlinable public static func list(_ id: consuming String) -> Self {
+	@inlinable public static func list(_ id: consuming HTML.Identifier) -> Self {
 		.init(name: "list", value: id)
 	}
 
@@ -1018,6 +1028,21 @@ extension Attribute where Tag == HTML.Option {
 	/// Specifies that an option should be pre-selected when the page loads.
 	@inlinable public static var selected: Self {
 		.init(name: "selected")
+	}
+}
+
+// MARK: -
+
+extension Attribute where Tag == HTML.Output {
+
+	/// Specifies the relationship between the element and a form control.
+	@inlinable public static func `for`(_ ids: consuming [HTML.Identifier]) -> Self {
+		.init(name: "for", values: ids, separator: " ")
+	}
+
+	/// Specifies the relationship between the element and a form control.
+	@inlinable public static func `for`(_ ids: HTML.Identifier...) -> Self {
+		.init(name: "for", values: ids, separator: " ")
 	}
 }
 
