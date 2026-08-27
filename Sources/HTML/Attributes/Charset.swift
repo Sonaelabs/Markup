@@ -31,6 +31,6 @@ extension HTML.Charset: ExpressibleByStringLiteral {
 
 	/// Creates an instance using a string literal.
 	@inlinable public init(stringLiteral value: String) {
-		self.rawValue = value
+		self.init(rawValue: value)
 	}
 }
