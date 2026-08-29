@@ -8,6 +8,7 @@ public import Markup
 public enum HTML {
 	public protocol Element: Node {}
 	public protocol Tag: TagDefinition {}
+	public enum Trait {}
 }
 
 // MARK: -
