@@ -41,4 +41,3 @@ extension HTML.Element {
 		return buffer.read()
 	}
 }
-
