@@ -16,13 +16,6 @@ public struct Text: Node, Sendable {
 		self.content = content
 	}
 
-	/// Creates a new text node with the given content.
-	///
-	/// - Parameter build: A closure that produces the content of the node.
-	@inlinable public init(_ build: () -> String) {
-		self.content = build()
-	}
-
 	/// Renders the text element using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.

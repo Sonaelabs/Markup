@@ -16,13 +16,6 @@ public struct Raw: Node, Sendable {
 		self.content = content
 	}
 
-	/// Creates a new raw node with the given content.
-	///
-	/// - Parameter build: A closure that produces the content of the node.
-	@inlinable public init(_ build: () -> String) {
-		self.content = build()
-	}
-
 	/// Renders the raw element using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.
