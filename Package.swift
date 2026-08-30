@@ -13,6 +13,8 @@ let package = Package(
 
 		.library(name: "HTML", targets: ["HTML"]),
 		.library(name: "HTMX", targets: ["HTMX"]),
+
+		.library(name: "SVG", targets: ["SVG"]),
     ],
 
 	targets: [
@@ -28,6 +30,11 @@ let package = Package(
 			dependencies: ["HTML"]
 		),
 
+		.target(
+			name: "SVG",
+			dependencies: ["Markup", "HTML"]
+		),
+
 		.testTarget(
 			name: "MarkupTests",
 			dependencies: ["Markup"],
@@ -41,6 +48,11 @@ let package = Package(
 		.testTarget(
 			name: "HTMXTests",
 			dependencies: ["HTMX"],
+		),
+
+		.testTarget(
+			name: "SVGTests",
+			dependencies: ["SVG"],
 		),
     ],
 )
