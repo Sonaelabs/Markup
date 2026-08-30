@@ -15,9 +15,9 @@ public protocol Renderer {
 	/// Renders a text string.
 	mutating func append(text: consuming String)
 
-	/// Renders an element's starting tag and attributes.
-	mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>])
+	/// Renders a starting tag with attributes.
+	mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>], terminator: StaticString?)
 
-	/// Renders an element's ending tag.
+	/// Renders an ending tag.
 	mutating func append<Tag: TagDefinition>(end tag: Tag.Type)
 }

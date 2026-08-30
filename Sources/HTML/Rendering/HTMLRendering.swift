@@ -30,7 +30,7 @@ extension HTMLRenderer where Buffer == [UInt8] {
 
 // MARK: -
 
-extension HTML.Element {
+extension HTML.Node {
 
 	/// Renders the node into an HTML string.
 	///

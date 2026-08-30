@@ -35,11 +35,11 @@ struct RecordingRenderer: Renderer {
 		events.append(.text(text))
 	}
 
-	mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>]) {
-		events.append(.start(tag.name))
+	mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>], terminator: StaticString?) {
+		events.append(.start(tag.name.description))
 	}
 
 	mutating func append<Tag: TagDefinition>(end tag: Tag.Type) {
-		events.append(.end(tag.name))
+		events.append(.end(tag.name.description))
 	}
 }

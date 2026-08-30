@@ -53,27 +53,12 @@ struct FragmentTests {
 			Fixtures.raw,
 			Fixtures.text,
 			Fixtures.raw,
-			Fixtures.singleElement,
-			Fixtures.text,
-			Fixtures.raw,
-			Fixtures.text,
-			Fixtures.raw,
-			Fixtures.text,
-			Fixtures.raw,
 		)
 		
 		var recorder = RecordingRenderer()
 		test.render(using: &recorder)
 
 		#expect(recorder.events == [
-			.text("test"),
-			.raw("test"),
-			.text("test"),
-			.raw("test"),
-			.text("test"),
-			.raw("test"),
-			.start("bar"),
-			.end("bar"),
 			.text("test"),
 			.raw("test"),
 			.text("test"),

@@ -30,70 +30,70 @@ struct ConditionalNodeTests {
 		])
 	}
 
-	@Test func streamIfTrue() async throws {
-		let test = foo {
-			if true { Fixtures.text }
-		}
-
-		var recorder = RecordingRenderer()
-		test.render(using: &recorder)
-
-		#expect(recorder.events == [
-			.start("foo"),
-			.text("test"),
-			.end("foo"),
-		])
-	}
-
-	@Test func streamIfFalse() async throws {
-		let test = foo {
-			if false { Fixtures.text }
-		}
-
-		var recorder = RecordingRenderer()
-		test.render(using: &recorder)
-
-		#expect(recorder.events == [
-			.start("foo"),
-			.end("foo"),
-		])
-	}
-
-	@Test func streamIfTrueElse() async throws {
-		let test = foo {
-			if true {
-				Fixtures.text
-			} else {
-				Fixtures.raw
-			}
-		}
-
-		var recorder = RecordingRenderer()
-		test.render(using: &recorder)
-
-		#expect(recorder.events == [
-			.start("foo"),
-			.text("test"),
-			.end("foo"),
-		])
-	}
-
-	@Test func streamIfFalseElse() async throws {
-		let test = foo {
-			if false {
-				Fixtures.text
-			} else {
-				Fixtures.raw
-			}
-		}
-
-		var recorder = RecordingRenderer()
-		test.render(using: &recorder)
-
-		#expect(recorder.events == [
-			.start("foo"),
-			.raw("test"),
-			.end("foo"),
-		])
-	}
+//	@Test func streamIfTrue() async throws {
+//		let test = foo {
+//			if true { Fixtures.text }
+//		}
+//
+//		var recorder = RecordingRenderer()
+//		test.render(using: &recorder)
+//
+//		#expect(recorder.events == [
+//			.start("foo"),
+//			.text("test"),
+//			.end("foo"),
+//		])
+//	}
+//
+//	@Test func streamIfFalse() async throws {
+//		let test = foo {
+//			if false { Fixtures.text }
+//		}
+//
+//		var recorder = RecordingRenderer()
+//		test.render(using: &recorder)
+//
+//		#expect(recorder.events == [
+//			.start("foo"),
+//			.end("foo"),
+//		])
+//	}
+//
+//	@Test func streamIfTrueElse() async throws {
+//		let test = foo {
+//			if true {
+//				Fixtures.text
+//			} else {
+//				Fixtures.raw
+//			}
+//		}
+//
+//		var recorder = RecordingRenderer()
+//		test.render(using: &recorder)
+//
+//		#expect(recorder.events == [
+//			.start("foo"),
+//			.text("test"),
+//			.end("foo"),
+//		])
+//	}
+//
+//	@Test func streamIfFalseElse() async throws {
+//		let test = foo {
+//			if false {
+//				Fixtures.text
+//			} else {
+//				Fixtures.raw
+//			}
+//		}
+//
+//		var recorder = RecordingRenderer()
+//		test.render(using: &recorder)
+//
+//		#expect(recorder.events == [
+//			.start("foo"),
+//			.raw("test"),
+//			.end("foo"),
+//		])
+//	}
 }

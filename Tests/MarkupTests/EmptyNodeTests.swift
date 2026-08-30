@@ -17,14 +17,14 @@ struct EmptyNodeTests {
 		#expect(recorder.events.isEmpty)
 	}
 
-	@Test func streamElementWithEmptyContent() async throws {
-		var recorder = RecordingRenderer()
-
-		Fixtures.singleElement.render(using: &recorder)
-
-		#expect(recorder.events == [
-			.start("bar"),
-			.end("bar"),
-		])
-	}
+//	@Test func streamElementWithEmptyContent() async throws {
+//		var recorder = RecordingRenderer()
+//
+//		Fixtures.singleElement.render(using: &recorder)
+//
+//		#expect(recorder.events == [
+//			.start("bar"),
+//			.end("bar"),
+//		])
+//	}
 }

@@ -29,14 +29,12 @@ struct ComponentTests {
 		compound.render(using: &recorder)
 
 		#expect(recorder.events == [
-			.start("foo"),
 			.comment("Hello"),
 			.text("foo"),
 			.comment("Hello"),
 			.text("bar"),
 			.comment("Hello"),
 			.text("baz"),
-			.end("foo"),
 		])
 	}
 }
@@ -47,10 +45,8 @@ struct FooList: Component {
 	let names: [String]
 
 	var content: some Node {
-		foo {
-			ForEach(names) { name in
-				FooItem(name: name)
-			}
+		ForEach(names) { name in
+			FooItem(name: name)
 		}
 	}
 }

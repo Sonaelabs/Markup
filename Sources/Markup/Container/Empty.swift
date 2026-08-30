@@ -7,7 +7,7 @@
 public struct Empty: Node {
 
 	/// Creates a new empty element.
-	@usableFromInline init() {}
+	public init() {}
 
 	/// Renders the empty element using the given renderer.
 	///

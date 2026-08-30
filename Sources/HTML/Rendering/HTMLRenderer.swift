@@ -52,19 +52,28 @@ public struct HTMLRenderer<Buffer: HTMLBuffer>: Renderer {
 	}
 
 	/// Renders an HTML element's starting tag and attributes.
-	@inlinable public mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>]) {
+	@inlinable public mutating func append<Tag: TagDefinition>(start tag: Tag.Type, attributes: consuming [Attribute<Tag>], terminator: StaticString?) {
 		buffer.append(60) // <
-		buffer.append(contentsOf: tag.name.utf8)
+
+		tag.name.withUTF8Buffer { utf8 in
+			buffer.append(contentsOf: utf8)
+		}
 
 		for attribute in attributes {
 			buffer.append(32) // space
-			buffer.append(contentsOf: attribute.name.utf8)
+			append(raw: attribute.name)
 
 			if let value = attribute.value {
 				buffer.append(61) // =
 				buffer.append(34) // "
 				buffer.appendEscapedAttribute(value)
 				buffer.append(34) // "
+			}
+		}
+
+		if let terminator {
+			terminator.withUTF8Buffer { utf8 in
+				buffer.append(contentsOf: utf8)
 			}
 		}
 
@@ -75,7 +84,11 @@ public struct HTMLRenderer<Buffer: HTMLBuffer>: Renderer {
 	@inlinable public mutating func append<Tag: TagDefinition>(end tag: Tag.Type) {
 		buffer.append(60) // <
 		buffer.append(47) // /
-		buffer.append(contentsOf: tag.name.utf8)
+
+		tag.name.withUTF8Buffer { utf8 in
+			buffer.append(contentsOf: utf8)
+		}
+
 		buffer.append(62) // >
 	}
 
