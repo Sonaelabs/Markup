@@ -1,8 +1,6 @@
 //
-//  SVG.swift
-//  markup
-//
-//  Created by Felix Gabel on 2026-08-28.
+// Copyright © 2026 Sonae Labs.
+// Released under the MIT License.
 //
 
 public import Markup
