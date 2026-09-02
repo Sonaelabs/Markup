@@ -35,8 +35,13 @@ extension HTMX.Trigger {
 		.intersect.appending("root", value: selector)
 	}
 
+	/// Creates a `intersect rootMargin:` event trigger.
+	@inlinable public static func intersect(rootMargin selector: consuming String) -> Self {
+		.intersect.appending("rootMargin", value: selector)
+	}
+
 	/// Creates a `intersect threshold:` event trigger.
-	@inlinable public static func intersect(threshold: consuming Float) -> Self {
+	@inlinable public static func intersect(threshold: consuming Double) -> Self {
 		.intersect.appending("threshold", value: .init(threshold))
 	}
 }
@@ -281,9 +286,23 @@ extension HTMX.Trigger {
 		appending("target", value: selector)
 	}
 
-	/// Specifies the event will not trigger any other htmx requests on parents.
-	@inlinable public consuming func consume() -> Self {
-		appending("consume")
+	/// Specifies the event will call `preventDefault()`.
+	@inlinable public consuming func prevent() -> Self {
+		appending("prevent")
+	}
+
+	/// Specifies the event will call `stopPropagation()`.
+	@inlinable public consuming func stop() -> Self {
+		appending("stop")
+	}
+	/// Specifies the event will be triggered during capture phase, not bubble phase.
+	@inlinable public consuming func capture() -> Self {
+		appending("capture")
+	}
+
+	/// Specifies the event will not call `preventDefault()`.
+	@inlinable public consuming func passive() -> Self {
+		appending("passive")
 	}
 
 	@usableFromInline consuming func appending(_ modifier: consuming String, value: consuming String? = nil) -> Self {

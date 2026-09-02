@@ -32,6 +32,15 @@ extension HTMX {
 			/// After the target element.
 			case afterEnd = "afterend"
 
+			/// Morphs content inside element, preserving state and focus.
+			case innerMorph
+
+			/// Morphs entire element, preserving state and focus.
+			case outerMorph
+
+			/// Morphs the target’s attributes, then replaces its children.
+			case outerSync
+
 			/// Deletes the target element.
 			case delete
 
@@ -81,6 +90,15 @@ extension HTMX.Swap {
 	/// Insert response after the target element.
 	@inlinable public static var afterEnd: Self { .init(strategy: .afterEnd) }
 
+	/// Morphs content inside element, preserving state and focus.
+	@inlinable public static var innerMorph: Self { .init(strategy: .innerMorph) }
+
+	/// Morphs entire element, preserving state and focus.
+	@inlinable public static var outerMorph: Self { .init(strategy: .outerMorph) }
+
+	/// Morphs the target’s attributes, then replaces its children.
+	@inlinable public static var outerSync: Self { .init(strategy: .outerSync) }
+
 	/// Deletes target element regardless of the response.
 	@inlinable public static var delete: Self { .init(strategy: .delete) }
 
@@ -92,6 +110,11 @@ extension HTMX.Swap {
 
 extension HTMX.Swap {
 
+	/// Specifies use of the new View Transitions API when a swap occurs.
+	@inlinable public consuming func transition(_ enable: consuming Bool = true) -> Self {
+		appending("transition", .init(enable))
+	}
+
 	/// Specifies the duration before doing the swap after it is received.
 	@inlinable public consuming func swap(_ delay: consuming Duration) -> Self {
 		appending("swap", delay.cssTime)
@@ -102,19 +125,9 @@ extension HTMX.Swap {
 		appending("settle", delay.cssTime)
 	}
 
-	/// Specifies use of the new View Transitions API when a swap occurs.
-	@inlinable public consuming func transition(_ enable: consuming Bool = true) -> Self {
-		appending("transition", .init(enable))
-	}
-
 	/// Specifies wether the title of the page will be updated.
 	@inlinable public consuming func ignoreTitle(_ enable: consuming Bool = true) -> Self {
 		appending("ignoreTitle", .init(enable))
-	}
-
-	/// Specifies to preserves focus between requests for inputs that have a defined id attribute.
-	@inlinable public consuming func focusScroll(_ enable: consuming Bool) -> Self {
-		appending("focus-scroll", .init(enable))
 	}
 
 	/// Specifies scrolling behavior of the target element.
@@ -137,10 +150,17 @@ extension HTMX.Swap {
 		appending("show:\(selector.rawValue)", direction.rawValue)
 	}
 
+	/// Specifies to preserves focus between requests for inputs that have a defined id attribute.
+	@inlinable public consuming func focusScroll(_ enable: consuming Bool) -> Self {
+		appending("focus-scroll", .init(enable))
+	}
+
 	/// Specifies not to scroll.
 	@inlinable public consuming func showNone() -> Self {
 		appending("show", "none")
 	}
+
+	
 
 	@usableFromInline consuming func appending(_ modifier: consuming String, _ others: String...) -> Self {
 		if !rawValue.isEmpty {

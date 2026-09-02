@@ -58,7 +58,6 @@ struct HTMXTests {
 		expect(.hx.trigger(.click.changed()),                    "hx-trigger", "click changed")
 		expect(.hx.trigger(.click.delay(.seconds(2))),           "hx-trigger", "click delay:2s")
 		expect(.hx.trigger(.click.throttle(.milliseconds(300))), "hx-trigger", "click throttle:300ms")
-		expect(.hx.trigger(.click.consume()),                    "hx-trigger", "click consume")
 
 		expect(.hx.trigger(.click.from("body")),             "hx-trigger", "click from:body")
 		expect(.hx.trigger(.click.from(.document)),          "hx-trigger", "click from:document")
@@ -212,28 +211,12 @@ struct HTMXTests {
 		expect(.hx.replaceURL("/test"), "hx-replace-url", "/test")
 	}
 
-	@Test func `hx-history`() {
-		expect(.hx.history(true),  "hx-history", "true")
-		expect(.hx.history(false), "hx-history", "false")
-	}
-
 	@Test func `hx-history-elt`() {
 		expect(.hx.historyElt(), "hx-history-elt", nil)
 	}
 
-	@Test func `hx-ext`() {
-		expect(.hx.ext("foo"), "hx-ext", "foo")
-		expect(.hx.ext(.sse),  "hx-ext", "sse")
-		expect(.hx.ext(.ws),   "hx-ext", "ws")
-
-		expect(.hx.ext(.sse, .ws), "hx-ext", "sse, ws")
-
-		expect(.hx.ext(.ignore(.ws)),       "hx-ext", "ignore:ws")
-		expect(.hx.ext(.sse, .ignore(.ws)), "hx-ext", "sse, ignore:ws")
-	}
-
 	@Test func `hx-ignore`() {
-		expect(.hx.ignore(), "hx-disable", nil)
+		expect(.hx.ignore(), "hx-ignore", nil)
 	}
 
 	@Test func `hx-boost`() {
@@ -260,30 +243,15 @@ struct HTMXTests {
 	}
 
 	@Test func `hx-disable`() {
-		expect(.hx.disable(.this), "hx-disabled-elt", "this")
-//		expect(.hx.disable(.inherit), "hx-disabled-elt", "inherit")
-//		expect(.hx.disable(.inherit, #foo), "hx-disabled-elt", "inherit, #foo")
-		expect(.hx.disable(.find("button")), "hx-disabled-elt", "find button")
-		expect(.hx.disable(.find("button"), .next("input[type='text']")), "hx-disabled-elt", "find button, next input[type='text']")
+		expect(.hx.disable(.this), "hx-disable", "this")
+//		expect(.hx.disable(.inherit), "hx-disable", "inherit")
+//		expect(.hx.disable(.inherit, #foo), "hx-disable", "inherit, #foo")
+		expect(.hx.disable(.find("button")), "hx-disable", "find button")
+		expect(.hx.disable(.find("button"), .next("input[type='text']")), "hx-disable", "find button, next input[type='text']")
 	}
 
 	@Test func `hx-preserve`() {
 		expect(.hx.preserve(), "hx-preserve", nil)
-	}
-
-	@Test func `hx-request`() {
-		// TODO: extend test coverage
-		expect(.hx.request("{}"), "hx-request", "{}")
-	}
-
-	@Test func `hx-disinherit`() {
-		expect(.hx.disinherit("foo"),        "hx-disinherit", "foo")
-		expect(.hx.disinherit("foo", "bar"), "hx-disinherit", "foo bar")
-	}
-
-	@Test func `hx-inherit`() {
-		expect(.hx.inherit("foo"),        "hx-inherit", "foo")
-		expect(.hx.inherit("foo", "bar"), "hx-inherit", "foo bar")
 	}
 }
 
@@ -292,31 +260,12 @@ struct HTMXTests {
 extension HTMXTests {
 
 	@Test func `sse-connect`() {
-		expect(.sse.connect("/"),     "sse-connect", "/")
-		expect(.sse.connect("/test"), "sse-connect", "/test")
-	}
-
-	@Test func `sse-swap`() {
-		expect(.sse.swap("foo"),               "sse-swap", "foo")
-		expect(.sse.swap("foo", "bar", "baz"), "sse-swap", "foo, bar, baz")
+		expect(.sse.connect("/"),     "hx-sse:connect", "/")
+		expect(.sse.connect("/test"), "hx-sse:connect", "/test")
 	}
 
 	@Test func `sse-close`() {
-		expect(.sse.close("foo"), "sse-close", "foo")
-	}
-}
-
-// MARK: - Web Sockets
-
-extension HTMXTests {
-
-	@Test func `ws-connect`() {
-		expect(.ws.connect("/"),     "ws-connect", "/")
-		expect(.ws.connect("/test"), "ws-connect", "/test")
-	}
-
-	@Test func `ws-send`() {
-		expect(.ws.send(), "ws-send", nil)
+		expect(.sse.close("foo"), "hx-sse:close", "foo")
 	}
 }
 

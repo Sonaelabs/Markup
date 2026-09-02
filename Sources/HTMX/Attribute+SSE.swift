@@ -17,22 +17,12 @@ extension Attribute.sse {
 
 	/// Creates an `sse-connect` attribute.
 	@inlinable public static func connect(_ url: consuming String) -> Attribute<Tag> {
-		.init(name: "sse-connect", value: url)
-	}
-
-	/// Creates an `sse-swap` attribute.
-	@inlinable public static func swap(_ name: consuming String) -> Attribute<Tag> {
-		.init(name: "sse-swap", value: name)
-	}
-
-	/// Creates an `sse-swap` attribute.
-	@inlinable public static func swap(_ names: String...) -> Attribute<Tag> {
-		swap(names.joined(separator: ", "))
+		.init(name: "hx-sse:connect", value: url)
 	}
 
 	/// Creates an `sse-close` attribute.
 	@inlinable public static func close(_ name: consuming String) -> Attribute<Tag> {
-		.init(name: "sse-close", value: name)
+		.init(name: "hx-sse:close", value: name)
 	}
 }
 

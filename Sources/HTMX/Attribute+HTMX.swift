@@ -43,6 +43,11 @@ extension Attribute.hx {
 	@inlinable public static func delete(_ url: consuming String) -> Attribute<Tag> {
 		.init(name: "hx-delete", value: url)
 	}
+
+	/// Creates an `hx-query` attribute.
+	@inlinable public static func query(_ url: consuming String) -> Attribute<Tag> {
+		.init(name: "hx-query", value: url)
+	}
 }
 
 // MARK: - Request Control
@@ -74,14 +79,14 @@ extension Attribute.hx {
 		.init(name: "hx-select", value: selector)
 	}
 
-	/// Creates an `hx-select-oob` attribute.
-	@inlinable public static func selectOOB(_ selector: consuming String) -> Attribute<Tag> {
-		.init(name: "hx-select-oob", value: selector)
-	}
-
 	/// Creates an `hx-swap-oob` attribute.
 	@inlinable public static func swapOOB(_ selector: consuming HTMX.SwapOOB) -> Attribute<Tag> {
 		.init(name: "hx-swap-oob", value: selector)
+	}
+
+	/// Creates an `hx-select-oob` attribute.
+	@inlinable public static func selectOOB(_ selector: consuming String) -> Attribute<Tag> {
+		.init(name: "hx-select-oob", value: selector)
 	}
 
 	/// Creates an `hx-confirm` attribute.
@@ -145,39 +150,13 @@ extension Attribute.hx {
 		.init(name: "hx-replace-url", value: url)
 	}
 
-	/// Creates an `hx-history` attribute.
-	@inlinable public static func history(_ enable: consuming Bool) -> Attribute<Tag> {
-		.init(name: "hx-history", value: enable)
-	}
-
 	/// Creates an `hx-history-elt` attribute.
 	@inlinable public static func historyElt() -> Attribute<Tag> {
 		.init(name: "hx-history-elt")
 	}
 }
 
-// MARK: - Lifecycle
-
-extension Attribute.hx {
-
-	/// Creates an `hx-ext` attribute.
-	@inlinable public static func ext(_ value: consuming HTMX.Extension) -> Attribute<Tag> {
-		.init(name: "hx-ext", value: value)
-	}
-
-	/// Creates an `hx-ext` attribute.
-	@inlinable public static func ext(_ extensions: HTMX.Extension...) -> Attribute<Tag> {
-		.init(name: "hx-ext", values: extensions, separator: ", ")
-	}
-
-	// !!!: v4:name, v2: implementation
-	/// Creates an `hx-disable` attribute.
-	@inlinable public static func ignore() -> Attribute<Tag> {
-		.init(name: "hx-disable")
-	}
-}
-
-// MARK: - Misc
+// MARK: - Enhancements
 
 extension Attribute.hx {
 
@@ -185,6 +164,16 @@ extension Attribute.hx {
 	@inlinable public static func boost(_ enable: consuming Bool) -> Attribute<Tag> {
 		.init(name: "hx-boost", value: enable)
 	}
+
+	/// Creates an `hx-preload` attribute.
+
+
+	/// Creates an `hx-pending` attribute.
+}
+
+// MARK: - Misc
+
+extension Attribute.hx {
 
 	/// Creates an `hx-indicator` attribute.
 	@inlinable public static func indicator(_ value: consuming HTMX.Indicator) -> Attribute<Tag> {
@@ -207,22 +196,27 @@ extension Attribute.hx {
 		return .init(name: "hx-sync", value: modification)
 	}
 
+	// TODO: hx-status
+
 	/// Creates an `hx-validate` attribute.
 	@inlinable public static func validate(_ enable: consuming Bool) -> Attribute<Tag> {
 		.init(name: "hx-validate", value: enable)
 	}
 
-	// TODO: add support for .inherit
-	// !!!: v4:name, v2: implementation
-	/// Creates an `hx-disabled-elt` attribute.
+	/// Creates an `hx-disabled` attribute.
 	@inlinable public static func disable(_ selector: consuming HTMX.FooSelector) -> Attribute<Tag> {
-		.init(name: "hx-disabled-elt", value: selector)
+		.init(name: "hx-disable", value: selector)
+	}
+
+	/// Creates an `hx-ignore` attribute.
+	@inlinable public static func ignore() -> Attribute<Tag> {
+		.init(name: "hx-ignore")
 	}
 
 	// !!!: v4:name, v2: implementation
 	/// Creates an `hx-disabled-elt` attribute.
 	@inlinable public static func disable(_ selector: HTMX.FooSelector...) -> Attribute<Tag> {
-		.init(name: "hx-disabled-elt", values: selector, separator: ", ")
+		.init(name: "hx-disable", values: selector, separator: ", ")
 	}
 
 	/// Creates an `hx-preserve` attribute.
@@ -230,34 +224,9 @@ extension Attribute.hx {
 		.init(name: "hx-preserve")
 	}
 
-	// TODO: add proper implementation
-	/// Creates an `hx-request` attribute.
-	@inlinable public static func request(_ json: consuming String) -> Attribute<Tag> {
-		.init(name: "hx-request", value: json)
-	}
-}
-
-// MARK: - Inheritance
-
-extension Attribute.hx {
-
-	/// Creates an `hx-disinherit` attribute.
-	@inlinable public static func disinherit(_ name: consuming String) -> Attribute<Tag> {
-		.init(name: "hx-disinherit", value: name)
-	}
-
-	/// Creates an `hx-disinherit` attribute.
-	@inlinable public static func disinherit(_ names: String...) -> Attribute<Tag> {
-		disinherit(names.joined(separator: " "))
-	}
-
-	/// Creates an `hx-inherit` attribute.
-	@inlinable public static func inherit(_ name: consuming String) -> Attribute<Tag> {
-		.init(name: "hx-inherit", value: name)
-	}
-
-	/// Creates an `hx-inherit` attribute.
-	@inlinable public static func inherit(_ names: String...) -> Attribute<Tag> {
-		inherit(names.joined(separator: " "))
-	}
+	// TODO: hx-morph-skip
+	// TODO: hx-morph-skip-children
+	// TODO: hx-action
+	// TODO: hx-method
+	// TODO: hx-config
 }

@@ -63,6 +63,16 @@ extension HTML.Element where Content == Empty {
 		self.content = Empty()
 	}
 
+	/// Creates an element with the given attributes.
+	///
+	/// - Parameters:
+	///   - name: The name of the element.
+	///   - attributes: The attributes of the element.
+	@inlinable public init(_ attributes: Attribute<Tag>?...) {
+		self.attributes = attributes.compactMap { $0 }
+		self.content = Empty()
+	}
+
 	/// Renders the element using the given renderer.
 	///
 	/// - Parameter renderer: A renderer used for rendering.
@@ -89,6 +99,15 @@ extension HTML {
 		///   - attributes: The attributes of the void element.
 		@inlinable public init(_ attributes: Attribute<Tag>...) {
 			self.attributes = attributes
+		}
+
+		/// Creates a void element with the given attributes.
+		///
+		/// - Parameters:
+		///   - name: The name of the void element.
+		///   - attributes: The attributes of the void element.
+		@inlinable public init(_ attributes: Attribute<Tag>?...) {
+			self.attributes = attributes.compactMap { $0 }
 		}
 
 		/// Renders the void element using the given renderer.
