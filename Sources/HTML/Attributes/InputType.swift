@@ -21,7 +21,7 @@ extension HTML {
 		case date
 
 		/// Defines a date and time control (`YYYY-MM-DDTHH:mm`).
-		case datetimeLocal
+		case datetimeLocal = "datetime-local"
 
 		/// Defines a field for an e-mail address.
 		case email
