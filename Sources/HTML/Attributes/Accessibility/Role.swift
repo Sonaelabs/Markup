@@ -16,6 +16,9 @@ extension ARIA {
 		/// Specifies a button/control cluster.
 		case group
 
+		/// Specifies a list.
+		case list
+
 		/// Specifies no rule.
 		case none
 
