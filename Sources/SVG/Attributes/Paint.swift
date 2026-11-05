@@ -42,17 +42,17 @@ extension SVG.Paint {
 
 	/// Returns paint formated as `rgb(r% g% b%)`.
 	public static func rgb(_ r: SVG.Percentage, _ g: SVG.Percentage, _ b: SVG.Percentage) -> Self {
-		.init(rawValue: "rgb(\(r) \(g) \(b)")
+		.init(rawValue: "rgb(\(r) \(g) \(b))")
 	}
 
 	/// Returns paint formated as `rgb(r g b / a)`.
 	public static func rgb(_ r: Int, _ g: Int, _ b: Int, _ a: Double) -> Self {
-		.init(rawValue: "rgb(\(r) \(g) \(b) / \(a)")
+		.init(rawValue: "rgb(\(r) \(g) \(b) / \(a))")
 	}
 
 	/// Returns paint formated as `rgb(r g b / a%)`.
 	public static func rgb(_ r: Int, _ g: Int, _ b: Int, _ a: SVG.Percentage) -> Self {
-		.init(rawValue: "rgb(\(r) \(g) \(b) / \(a)")
+		.init(rawValue: "rgb(\(r) \(g) \(b) / \(a))")
 	}
 }
 

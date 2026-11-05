@@ -147,6 +147,11 @@ extension Attribute where Tag: HTML.Tag {
 		.init(name: "spellcheck", value: enable)
 	}
 
+	/// Specifies an inline style of an HTML element.
+	@inlinable public static func style(_ value: consuming String) -> Self {
+		.init(name: "style", value: value)
+	}
+
 	/// Specifies the tab order of an HTML element.
 	@inlinable public static func tabIndex(_ value: consuming Int) -> Self {
 		.init(name: "tabindex", value: value)
@@ -517,6 +522,7 @@ extension Attribute where Tag: HTML.Trait.Multiple {
 // MARK: -
 
 extension HTML.Button: HTML.Trait.Name {}
+extension HTML.Details: HTML.Trait.Name {}
 extension HTML.Fieldset: HTML.Trait.Name {}
 extension HTML.Form: HTML.Trait.Name {}
 extension HTML.Iframe: HTML.Trait.Name {}

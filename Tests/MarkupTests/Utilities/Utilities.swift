@@ -18,7 +18,6 @@ struct RecordingRenderer: Renderer {
 		case text(String)
 		case start(String)
 		case end(String)
-		case flush(force: Bool)
 	}
 
 	var events: [Event] = []

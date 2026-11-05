@@ -34,7 +34,7 @@ extension Attribute where Tag: SVG.Trait.Center {
 
 	/// Creates a `cy` attribute.
 	@inlinable public static func cy(_ cy: consuming SVG.Length) -> Self {
-		.init(name: "cx", value: cy)
+		.init(name: "cy", value: cy)
 	}
 
 	/// Creates a `cx` attribute.

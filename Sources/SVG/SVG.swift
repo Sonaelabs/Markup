@@ -20,7 +20,7 @@ extension Optional: SVG.Node where Wrapped: SVG.Node {}
 
 extension Compound: SVG.Node where Content: SVG.Node {}
 extension Conditional: SVG.Node where First: SVG.Node, Second: SVG.Node {}
-extension ForEach: SVG.Node where Content: HTML.Node {}
+extension ForEach: SVG.Node where Content: SVG.Node {}
 extension Fragment: SVG.Node where repeat each Child: SVG.Node {}
 
 extension Comment: SVG.Node {}

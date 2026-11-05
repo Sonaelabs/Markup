@@ -192,7 +192,7 @@ extension Attribute.hx {
 
 	/// Creates an `hx-sync` attribute.
 	@inlinable public static func sync(_ selector: consuming HTMX.FooSelector, _ strategy: consuming HTMX.SyncStrategy) -> Attribute<Tag> {
-		let modification = selector.rawValue + ":\(strategy)"
+		let modification = selector.rawValue + ":\(strategy.rawValue)"
 		return .init(name: "hx-sync", value: modification)
 	}
 

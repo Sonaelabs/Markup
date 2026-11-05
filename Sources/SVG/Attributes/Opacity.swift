@@ -17,7 +17,7 @@ extension SVG {
 
 // MARK: -
 
-extension SVG.Paint: ExpressibleByFloatLiteral {
+extension SVG.Opacity: ExpressibleByFloatLiteral {
 
 	@inlinable public init(floatLiteral value: Double) {
 		self.init(rawValue: .init(value))
