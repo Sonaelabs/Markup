@@ -5,11 +5,6 @@
 
 @testable import Markup
 
-enum TestError: Error, Equatable {
-	case asyncContent
-	case asyncForEach
-}
-
 struct RecordingRenderer: Renderer {
 
 	enum Event: Equatable {
