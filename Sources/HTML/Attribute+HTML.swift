@@ -309,7 +309,7 @@ extension HTML.Textarea: HTML.Trait.Disabled {}
 
 extension Attribute where Tag: HTML.Trait.Disabled {
 
-	/// Specifies that the element should be disabled.
+	/// Specifies the element as disabled.
 	@inlinable public static var disabled: Self {
 		.init(name: "disabled")
 	}
@@ -626,8 +626,8 @@ extension HTML.Textarea: HTML.Trait.Readonly {}
 
 extension Attribute where Tag: HTML.Trait.Readonly {
 
-	/// Specifies that the element is read-only.
-	@inlinable public static var readOnly: Self {
+	/// Specifies the element as readonly.
+	@inlinable public static var readonly: Self {
 		.init(name: "readonly")
 	}
 }
@@ -640,7 +640,7 @@ extension HTML.Textarea: HTML.Trait.Required {}
 
 extension Attribute where Tag: HTML.Trait.Required {
 
-	/// Specifies that the element must be filled out before submitting the form.
+	/// Specifies a field as required.
 	@inlinable public static var required: Self {
 		.init(name: "required")
 	}
@@ -815,6 +815,12 @@ extension Attribute where Tag: HTML.Trait.Value {
 	/// Specifies the value of the element.
 	@inlinable public static func value(_ value: consuming String) -> Self {
 		.init(name: "value", value: value)
+	}
+
+	/// Specifies the value of the element if not `nil`.
+	@inlinable public static func value(_ value: consuming String?) -> Self? {
+		guard let value else { return nil }
+		return .value(value)
 	}
 }
 

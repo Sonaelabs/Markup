@@ -69,9 +69,15 @@ extension Attribute.aria {
 		.init(name: "aria-describedby", values: ids, separator: " ")
 	}
 
-	/// Creates an `aria-disabled` attribute.
-	@inlinable public static func disabled(_ disabled: consuming Bool) -> Attribute<Tag> {
-		.init(name: "aria-disabled", value: disabled)
+	/// Creates an `aria-describedby` attribute if value is not `nil`.
+	@inlinable public static func described(by id: consuming HTML.Identifier?) -> Attribute<Tag>? {
+		guard let id else { return nil }
+		return .aria.described(by: id)
+	}
+
+	/// Creates an `aria-disabled="true"` attribute.
+	@inlinable public static var disabled: Attribute<Tag> {
+		.init(name: "aria-disabled", value: true)
 	}
 
 	/// Creates an `aria-haspopup` attribute.
@@ -79,9 +85,14 @@ extension Attribute.aria {
 		.init(name: "aria-haspopup", value: haspopup)
 	}
 
-	/// Creates an `aria-hidden` attribute.
-	@inlinable public static func hidden(_ hidden: consuming Bool) -> Attribute<Tag> {
-		.init(name: "aria-hidden", value: hidden)
+	/// Creates an `aria-hidden="true"` attribute.
+	@inlinable public static var hidden: Attribute<Tag> {
+		.init(name: "aria-hidden", value: true)
+	}
+
+	/// Creates an `aria-invalid="true"` attribute.
+	@inlinable public static var invalid: Attribute<Tag> {
+		.init(name: "aria-invalid", value: true)
 	}
 
 	/// Creates an `aria-invalid` attribute.
@@ -124,9 +135,9 @@ extension Attribute.aria {
 		.init(name: "aria-expanded", value: expanded)
 	}
 
-	/// Creates an `aria-modal` attribute.
-	@inlinable public static func modal(_ modal: consuming Bool) -> Attribute<Tag> {
-		.init(name: "aria-modal", value: modal)
+	/// Creates an `aria-modal="true"` attribute.
+	@inlinable public static var modal: Attribute<Tag> {
+		.init(name: "aria-modal", value: true)
 	}
 
 	/// Creates an `aria-pressed` attribute.

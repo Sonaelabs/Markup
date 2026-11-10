@@ -21,13 +21,3 @@ extension ARIA {
 		case spelling
 	}
 }
-
-// MARK: -
-
-extension ARIA.Invalid: ExpressibleByBooleanLiteral {
-
-	/// Creates an instance using a boolean literal.
-	@inlinable public init(booleanLiteral value: Bool) {
-		self = value ? .true : .false
-	}
-}
