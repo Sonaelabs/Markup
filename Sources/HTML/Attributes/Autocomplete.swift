@@ -3,15 +3,48 @@
 // Released under the MIT License.
 //
 
-extension HTML {
+/// A type representing the `autocomplete` attribute.
+public struct Autocomplete: RawRepresentable, Sendable {
 
-	/// A type representing the `autocomplete` attribute.
-	public enum Autocomplete: String, Sendable {
+	public var rawValue: String
 
-		/// Specifies autocomplete is on.
-		case on
+	/// Creates an instance using a string.
+	@inlinable public init(rawValue: String) {
+		self.rawValue = rawValue
+	}
+}
 
-		/// Specifies autocomplete is on.
-		case off
+// MARK: -
+
+extension Autocomplete {
+
+	/// Creates a `on` attribute.
+	@inlinable public static var on: Self {
+		.init(rawValue: "on")
+	}
+
+	/// Creates a `off` attribute.
+	@inlinable public static var off: Self {
+		.init(rawValue: "off")
+	}
+}
+
+// MARK: -
+
+extension Autocomplete {
+
+	/// Creates a `name` attribute.
+	@inlinable public static var name: Self {
+		.init(rawValue: "name")
+	}
+}
+
+// MARK: -
+
+extension Autocomplete: ExpressibleByStringLiteral {
+
+	/// Creates an instance using a string literal.
+	@inlinable public init(stringLiteral value: String) {
+		self.init(rawValue: value)
 	}
 }

@@ -3,21 +3,18 @@
 // Released under the MIT License.
 //
 
-extension ARIA {
+/// A type representing content editability.
+public enum Invalid: String, Sendable {
 
-	/// A type representing content editability.
-	public enum Invalid: String, Sendable {
+	/// Value has failed validation.
+	case `true` = "true"
 
-		/// Value has failed validation.
-		case `true` = "true"
+	/// Value has passed validation.
+	case `false` = "false"
 
-		/// Value has passed validation.
-		case `false` = "false"
+	/// Grammatical error detected.
+	case grammar
 
-		/// Grammatical error detected.
-		case grammar
-
-		/// Spelling error detected.
-		case spelling
-	}
+	/// Spelling error detected.
+	case spelling
 }

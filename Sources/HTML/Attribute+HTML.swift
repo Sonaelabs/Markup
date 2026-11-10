@@ -78,7 +78,7 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies whether the content of an HTML element is editable or not.
-	@inlinable public static func contentEditable(_ value: consuming HTML.ContentEditable) -> Self {
+	@inlinable public static func contentEditable(_ value: consuming ContentEditable) -> Self {
 		.init(name: "contenteditable", value: value.rawValue)
 	}
 
@@ -88,7 +88,7 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies the direction of the text in an HTML element.
-	@inlinable public static func dir(_ value: consuming HTML.TextDirection) -> Self {
+	@inlinable public static func dir(_ value: consuming TextDirection) -> Self {
 		.init(name: "dir", value: value)
 	}
 
@@ -98,7 +98,7 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies the enter key on virtual keyboards.
-	@inlinable public static func enterKeyHint(_ value: consuming HTML.EnterKeyHint) -> Self {
+	@inlinable public static func enterKeyHint(_ value: consuming EnterKeyHint) -> Self {
 		.init(name: "enterkeyhint", value: value)
 	}
 
@@ -108,7 +108,7 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies a unique id for an HTML element.
-	@inlinable public static func id(_ id: consuming HTML.Identifier) -> Self {
+	@inlinable public static func id(_ id: consuming Identifier) -> Self {
 		.init(name: "id", value: id)
 	}
 
@@ -118,17 +118,17 @@ extension Attribute where Tag: HTML.Tag {
 	}
 
 	/// Specifies the appearance of the keyboard on a phone or tablet.
-	@inlinable public static func inputMode(_ value: consuming HTML.InputMode) -> Self {
+	@inlinable public static func inputMode(_ value: consuming InputMode) -> Self {
 		.init(name: "inputmode", value: value)
 	}
 
 	/// Specifies the language of the content in an HTML element.
-	@inlinable public static func lang(_ value: consuming HTML.Language) -> Self {
+	@inlinable public static func lang(_ value: consuming Language) -> Self {
 		.init(name: "lang", value: value)
 	}
 
 	/// Defines an HTML element as a popover element.
-	@inlinable public static func popover(_ value: consuming HTML.Popover) -> Self {
+	@inlinable public static func popover(_ value: consuming Popover) -> Self {
 		.init(name: "popover", value: value)
 	}
 
@@ -214,7 +214,7 @@ extension HTML.Script: HTML.Trait.Charset {}
 extension Attribute where Tag: HTML.Trait.Charset {
 
 	/// Specifies the character encoding.
-	@inlinable public static func charset(_ encoding: consuming HTML.Charset) -> Self {
+	@inlinable public static func charset(_ encoding: consuming Charset) -> Self {
 		.init(name: "charset", value: encoding)
 	}
 }
@@ -264,7 +264,7 @@ extension Attribute where Tag: HTML.Trait.Crossorigin {
 	}
 
 	/// Creates a `crossorigin` attribute.
-	@inlinable public static func crossOrigin(_ value: consuming HTML.CrossOrigin) -> Self {
+	@inlinable public static func crossOrigin(_ value: consuming CrossOrigin) -> Self {
 		.init(name: "crossorigin", value: value)
 	}
 }
@@ -336,7 +336,7 @@ extension HTML.Output: HTML.Trait.For {}
 extension Attribute where Tag: HTML.Trait.For {
 
 	/// Specifies the relationship between the element and a form control.
-	@inlinable public static func `for`(_ id: consuming HTML.Identifier) -> Self {
+	@inlinable public static func `for`(_ id: consuming Identifier) -> Self {
 		.init(name: "for", value: id)
 	}
 }
@@ -356,17 +356,17 @@ extension HTML.Textarea: HTML.Trait.Form {}
 extension Attribute where Tag: HTML.Trait.Form {
 
 	/// Specifies the form the element belongs to.
-	@inlinable public static func form(_ id: consuming HTML.Identifier) -> Self {
+	@inlinable public static func form(_ id: consuming Identifier) -> Self {
 		.init(name: "form", value: id)
 	}
 
 	/// Specifies the form the element belongs to.
-	@inlinable public static func form(_ ids: consuming [HTML.Identifier]) -> Self {
+	@inlinable public static func form(_ ids: consuming [Identifier]) -> Self {
 		.init(name: "form", values: ids, separator: " ")
 	}
 
 	/// Specifies the form the element belongs to.
-	@inlinable public static func form(_ ids: HTML.Identifier...) -> Self {
+	@inlinable public static func form(_ ids: Identifier...) -> Self {
 		.init(name: "form", values: ids, separator: " ")
 	}
 }
@@ -392,17 +392,17 @@ extension HTML.Th: HTML.Trait.Headers {}
 extension Attribute where Tag: HTML.Trait.Headers {
 
 	/// Specifies one or more header cells a table cell is related to.
-	@inlinable public static func headers(_ id: consuming HTML.Identifier) -> Self {
+	@inlinable public static func headers(_ id: consuming Identifier) -> Self {
 		.init(name: "headers", value: id)
 	}
 
 	/// Specifies one or more header cells a table cell is related to.
-	@inlinable public static func headers(_ ids: consuming [HTML.Identifier]) -> Self {
+	@inlinable public static func headers(_ ids: consuming [Identifier]) -> Self {
 		.init(name: "headers", values: ids, separator: " ")
 	}
 
 	/// Specifies one or more header cells a table cell is related to.
-	@inlinable public static func headers(_ ids: HTML.Identifier...) -> Self {
+	@inlinable public static func headers(_ ids: Identifier...) -> Self {
 		.init(name: "headers", values: ids, separator: " ")
 	}
 }
@@ -432,7 +432,7 @@ extension HTML.Link: HTML.Trait.Hreflang {}
 extension Attribute where Tag: HTML.Trait.Hreflang {
 
 	/// Specifies the language of the linked document.
-	@inlinable public static func hrefLang(_ language: consuming HTML.Language) -> Self {
+	@inlinable public static func hrefLang(_ language: consuming Language) -> Self {
 		.init(name: "hreflang", value: language)
 	}
 }
@@ -596,7 +596,7 @@ extension Attribute where Tag: HTML.Trait.Playback {
 	}
 
 	/// Specifies if and how the author thinks that the media file should be loaded when the page loads.
-	@inlinable public static func preload(_ value: consuming HTML.Preload) -> Self {
+	@inlinable public static func preload(_ value: consuming Preload) -> Self {
 		.init(name: "preload", value: value)
 	}
 }
@@ -609,12 +609,12 @@ extension HTML.Input: HTML.Trait.Popover {}
 extension Attribute where Tag: HTML.Trait.Popover {
 
 	/// Specifies the popover target that will be shown when the user clicks on the element.
-	@inlinable public static func popover(target: consuming HTML.Identifier) -> Self {
+	@inlinable public static func popover(target: consuming Identifier) -> Self {
 		.init(name: "popovertarget", value: target)
 	}
 
 	/// Specifies the popover action that will be performed when the user clicks on the element.
-	@inlinable public static func popover(action: consuming HTML.PopoverAction) -> Self {
+	@inlinable public static func popover(action: consuming Popover.Action) -> Self {
 		.init(name: "popovertargetaction", value: action)
 	}
 }
@@ -765,7 +765,7 @@ extension HTML.Form: HTML.Trait.Target {}
 extension Attribute where Tag: HTML.Trait.Target {
 
 	/// Specifies the target for where to open the linked document or where to submit the form.
-	@inlinable public static func target(_ value: consuming HTML.Target) -> Self {
+	@inlinable public static func target(_ value: consuming Target) -> Self {
 		.init(name: "target", value: value)
 	}
 }
@@ -829,7 +829,7 @@ extension Attribute where Tag: HTML.Trait.Value {
 extension Attribute where Tag == HTML.A {
 
 	/// Specifies the relationship of the `<a>` element.
-	@inlinable public static func rel(_ value: consuming HTML.HyperlinkRelationship) -> Self {
+	@inlinable public static func rel(_ value: consuming HyperlinkRelationship) -> Self {
 		.init(name: "rel", value: value)
 	}
 }
@@ -845,12 +845,12 @@ extension Attribute where Tag == HTML.Area {
 	}
 
 	/// Specifies the relationship of the `<area>` element.
-	@inlinable public static func rel(_ value: consuming HTML.HyperlinkRelationship) -> Self {
+	@inlinable public static func rel(_ value: consuming HyperlinkRelationship) -> Self {
 		.init(name: "rel", value: value)
 	}
 
 	/// Specifies the shape of an area in an image map.
-	@inlinable public static func shape(_ value: consuming HTML.AreaShape) -> Self {
+	@inlinable public static func shape(_ value: consuming AreaShape) -> Self {
 		.init(name: "shape", value: value)
 	}
 }
@@ -866,12 +866,12 @@ extension Attribute where Tag == HTML.Button {
 	}
 
 	/// Specifies the commands target.
-	@inlinable public static func commandFor(_ id: consuming HTML.Identifier) -> Self {
+	@inlinable public static func commandFor(_ id: consuming Identifier) -> Self {
 		.init(name: "commandfor", value: id)
 	}
 
 	/// Specifies the button type.
-	@inlinable public static func type(_ value: consuming HTML.ButtonType) -> Self {
+	@inlinable public static func type(_ value: consuming ButtonType) -> Self {
 		.init(name: "type", value: value)
 	}
 }
@@ -891,17 +891,17 @@ extension Attribute where Tag == HTML.Form {
 	}
 
 	/// Specifies whether autocomplete should be on or off.
-	@inlinable public static func autocomplete(_ value: consuming HTML.Autocomplete) -> Self {
-		.init(name: "autocomplete", value: value)
+	@inlinable public static func autocomplete(_ value: consuming Bool) -> Self {
+		.init(name: "autocomplete", value: value ? Autocomplete.on : Autocomplete.off)
 	}
 
 	/// Specifies how the form-data should be encoded.
-	@inlinable public static func encType(_ value: consuming HTML.EncType) -> Self {
+	@inlinable public static func encType(_ value: consuming EncType) -> Self {
 		.init(name: "enctype", value: value)
 	}
 
 	/// Specifies the HTTP method to use when submitting the form.
-	@inlinable public static func method(_ value: consuming HTML.FormMethod) -> Self {
+	@inlinable public static func method(_ value: consuming FormMethod) -> Self {
 		.init(name: "method", value: value)
 	}
 
@@ -911,7 +911,7 @@ extension Attribute where Tag == HTML.Form {
 	}
 
 	/// Specifies the relationship of the `<form>` element.
-	@inlinable public static func rel(_ value: consuming HTML.FormRelationship) -> Self {
+	@inlinable public static func rel(_ value: consuming FormRelationship) -> Self {
 		.init(name: "rel", value: value)
 	}
 }
@@ -948,7 +948,7 @@ extension Attribute where Tag == HTML.Input {
 	}
 
 	/// Specifies the datalist associated with an input element.
-	@inlinable public static func list(_ id: consuming HTML.Identifier) -> Self {
+	@inlinable public static func list(_ id: consuming Identifier) -> Self {
 		.init(name: "list", value: id)
 	}
 
@@ -963,7 +963,7 @@ extension Attribute where Tag == HTML.Input {
 	}
 
 	/// Specifies the input type.
-	@inlinable public static func type(_ value: consuming HTML.InputType) -> Self {
+	@inlinable public static func type(_ value: consuming InputType) -> Self {
 		.init(name: "type", value: value)
 	}
 }
@@ -983,7 +983,7 @@ extension Attribute where Tag == HTML.Img {
 extension Attribute where Tag == HTML.Link {
 
 	/// Specifies the relationship of the `<link>` element.
-	@inlinable public static func rel(_ value: consuming HTML.LinkRelationship) -> Self {
+	@inlinable public static func rel(_ value: consuming LinkRelationship) -> Self {
 		.init(name: "rel", value: value)
 	}
 }
@@ -1048,12 +1048,12 @@ extension Attribute where Tag == HTML.Option {
 extension Attribute where Tag == HTML.Output {
 
 	/// Specifies the relationship between the element and a form control.
-	@inlinable public static func `for`(_ ids: consuming [HTML.Identifier]) -> Self {
+	@inlinable public static func `for`(_ ids: consuming [Identifier]) -> Self {
 		.init(name: "for", values: ids, separator: " ")
 	}
 
 	/// Specifies the relationship between the element and a form control.
-	@inlinable public static func `for`(_ ids: HTML.Identifier...) -> Self {
+	@inlinable public static func `for`(_ ids: Identifier...) -> Self {
 		.init(name: "for", values: ids, separator: " ")
 	}
 }
@@ -1113,7 +1113,7 @@ extension Attribute where Tag == HTML.Textarea {
 extension Attribute where Tag == HTML.Th {
 
 	/// Specifies whether a header cell is a header for a column, row, or group of columns or rows.
-	@inlinable public static func scope(_ value: consuming HTML.Scope) -> Self {
+	@inlinable public static func scope(_ value: consuming Scope) -> Self {
 		.init(name: "scope", value: value)
 	}
 }
@@ -1128,7 +1128,7 @@ extension Attribute where Tag == HTML.Track {
 	}
 
 	/// Specifies the kind of text track.
-	@inlinable public static func kind(_ value: consuming HTML.TrackKind) -> Self {
+	@inlinable public static func kind(_ value: consuming TrackKind) -> Self {
 		.init(name: "kind", value: value)
 	}
 

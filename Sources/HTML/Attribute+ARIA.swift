@@ -15,7 +15,7 @@ extension Attribute where Tag: HTML.Tag {
 	public enum aria {}
 
 	/// Creates a `role` attribute.
-	@inlinable public static func role(_ role: consuming ARIA.Role) -> Attribute<Tag> {
+	@inlinable public static func role(_ role: consuming Role) -> Attribute<Tag> {
 		.init(name: "role", value: role)
 	}
 }
@@ -35,42 +35,42 @@ extension Attribute.aria {
 	}
 
 	/// Creates an `aria-controls` attribute.
-	@inlinable public static func controls(_ id: consuming HTML.Identifier) -> Attribute<Tag> {
+	@inlinable public static func controls(_ id: consuming Identifier) -> Attribute<Tag> {
 		.init(name: "aria-controls", value: id)
 	}
 
 	/// Creates an `aria-controls` attribute.
-	@inlinable public static func controls(_ ids: consuming [HTML.Identifier]) -> Attribute<Tag> {
+	@inlinable public static func controls(_ ids: consuming [Identifier]) -> Attribute<Tag> {
 		.init(name: "aria-controls", values: ids, separator: " ")
 	}
 
 	/// Creates an `aria-controls` attribute.
-	@inlinable public static func controls(_ ids: HTML.Identifier...) -> Attribute<Tag> {
+	@inlinable public static func controls(_ ids: Identifier...) -> Attribute<Tag> {
 		.init(name: "aria-controls", values: ids, separator: " ")
 	}
 
 	/// Creates an `aria-current` attribute.
-	@inlinable public static func current(_ current: consuming ARIA.Current) -> Attribute<Tag> {
+	@inlinable public static func current(_ current: consuming Current) -> Attribute<Tag> {
 		.init(name: "aria-current", value: current)
 	}
 
 	/// Creates an `aria-describedby` attribute.
-	@inlinable public static func described(by id: consuming HTML.Identifier) -> Attribute<Tag> {
+	@inlinable public static func described(by id: consuming Identifier) -> Attribute<Tag> {
 		.init(name: "aria-describedby", value: id)
 	}
 
 	/// Creates an `aria-describedby` attribute.
-	@inlinable public static func described(by ids: consuming [HTML.Identifier]) -> Attribute<Tag> {
+	@inlinable public static func described(by ids: consuming [Identifier]) -> Attribute<Tag> {
 		.init(name: "aria-describedby", values: ids, separator: " ")
 	}
 
 	/// Creates an `aria-describedby` attribute.
-	@inlinable public static func described(by ids: HTML.Identifier...) -> Attribute<Tag> {
+	@inlinable public static func described(by ids: Identifier...) -> Attribute<Tag> {
 		.init(name: "aria-describedby", values: ids, separator: " ")
 	}
 
 	/// Creates an `aria-describedby` attribute if value is not `nil`.
-	@inlinable public static func described(by id: consuming HTML.Identifier?) -> Attribute<Tag>? {
+	@inlinable public static func described(by id: consuming Identifier?) -> Attribute<Tag>? {
 		guard let id else { return nil }
 		return .aria.described(by: id)
 	}
@@ -81,7 +81,7 @@ extension Attribute.aria {
 	}
 
 	/// Creates an `aria-haspopup` attribute.
-	@inlinable public static func hasPopup(_ haspopup: consuming ARIA.HasPopup) -> Attribute<Tag> {
+	@inlinable public static func hasPopup(_ haspopup: consuming HasPopup) -> Attribute<Tag> {
 		.init(name: "aria-haspopup", value: haspopup)
 	}
 
@@ -96,7 +96,7 @@ extension Attribute.aria {
 	}
 
 	/// Creates an `aria-invalid` attribute.
-	@inlinable public static func invalid(_ invalid: consuming ARIA.Invalid) -> Attribute<Tag> {
+	@inlinable public static func invalid(_ invalid: consuming Invalid) -> Attribute<Tag> {
 		.init(name: "aria-invalid", value: invalid)
 	}
 
@@ -106,22 +106,22 @@ extension Attribute.aria {
 	}
 
 	/// Creates an `aria-labelledby` attribute.
-	@inlinable public static func labelled(by id: consuming HTML.Identifier) -> Attribute<Tag> {
+	@inlinable public static func labelled(by id: consuming Identifier) -> Attribute<Tag> {
 		.init(name: "aria-labelledby", value: id)
 	}
 
 	/// Creates an `aria-labelledby` attribute.
-	@inlinable public static func labelled(by ids: consuming [HTML.Identifier]) -> Attribute<Tag> {
+	@inlinable public static func labelled(by ids: consuming [Identifier]) -> Attribute<Tag> {
 		.init(name: "aria-labelledby", values: ids, separator: " ")
 	}
 
 	/// Creates an `aria-labelledby` attribute.
-	@inlinable public static func labelled(by ids: HTML.Identifier...) -> Attribute<Tag> {
+	@inlinable public static func labelled(by ids: Identifier...) -> Attribute<Tag> {
 		.init(name: "aria-labelledby", values: ids, separator: " ")
 	}
 
 	/// Creates an `aria-live` attribute.
-	@inlinable public static func live(_ live: consuming ARIA.Live) -> Attribute<Tag> {
+	@inlinable public static func live(_ live: consuming Live) -> Attribute<Tag> {
 		.init(name: "aria-live", value: live)
 	}
 }
@@ -141,12 +141,12 @@ extension Attribute.aria {
 	}
 
 	/// Creates an `aria-pressed` attribute.
-	@inlinable public static func pressed(_ pressed: consuming ARIA.Pressed) -> Attribute<Tag> {
+	@inlinable public static func pressed(_ pressed: consuming Pressed) -> Attribute<Tag> {
 		.init(name: "aria-pressed", value: pressed)
 	}
 
 	/// Creates an `aria-sort` attribute.
-	@inlinable public static func sort(_ sort: consuming ARIA.Sort) -> Attribute<Tag> {
+	@inlinable public static func sort(_ sort: consuming Sort) -> Attribute<Tag> {
 		.init(name: "aria-sort", value: sort)
 	}
 }

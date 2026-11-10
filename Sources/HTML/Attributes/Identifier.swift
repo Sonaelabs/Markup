@@ -3,29 +3,27 @@
 // Released under the MIT License.
 //
 
-extension HTML {
+/// Specifies a unique identifier
+public struct Identifier: RawRepresentable, Sendable {
+	public typealias RawValue = String
 
-	public struct Identifier: RawRepresentable, Sendable {
-		public typealias RawValue = String
+	public var rawValue: RawValue
 
-		public var rawValue: RawValue
+	/// Creates an `id` using a raw string value.
+	@inlinable public init(rawValue: RawValue) {
+		assert(!rawValue.isEmpty, "An `id` must not be an empty string")
+		assert(!rawValue.contains(where: \.isWhitespace), "An `id` must not contain whitespace: \(rawValue)")
+		self.rawValue = rawValue
+	}
 
-		/// Creates an `id` using a raw string value.
-		@inlinable public init(rawValue: RawValue) {
-			assert(!rawValue.isEmpty, "An `id` must not be an empty string")
-			assert(!rawValue.contains(where: \.isWhitespace), "An `id` must not contain whitespace: \(rawValue)")
-			self.rawValue = rawValue
-		}
-
-		public func appending(_ id: consuming Self) -> Self {
-			.init(rawValue: rawValue + "-" + id.rawValue)
-		}
+	public func appending(_ id: consuming Self) -> Self {
+		.init(rawValue: rawValue + "-" + id.rawValue)
 	}
 }
 
 // MARK: -
 
-extension HTML.Identifier: ExpressibleByStringLiteral {
+extension Identifier: ExpressibleByStringLiteral {
 
 	/// Creates an `id` using a string literal.
 	public init(stringLiteral value: RawValue) {

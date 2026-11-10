@@ -3,19 +3,16 @@
 // Released under the MIT License.
 //
 
-extension HTML {
+/// Specifies the direction of the text in an HTML element.
+public enum TextDirection: String, Sendable {
 
-	/// Specifies the direction of the text in an HTML element.
-	public enum TextDirection: String, Sendable {
+	/// Left-to-right text direction.
+	case leftToRight = "ltr"
 
-		/// Left-to-right text direction.
-		case leftToRight = "ltr"
+	/// Right-to-left text direction.
+	case rightToLeft = "rtl"
 
-		/// Right-to-left text direction.
-		case rightToLeft = "rtl"
-
-		/// Default (when the `dir` attribute is omitted). Lets the browser infer
-		/// text direction from content. Recommended when the direction is unknown.
-		case automatic = "auto"
-	}
+	/// Default (when the `dir` attribute is omitted). Lets the browser infer
+	/// text direction from content. Recommended when the direction is unknown.
+	case automatic = "auto"
 }
