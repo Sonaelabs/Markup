@@ -147,6 +147,12 @@ extension Attribute where Tag: HTML.Tag {
 		.init(name: "spellcheck", value: enable)
 	}
 
+	/// Specifies whether the element is to have its spelling and grammar checked or not.
+	@inlinable public static func spellcheck(_ enable: consuming Bool?) -> Self? {
+		guard let enable else { return nil }
+		return .spellcheck(enable)
+	}
+
 	/// Specifies an inline style of an HTML element.
 	@inlinable public static func style(_ value: consuming String) -> Self {
 		.init(name: "style", value: value)
@@ -193,6 +199,12 @@ extension Attribute where Tag: HTML.Trait.Autocomplete {
 	/// Specifies the types of autocomplete.
 	@inlinable public static func autocomplete(_ value: consuming String) -> Self {
 		.init(name: "autocomplete", value: value)
+	}
+
+	/// Specifies the types of autocomplete if provided.
+	@inlinable public static func autocomplete(_ value: consuming String?) -> Self? {
+		guard let value else { return nil }
+		return .autocomplete(value)
 	}
 
 	/// Specifies the types of autocomplete.
