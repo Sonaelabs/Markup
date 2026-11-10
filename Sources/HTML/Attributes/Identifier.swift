@@ -16,6 +16,10 @@ extension HTML {
 			assert(!rawValue.contains(where: \.isWhitespace), "An `id` must not contain whitespace: \(rawValue)")
 			self.rawValue = rawValue
 		}
+
+		public func appending(_ id: consuming Self) -> Self {
+			.init(rawValue: rawValue + "-" + id.rawValue)
+		}
 	}
 }
 
