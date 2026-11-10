@@ -3,21 +3,18 @@
 // Released under the MIT License.
 //
 
-extension SVG {
+public struct Opacity: RawRepresentable, Sendable {
 
-	public struct Opacity: RawRepresentable, Sendable {
+	public let rawValue: String
 
-		public let rawValue: String
-
-		@inlinable public init(rawValue: String) {
-			self.rawValue = rawValue
-		}
+	@inlinable public init(rawValue: String) {
+		self.rawValue = rawValue
 	}
 }
 
 // MARK: -
 
-extension SVG.Opacity: ExpressibleByFloatLiteral {
+extension Opacity: ExpressibleByFloatLiteral {
 
 	@inlinable public init(floatLiteral value: Double) {
 		self.init(rawValue: .init(value))
@@ -26,7 +23,7 @@ extension SVG.Opacity: ExpressibleByFloatLiteral {
 
 // MARK: -
 
-extension SVG.Opacity: ExpressibleByStringLiteral {
+extension Opacity: ExpressibleByStringLiteral {
 	
 	@inlinable public init(stringLiteral value: String) {
 		self.init(rawValue: value)

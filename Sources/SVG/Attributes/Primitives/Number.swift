@@ -3,21 +3,18 @@
 // Released under the MIT License.
 //
 
-extension SVG {
+public struct Number: RawRepresentable, Sendable {
 
-	public struct Number: RawRepresentable, Sendable {
+	public let rawValue: String
 
-		public let rawValue: String
-
-		@inlinable public init(rawValue: String) {
-			self.rawValue = rawValue
-		}
+	@inlinable public init(rawValue: String) {
+		self.rawValue = rawValue
 	}
 }
 
 // MARK: -
 
-extension SVG.Number: ExpressibleByFloatLiteral {
+extension Number: ExpressibleByFloatLiteral {
 
 	@inlinable public init(floatLiteral value: Double) {
 		self.init(rawValue: .init(value))
@@ -26,7 +23,7 @@ extension SVG.Number: ExpressibleByFloatLiteral {
 
 // MARK: -
 
-extension SVG.Number: ExpressibleByIntegerLiteral {
+extension Number: ExpressibleByIntegerLiteral {
 
 	@inlinable public init(integerLiteral value: Int) {
 		self.init(rawValue: .init(value))
@@ -35,7 +32,7 @@ extension SVG.Number: ExpressibleByIntegerLiteral {
 
 // MARK: -
 
-extension SVG.Number: ExpressibleByStringLiteral {
+extension Number: ExpressibleByStringLiteral {
 	
 	@inlinable public init(stringLiteral value: String) {
 		self.init(rawValue: value)

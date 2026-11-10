@@ -3,15 +3,12 @@
 // Released under the MIT License.
 //
 
-extension SVG {
+/// A type that represents fill rule.
+public enum FillRule: String, Sendable {
 
-	/// A type that represents fill rule.
-	public enum FillRule: String, Sendable {
+	/// Specifies non zero fill rule.
+	case nonzero
 
-		/// Specifies non zero fill rule.
-		case nonzero
-
-		/// Specifies even odd fill rule.
-		case evenodd
-	}
+	/// Specifies even odd fill rule.
+	case evenodd
 }

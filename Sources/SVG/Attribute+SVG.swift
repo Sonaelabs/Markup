@@ -28,32 +28,32 @@ extension SVG.RadialGradient: SVG.Trait.Center {}
 extension Attribute where Tag: SVG.Trait.Center {
 
 	/// Creates a `cx` attribute.
-	@inlinable public static func cx(_ cx: consuming SVG.Length) -> Self {
+	@inlinable public static func cx(_ cx: consuming Length) -> Self {
 		.init(name: "cx", value: cx)
 	}
 
 	/// Creates a `cy` attribute.
-	@inlinable public static func cy(_ cy: consuming SVG.Length) -> Self {
+	@inlinable public static func cy(_ cy: consuming Length) -> Self {
 		.init(name: "cy", value: cy)
 	}
 
 	/// Creates a `cx` attribute.
-	@inlinable public static func cx(_ cx: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func cx(_ cx: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "cx", value: cx.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `cy` attribute.
-	@inlinable public static func cy(_ cy: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func cy(_ cy: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "cy", value: cy.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `cx` attribute.
-	@inlinable public static func cx(_ cx: consuming SVG.Percentage) -> Self {
+	@inlinable public static func cx(_ cx: consuming Percentage) -> Self {
 		.init(name: "cx", value: cx)
 	}
 
 	/// Creates a `cy` attribute.
-	@inlinable public static func cy(_ cy: consuming SVG.Percentage) -> Self {
+	@inlinable public static func cy(_ cy: consuming Percentage) -> Self {
 		.init(name: "cy", value: cy)
 	}
 }
@@ -66,32 +66,32 @@ extension SVG.Rect: SVG.Trait.Corner {}
 extension Attribute where Tag: SVG.Trait.Corner {
 
 	/// Creates a `rx` attribute.
-	@inlinable public static func rx(_ rx: consuming SVG.Number) -> Self {
+	@inlinable public static func rx(_ rx: consuming Number) -> Self {
 		.init(name: "rx", value: rx)
 	}
 
 	/// Creates a `ry` attribute.
-	@inlinable public static func ry(_ ry: consuming SVG.Number) -> Self {
+	@inlinable public static func ry(_ ry: consuming Number) -> Self {
 		.init(name: "ry", value: ry)
 	}
 
 	/// Creates a `rx` attribute.
-	@inlinable public static func rx(_ rx: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func rx(_ rx: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "rx", value: rx.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `ry` attribute.
-	@inlinable public static func ry(_ ry: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func ry(_ ry: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "ry", value: ry.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `rx` attribute.
-	@inlinable public static func rx(_ rx: consuming SVG.Percentage) -> Self {
+	@inlinable public static func rx(_ rx: consuming Percentage) -> Self {
 		.init(name: "rx", value: rx)
 	}
 
 	/// Creates a `ry` attribute.
-	@inlinable public static func ry(_ ry: consuming SVG.Percentage) -> Self {
+	@inlinable public static func ry(_ ry: consuming Percentage) -> Self {
 		.init(name: "ry", value: ry)
 	}
 }
@@ -112,17 +112,17 @@ extension SVG.Tspan: SVG.Trait.Fill {}
 extension Attribute where Tag: SVG.Trait.Fill {
 
 	/// Creates a `fill` attribute.
-	@inlinable public static func fill(_ fill: consuming SVG.Paint) -> Self {
+	@inlinable public static func fill(_ fill: consuming Paint) -> Self {
 		.init(name: "fill", value: fill)
 	}
 
 	/// Creates a `fill-opacity` attribute.
-	@inlinable public static func fill(opacity: consuming SVG.Opacity) -> Self {
+	@inlinable public static func fill(opacity: consuming Opacity) -> Self {
 		.init(name: "fill-opacity", value: opacity)
 	}
 
 	/// Creates a `fill-rule` attribute.
-	@inlinable public static func fill(rule: consuming SVG.FillRule) -> Self {
+	@inlinable public static func fill(rule: consuming FillRule) -> Self {
 		.init(name: "fill-opacity", value: rule)
 	}
 }
@@ -135,62 +135,62 @@ extension SVG.LinearGradient: SVG.Trait.Linear {}
 extension Attribute where Tag: SVG.Trait.Linear {
 
 	/// Creates a `x1` attribute.
-	@inlinable public static func x1(_ x1: consuming SVG.Number) -> Self {
+	@inlinable public static func x1(_ x1: consuming Number) -> Self {
 		.init(name: "x1", value: x1)
 	}
 
 	/// Creates a `y1` attribute.
-	@inlinable public static func y1(_ y1: consuming SVG.Number) -> Self {
+	@inlinable public static func y1(_ y1: consuming Number) -> Self {
 		.init(name: "y1", value: y1)
 	}
 
 	/// Creates a `x1` attribute.
-	@inlinable public static func x1(_ x1: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func x1(_ x1: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "x1", value: x1.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `y1` attribute.
-	@inlinable public static func y1(_ y1: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func y1(_ y1: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "y1", value: y1.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `x1` attribute.
-	@inlinable public static func x1(_ x1: consuming SVG.Percentage) -> Self {
+	@inlinable public static func x1(_ x1: consuming Percentage) -> Self {
 		.init(name: "x1", value: x1)
 	}
 
 	/// Creates a `y1` attribute.
-	@inlinable public static func y1(_ y1: consuming SVG.Percentage) -> Self {
+	@inlinable public static func y1(_ y1: consuming Percentage) -> Self {
 		.init(name: "y1", value: y1)
 	}
 
 	/// Creates a `x2` attribute.
-	@inlinable public static func x2(_ x2: consuming SVG.Number) -> Self {
+	@inlinable public static func x2(_ x2: consuming Number) -> Self {
 		.init(name: "x2", value: x2)
 	}
 
 	/// Creates a `y2` attribute.
-	@inlinable public static func y2(_ y2: consuming SVG.Number) -> Self {
+	@inlinable public static func y2(_ y2: consuming Number) -> Self {
 		.init(name: "y2", value: y2)
 	}
 
 	/// Creates a `x2` attribute.
-	@inlinable public static func x2(_ x2: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func x2(_ x2: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "x2", value: x2.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `y2` attribute.
-	@inlinable public static func y2(_ y2: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func y2(_ y2: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "y2", value: y2.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `x2` attribute.
-	@inlinable public static func x2(_ x2: consuming SVG.Percentage) -> Self {
+	@inlinable public static func x2(_ x2: consuming Percentage) -> Self {
 		.init(name: "x2", value: x2)
 	}
 
 	/// Creates a `y2` attribute.
-	@inlinable public static func y2(_ y2: consuming SVG.Percentage) -> Self {
+	@inlinable public static func y2(_ y2: consuming Percentage) -> Self {
 		.init(name: "y2", value: y2)
 	}
 }
@@ -219,7 +219,7 @@ extension SVG.Use: SVG.Trait.Opacity {}
 extension Attribute where Tag: SVG.Trait.Opacity {
 
 	/// Creates a `opacity` attribute.
-	@inlinable public static func opacity(_ opacity: consuming SVG.Opacity) -> Self {
+	@inlinable public static func opacity(_ opacity: consuming Opacity) -> Self {
 		.init(name: "opacity", value: opacity)
 	}
 }
@@ -239,32 +239,32 @@ extension SVG.Use: SVG.Trait.Origin {}
 extension Attribute where Tag: SVG.Trait.Origin {
 
 	/// Creates a `x` attribute.
-	@inlinable public static func x(_ x: consuming SVG.Number) -> Self {
+	@inlinable public static func x(_ x: consuming Number) -> Self {
 		.init(name: "x", value: x)
 	}
 
 	/// Creates a `y` attribute.
-	@inlinable public static func y(_ y: consuming SVG.Number) -> Self {
+	@inlinable public static func y(_ y: consuming Number) -> Self {
 		.init(name: "y", value: y)
 	}
 
 	/// Creates a `x` attribute.
-	@inlinable public static func x(_ x: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func x(_ x: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "x", value: x.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `y` attribute.
-	@inlinable public static func y(_ y: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func y(_ y: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "y", value: y.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `x` attribute.
-	@inlinable public static func x(_ x: consuming SVG.Percentage) -> Self {
+	@inlinable public static func x(_ x: consuming Percentage) -> Self {
 		.init(name: "x", value: x)
 	}
 
 	/// Creates a `y` attribute.
-	@inlinable public static func y(_ y: consuming SVG.Percentage) -> Self {
+	@inlinable public static func y(_ y: consuming Percentage) -> Self {
 		.init(name: "y", value: y)
 	}
 }
@@ -290,12 +290,12 @@ extension SVG.RadialGradient: SVG.Trait.Radius {}
 extension Attribute where Tag: SVG.Trait.Radius {
 
 	/// Creates an `r` attribute.
-	@inlinable public static func r(_ r: consuming SVG.Number) -> Self {
+	@inlinable public static func r(_ r: consuming Number) -> Self {
 		.init(name: "r", value: r)
 	}
 
 	/// Creates a `r` attribute.
-	@inlinable public static func r(_ r: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func r(_ r: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "r", value: r.rawValue + unit.rawValue)
 	}
 }
@@ -313,32 +313,32 @@ extension SVG.Use: SVG.Trait.Size {}
 extension Attribute where Tag: SVG.Trait.Size {
 
 	/// Creates a `width` attribute.
-	@inlinable public static func width(_ width: consuming SVG.Number) -> Self {
+	@inlinable public static func width(_ width: consuming Number) -> Self {
 		.init(name: "width", value: width)
 	}
 
 	/// Creates a `height` attribute.
-	@inlinable public static func height(_ height: consuming SVG.Number) -> Self {
+	@inlinable public static func height(_ height: consuming Number) -> Self {
 		.init(name: "height", value: height)
 	}
 
 	/// Creates a `width` attribute.
-	@inlinable public static func width(_ width: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func width(_ width: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "width", value: width.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `height` attribute.
-	@inlinable public static func height(_ height: consuming SVG.Number, _ unit: consuming SVG.Length) -> Self {
+	@inlinable public static func height(_ height: consuming Number, _ unit: consuming Length) -> Self {
 		.init(name: "height", value: height.rawValue + unit.rawValue)
 	}
 
 	/// Creates a `width` attribute.
-	@inlinable public static func width(_ width: consuming SVG.Percentage) -> Self {
+	@inlinable public static func width(_ width: consuming Percentage) -> Self {
 		.init(name: "width", value: width)
 	}
 
 	/// Creates a `height` attribute.
-	@inlinable public static func height(_ height: consuming SVG.Percentage) -> Self {
+	@inlinable public static func height(_ height: consuming Percentage) -> Self {
 		.init(name: "height", value: height)
 	}
 }
@@ -360,7 +360,7 @@ extension SVG.Tspan: SVG.Trait.Stroke {}
 extension Attribute where Tag: SVG.Trait.Stroke {
 
 	/// Creates a `stroke` attribute.
-	@inlinable public static func stroke(_ stroke: consuming SVG.Paint) -> Self {
+	@inlinable public static func stroke(_ stroke: consuming Paint) -> Self {
 		.init(name: "stroke", value: stroke)
 	}
 
@@ -375,12 +375,12 @@ extension Attribute where Tag: SVG.Trait.Stroke {
 	}
 
 	/// Creates a `stroke-linecap` attribute.
-	@inlinable public static func stroke(lineCap: consuming SVG.LineCap) -> Self {
+	@inlinable public static func stroke(lineCap: consuming LineCap) -> Self {
 		.init(name: "stroke-linecap", value: lineCap)
 	}
 
 	/// Creates a `stroke-linejoin` attribute.
-	@inlinable public static func stroke(lineJoin: consuming SVG.LineJoin) -> Self {
+	@inlinable public static func stroke(lineJoin: consuming LineJoin) -> Self {
 		.init(name: "stroke-linejoin", value: lineJoin)
 	}
 
@@ -390,17 +390,17 @@ extension Attribute where Tag: SVG.Trait.Stroke {
 	}
 
 	/// Creates a `stroke-opacity` attribute.
-	@inlinable public static func stroke(opacity: consuming SVG.Opacity) -> Self {
+	@inlinable public static func stroke(opacity: consuming Opacity) -> Self {
 		.init(name: "stroke-opacity", value: opacity)
 	}
 
 	/// Creates a `stroke-width` attribute.
-	@inlinable public static func stroke(width: consuming SVG.Number) -> Self {
+	@inlinable public static func stroke(width: consuming Number) -> Self {
 		.init(name: "stroke-width", value: width)
 	}
 
 	/// Creates a `stroke-width` attribute.
-	@inlinable public static func stroke(width: consuming SVG.Percentage) -> Self {
+	@inlinable public static func stroke(width: consuming Percentage) -> Self {
 		.init(name: "stroke-width", value: width)
 	}
 }
@@ -441,7 +441,7 @@ extension Attribute where Tag == SVG {
 extension Attribute where Tag == SVG.Circle {
 
 	/// Creates an `r` attribute.
-	@inlinable public static func r(_ r: consuming SVG.Percentage) -> Self {
+	@inlinable public static func r(_ r: consuming Percentage) -> Self {
 		.init(name: "r", value: r)
 	}
 }
