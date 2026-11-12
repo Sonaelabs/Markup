@@ -9,21 +9,21 @@ import HTML
 struct NodeRenderingTests {
 
 	@Test func renderComment() {
-		#expect(Markup.Comment("").write() == #"<!--  -->"#)
-		#expect(Markup.Comment("plain text").write() == #"<!-- plain text -->"#)
-		#expect(Markup.Comment("a & b < c > d").write() == #"<!-- a & b < c > d -->"#)
-		#expect(Markup.Comment("-").write() == #"<!-- - -->"#)
-		#expect(Markup.Comment("--").write() == #"<!-- -- -->"#)
-		#expect(Markup.Comment("-----").write() == #"<!-- ----- -->"#)
-		#expect(Markup.Comment("a--b").write() == #"<!-- a--b -->"#)
-		#expect(Markup.Comment("<!--").write() == #"<!-- <!-- -->"#)
-		#expect(Markup.Comment("-->").write() == #"<!-- --> -->"#)
-		#expect(Markup.Comment(">start").write() == #"<!-- >start -->"#)
-		#expect(Markup.Comment("->start").write() == #"<!-- ->start -->"#)
-		#expect(Markup.Comment("end<!-").write() == #"<!-- end<!- -->"#)
-		#expect(Markup.Comment("--foo").write() == #"<!-- --foo -->"#)
-		#expect(Markup.Comment(" already padded ").write() == #"<!--  already padded  -->"#)
-		#expect(Markup.Comment("café — 日本語").write() == #"<!-- café — 日本語 -->"#)
+		#expect(Comment("").write() == #"<!--  -->"#)
+		#expect(Comment("plain text").write() == #"<!-- plain text -->"#)
+		#expect(Comment("a & b < c > d").write() == #"<!-- a & b < c > d -->"#)
+		#expect(Comment("-").write() == #"<!-- - -->"#)
+		#expect(Comment("--").write() == #"<!-- -- -->"#)
+		#expect(Comment("-----").write() == #"<!-- ----- -->"#)
+		#expect(Comment("a--b").write() == #"<!-- a--b -->"#)
+		#expect(Comment("<!--").write() == #"<!-- <!-- -->"#)
+		#expect(Comment("-->").write() == #"<!-- --> -->"#)
+		#expect(Comment(">start").write() == #"<!-- >start -->"#)
+		#expect(Comment("->start").write() == #"<!-- ->start -->"#)
+		#expect(Comment("end<!-").write() == #"<!-- end<!- -->"#)
+		#expect(Comment("--foo").write() == #"<!-- --foo -->"#)
+		#expect(Comment(" already padded ").write() == #"<!--  already padded  -->"#)
+		#expect(Comment("café — 日本語").write() == #"<!-- café — 日本語 -->"#)
 	}
 
 	@Test func renderRaw() {

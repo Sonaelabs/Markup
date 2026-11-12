@@ -6,7 +6,7 @@
 public import Markup
 
 public enum HTML {
-	public protocol Node: Markup.Node {}
+	public protocol Node: Markup::Node {}
 	public protocol Tag: TagDefinition {}
 	public enum Trait {}
 }

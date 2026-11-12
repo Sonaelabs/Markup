@@ -7,7 +7,7 @@ public import Markup
 public import HTML
 
 public enum SVG {
-	public protocol Node: Markup.Node {}
+	public protocol Node: Markup::Node {}
 	public protocol Tag: TagDefinition {}
 
 	public enum Trait {}
