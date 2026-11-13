@@ -22,6 +22,17 @@ extension SVG {
 		///   - name: The name of the element.
 		///   - attributes: The attributes of the element.
 		///   - build: The closure that builds the content.
+		@inlinable public init(_ attributes: Attribute<Tag>..., @ContentBuilder build: () -> Content) {
+			self.attributes = attributes
+			self.content = build()
+		}
+
+		/// Creates an element with the given attributes and children.
+		///
+		/// - Parameters:
+		///   - name: The name of the element.
+		///   - attributes: The attributes of the element.
+		///   - build: The closure that builds the content.
 		@inlinable public init(_ attributes: Attribute<Tag>?..., @ContentBuilder build: () -> Content) {
 			self.attributes = attributes.compactMap { $0 }
 			self.content = build()
