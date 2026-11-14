@@ -28,12 +28,12 @@ extension SVG.RadialGradient: SVG.Trait.Center {}
 extension Attribute where Tag: SVG.Trait.Center {
 
 	/// Creates a `cx` attribute.
-	@inlinable public static func cx(_ cx: consuming Length) -> Self {
+	@inlinable public static func cx(_ cx: consuming Number) -> Self {
 		.init(name: "cx", value: cx)
 	}
 
 	/// Creates a `cy` attribute.
-	@inlinable public static func cy(_ cy: consuming Length) -> Self {
+	@inlinable public static func cy(_ cy: consuming Number) -> Self {
 		.init(name: "cy", value: cy)
 	}
 
