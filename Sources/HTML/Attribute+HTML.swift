@@ -874,8 +874,8 @@ extension Attribute where Tag == HTML.Button {
 
 	//TODO: update value if possible
 	/// Specifies the button command.
-	@inlinable public static func command(_ value: consuming String) -> Self {
-		.init(name: "command", value: value)
+	@inlinable public static func command(_ command: consuming Command) -> Self {
+		.init(name: "command", value: command.name)
 	}
 
 	/// Specifies the commands target.
