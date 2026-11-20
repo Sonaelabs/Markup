@@ -576,8 +576,9 @@ extension HTML.Textarea: HTML.Trait.Placeholder {}
 extension Attribute where Tag: HTML.Trait.Placeholder {
 
 	/// Specifies a short hint that describes the expected value of an input field or a textarea.
-	@inlinable public static func placeholder(_ text: consuming String) -> Self {
-		.init(name: "placeholder", value: text)
+	@inlinable public static func placeholder(_ text: consuming String?) -> Self? {
+		guard let text, !text.isEmpty else { return nil }
+		return .init(name: "placeholder", value: text)
 	}
 }
 
