@@ -24,6 +24,9 @@ public enum Role: String, Sendable {
 	/// Specifies a presentation.
 	case presentation
 
+	/// Specifies a radio group.
+	case radiogroup
+
 	/// Specifies a status.
 	case status
 
