@@ -153,11 +153,6 @@ extension Attribute where Tag: HTML.Tag {
 		return .spellcheck(enable)
 	}
 
-	/// Specifies an inline style of an HTML element.
-	@inlinable public static func style(_ value: consuming String) -> Self {
-		.init(name: "style", value: value)
-	}
-
 	/// Specifies the tab order of an HTML element.
 	@inlinable public static func tabIndex(_ value: consuming Int) -> Self {
 		.init(name: "tabindex", value: value)
@@ -170,7 +165,7 @@ extension Attribute where Tag: HTML.Tag {
 
 	/// Specifies whether the content of an HTML element should be translated or not.
 	@inlinable public static func translate(_ enable: consuming Bool) -> Self {
-		.init(name: "translate", value: enable)
+		.init(name: "translate", value: enable ? "yes", "no")
 	}
 }
 
