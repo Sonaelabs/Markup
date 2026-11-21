@@ -69,8 +69,8 @@ struct AttributeRenderingTests {
 
 		expect(p(.title("foo")) {}, #"<p title="foo"></p>"#)
 
-		expect(p(.translate(true)) {}, #"<p translate="true"></p>"#)
-		expect(p(.translate(false)) {}, #"<p translate="false"></p>"#)
+		expect(p(.translate(true)) {}, #"<p translate="yes"></p>"#)
+		expect(p(.translate(false)) {}, #"<p translate="no"></p>"#)
 	}
 
 	@Test func renderEscapedAttributes() {

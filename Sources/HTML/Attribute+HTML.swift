@@ -165,7 +165,7 @@ extension Attribute where Tag: HTML.Tag {
 
 	/// Specifies whether the content of an HTML element should be translated or not.
 	@inlinable public static func translate(_ enable: consuming Bool) -> Self {
-		.init(name: "translate", value: enable ? "yes", "no")
+		.init(name: "translate", value: enable ? "yes" : "no")
 	}
 }
 
