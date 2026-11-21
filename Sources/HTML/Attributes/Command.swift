@@ -27,7 +27,7 @@ extension Command {
 	public static let close: Self = .init(name: "close")
 
 	/// Shows the popover if closed, otherwise hides.
-	public static let togglePopover: Self = .init(name: "toggle-Popover")
+	public static let togglePopover: Self = .init(name: "toggle-popover")
 
 	/// Hides the popover if open, otherwise does nothing.
 	public static let showPopover: Self = .init(name: "show-popover")
