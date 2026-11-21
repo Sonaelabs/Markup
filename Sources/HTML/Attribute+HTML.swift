@@ -331,7 +331,7 @@ extension Attribute where Tag: HTML.Trait.Download {
 
 	/// Specifies that the target will be downloaded when a user clicks on the hyperlink.
 	@inlinable public static func download(_ filename: String?) -> Self {
-		guard let filename else { return .init(name: "download") }
+		guard let filename, !filename.isEmpty else { return .init(name: "download") }
 		return .init(name: "download", value: filename)
 	}
 }
