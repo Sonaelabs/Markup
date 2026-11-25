@@ -50,8 +50,9 @@ extension Attribute.aria {
 	}
 
 	/// Creates an `aria-current` attribute.
-	@inlinable public static func current(_ current: consuming Current) -> Attribute<Tag> {
-		.init(name: "aria-current", value: current)
+	@inlinable public static func current(_ current: consuming Current?) -> Attribute<Tag>? {
+		guard let current, current != .false else { return nil }
+		return .init(name: "aria-current", value: current)
 	}
 
 	/// Creates an `aria-describedby` attribute.
